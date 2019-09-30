@@ -16,59 +16,139 @@ window.Dataset = {
       title: "Impose penalties on companies not meeting their c02 targets",
       votes: 12315,
       description: "yay",
-      content: [
+      stages: [
         {
           id: "1",
-          test: "uno"
+          name: "Defined"
         },
         {
           id: "2",
-          test: "dos"
+          name: "Sent"
         },
         {
           id: "3",
-          test: "tres"
+          name: "Denied",
+          class: "active"
+        }
+      ],
+      content: [
+        {
+          id: "1",
+          test: "Background"
+        },
+        {
+          id: "2",
+          test: "Cases"
         }
       ]
     },
     {
       id: "2",
       title: "Ration fossil fuels to a set limit/capita",
-      description: "placeholder",
       votes: 11561,
       description: "yay",
-      content: [
+      stages: [
         {
           id: "1",
-          test: "uno"
+          name: "Defined"
         },
         {
           id: "2",
-          test: "dos"
+          name: "Sent"
+        }
+      ],
+      content: [
+        {
+          id: "1",
+          test: "Background"
         },
         {
-          id: "3",
-          test: "tres"
+          id: "2",
+          test: "Cases"
         }
       ]
     },
     {
       id: "3",
       title: "Introduce tax breaks for railways",
+      votes: 11222,
       description: "yay",
-      votes: 11222
+      stages: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        }
+      ],
+      content: [
+        {
+          id: "1",
+          test: "Background"
+        },
+        {
+          id: "2",
+          test: "Cases"
+        }
+      ]
     },
     {
       id: "4",
       title: "Introduce tax for plastic packaging",
-      description: "placeholder",
-      votes: 10124
+      votes: 10124,
+      description: "yay",
+      stages: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        }
+      ],
+      content: [
+        {
+          id: "1",
+          test: "Background"
+        },
+        {
+          id: "2",
+          test: "Cases"
+        }
+      ]
     },
     {
       id: "5",
       title: "Ban plastic bags in all supermarkets",
-      description: "placeholder",
-      votes: 10023
+      votes: 10023,
+      description: "yay",
+      stages: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        }
+      ],
+      content: [
+        {
+          id: "1",
+          test: "Background"
+        },
+        {
+          id: "2",
+          test: "Cases"
+        }
+      ]
     }
   ],
 
