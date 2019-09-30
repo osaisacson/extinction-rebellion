@@ -30,8 +30,6 @@ h1,
 h2,
 h3 {
   font-family: 'Libre Franklin', sans-serif;
-  text-transform: uppercase;
-  width: fit-content;
 }
 
 h1,
@@ -120,15 +118,23 @@ h2 {
 }
 
 //Voting
-.voting {
-  display: inline-flex;
-  flex-direction: column;
+.voting-and-title {
+  display: flex;
   align-items: center;
-  font-weight: 600;
+}
+
+.voting {
+  align-items: center;
+
+  h6 {
+    width: 80px;
+    font-weight: 600;
+  }
 }
 
 .countUp,
 .countDown {
+  border: 0;
   font-family: 'FontAwesome';
   background-color: transparent;
 }

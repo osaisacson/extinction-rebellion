@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
+import CountUp from 'react-countup';
 
 export class Voting extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      score: 0
+      score: this.props.votes
     };
 
     this.increment = this.increment.bind(this);
@@ -18,7 +19,7 @@ export class Voting extends React.Component {
         <button className="countUp" onClick={this.increment}>
           <i className="fas fa-caret-up"></i>
         </button>
-        <div>{this.state.score}</div>
+        <h6>{this.state.score}</h6>
         <button className="countDown" onClick={this.decrement}>
           <i className="fas fa-caret-down"></i>
         </button>

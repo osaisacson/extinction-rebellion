@@ -10,22 +10,65 @@ window.Dataset = {
     return set;
   })(0, 10), //starts at 0, ends at 10
 
-  choices: [
+  active: [
     {
       id: "1",
-      img:
-        "https://images.unsplash.com/photo-1536630596251-b12ba0d9f7d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-      title: "Föreslagen ny gröda: Mikroblad!",
-      description:
-        "Microblad är en relativt ny företeelse i Sverige - det är plantor som skördas när det första paret med riktiga blad syns. De har ett väldigt högt näringsvärde med studier som visat att dessa plantor trots sin ringa storlek har ett 4-40 gånger högre näringsinnehåll än den färdigvuxna salladen (beroende på näringsämne)."
+      title: "Impose penalties on companies not meeting their c02 targets",
+      votes: 12315,
+      description: "yay",
+      content: [
+        {
+          id: "1",
+          test: "uno"
+        },
+        {
+          id: "2",
+          test: "dos"
+        },
+        {
+          id: "3",
+          test: "tres"
+        }
+      ]
     },
     {
       id: "2",
-      img:
-        "https://images.unsplash.com/photo-1533650936805-912836eda0fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-      title: "Föreslagen ny aktivitet: Bilfria Tisdagar!",
-      description:
-        "Om vi alla tar bilen på Tisdagar skulle vi minska vårt fotavtryck med 157kg c02/år. Vad säger ni? Ska vi?"
+      title: "Ration fossil fuels to a set limit/capita",
+      description: "placeholder",
+      votes: 11561,
+      description: "yay",
+      content: [
+        {
+          id: "1",
+          test: "uno"
+        },
+        {
+          id: "2",
+          test: "dos"
+        },
+        {
+          id: "3",
+          test: "tres"
+        }
+      ]
+    },
+    {
+      id: "3",
+      title: "Introduce tax breaks for railways",
+      description: "yay",
+      votes: 11222
+    },
+    {
+      id: "4",
+      title: "Introduce tax for plastic packaging",
+      description: "placeholder",
+      votes: 10124
+    },
+    {
+      id: "5",
+      title: "Ban plastic bags in all supermarkets",
+      description: "placeholder",
+      votes: 10023
     }
   ],
 

@@ -4,7 +4,7 @@ import "./dataset.js";
 
 import Notifications from "./components/Notifications.js";
 
-import Active from "./components/Discussed";
+import Active from "./components/Active";
 import Discussed from "./components/Discussed";
 import Suggested from "./components/Suggested";
 
@@ -23,7 +23,7 @@ class App extends React.Component {
         <header className="section">
           <img src={"/xr-logo.png"} className="logo" alt="logo" />
         </header>
-        <Notifications />
+        {/* <Notifications /> */}
 
         <div className="section">
           <br></br>
@@ -69,9 +69,9 @@ class App extends React.Component {
 
         <Active />
 
-        <Discussed />
+        {/* <Discussed />
 
-        <Suggested />
+        <Suggested /> */}
       </div>
     );
   }
