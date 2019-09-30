@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Book from "./../components/Book";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 
-export default class Harvest extends Component {
+export default class Suggested extends Component {
   constructor(props) {
     super(props);
 
@@ -38,7 +37,6 @@ export default class Harvest extends Component {
                     ""
                   )}
                 </Card.Body>
-                <Book />
               </Card.ImgOverlay>
 
               <Card.Footer>

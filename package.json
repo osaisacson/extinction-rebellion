@@ -1,5 +1,5 @@
 {
-  "name": "valkommen-hem",
+  "name": "extinction-rebellion-demands",
   "version": "1.0.0",
   "engines": {
     "node": "10.16.3"
@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osaisacson/valkommen-hem.git"
+    "url": "git+https://github.com/osaisacson/extinction-rebellion-demands.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/osaisacson/valkommen-hem/issues"
+    "url": "https://github.com/osaisacson/extinction-rebellion-demands/issues"
   },
-  "homepage": "https://github.com/osaisacson/valkommen-hem#readme",
+  "homepage": "https://github.com/osaisacson/extinction-rebellion-demands#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",

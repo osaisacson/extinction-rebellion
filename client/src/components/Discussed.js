@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
-export default class Production extends Component {
+export default class Discussed extends Component {
   // Then we add our constructor which receives our props
   constructor(props) {
     super(props);

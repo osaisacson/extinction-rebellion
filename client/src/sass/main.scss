@@ -1,38 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Franklin:100,400,600,900&display=swap);
-@import 'base/reset';
-@import 'base/clearfix';
-@import 'base/variables';
-@import 'base/mixins';
 
 
 //Main
 html {
-  font-size: $BASE_FONT_SIZE;
-  background: url('https://images.unsplash.com/photo-1531904895138-ac676f9f125a?ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80')
-    no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background: rgba(92,129,202,1);
+  background: 
+    -moz-linear-gradient(
+      left, 
+      rgba(92,129,202,1) 0%, 
+      rgba(249,140,112,1) 100%
+  );
+  background:
+    -webkit-linear-gradient(
+        left, 
+        rgba(92,129,202,1) 0%, 
+        rgba(249,140,112,1) 100%
+  );
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: unset !important;
+  background-color: transparent;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
-.App {
-  margin-bottom: 150px;
-  //   @include for-phone-only {
-  //     background-color: #282c34;
-  //  }
-}
-
-#root {
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 //Text
 
@@ -49,47 +39,8 @@ h2 {
   font-weight: 800;
 }
 
-//Overrides: to be cleaned
-a {
-  color: #666 !important;
-  font-family: 'Libre Franklin', sans-serif;
-  text-transform: uppercase;
-}
-
-.list-group-item {
-  background-color: transparent !important;
-}
-
-.nav-tabs {
-  background-color: rgba(255, 255, 255, 0.7);
-  border-bottom: 0;
-
-  .nav-link.active,
-  .nav-link:hover {
-    background-color: transparent !important;
-    border: 0 !important;
-    color: #000 !important;
-    font-weight: 600 !important;
-  }
-}
-
-.blockquote {
-  text-align: center;
-  background-color: slategrey;
-  color: white;
-  border-radius: 3px;
-}
-
 .card {
   background-color: rgba(255, 255, 255, .7) !important;
-}
-
-.card-img-overlay-text {
-  background-color: slategray;
-  color: #fff;
-  border-radius: 4px;
-  padding: 5px 6px;
-  width: fit-content;
 }
 
 
@@ -113,41 +64,11 @@ a {
 }
 
 //Sections
-.header-title {
-  padding: 20px 0;
 
-  h1 {
-    font-size: 26px;
-    font-weight: 600;
-  }
-
-  h2 {
-    font-size: 15px;
-    text-transform: inherit;
-  }
+.section {
+  margin: 10px 15px;
 }
 
-.section-header {
-  display: flex;
-  align-items: center;
-  margin: 40px 0 20px;
-}
-
-.text-section {
-  padding: 20px 0;
-}
-
-
-.stats-and-icon {
-  @extend .one-line-spread;
-  justify-content: space-around;
-}
-
-.header-and-badge {
-  font-weight: 600;
-  font-size: 14px;
-  font-family: 'Libre Franklin', sans-serif;
-}
 
 //Items
 .avatar {
@@ -169,36 +90,12 @@ a {
 
 //COMPONENTS
 
-.booking-btn {
-  position: absolute;
-  bottom: 60px;
-  right: 20px;
-}
-
-.notifications-custom-div {
-  padding-bottom: 20px;
-}
-
-.notification-custom {
-  width: 100%;
-  margin-bottom: 5px;
-  color: black;
-
-  &.warning {
-    color: #7d132f;
-  }
-}
-
 //Accordion custom
 
 .accordion-info {
   @extend .one-line-spread;
   justify-content: space-between;
   margin: 0 20px;
-
-  .nr {
-    font-weight: 600;
-  }
 }
 
 .accordion-custom-trigger-section {
@@ -228,7 +125,6 @@ a {
   flex-direction: column;
   align-items: center;
   font-weight: 600;
-  background-color: $collapsibleBackground;
 }
 
 .countUp,
