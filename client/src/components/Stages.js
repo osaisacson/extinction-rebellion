@@ -19,7 +19,7 @@ export default class Stages extends Component {
               </div>
 
               {item.name === "Denied" ? (
-                <div className="stage" href="#">
+                <div className="stage" key={item.name} href="#">
                   <h6 className="act">Rebel</h6>
                 </div>
               ) : null}

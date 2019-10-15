@@ -15,6 +15,7 @@ window.Dataset = {
       id: "1",
       title: "Impose penalties on companies not meeting their c02 targets",
       votes: 12315,
+      comments: 231,
       description: "yay",
       stages: [
         {
@@ -46,6 +47,7 @@ window.Dataset = {
       id: "2",
       title: "Ration fossil fuels to a set limit/capita",
       votes: 11561,
+      comments: 123,
       description: "yay",
       stages: [
         {
@@ -72,6 +74,7 @@ window.Dataset = {
       id: "3",
       title: "Introduce tax breaks for railways",
       votes: 11222,
+      comments: 126,
       description: "yay",
       stages: [
         {
@@ -98,6 +101,7 @@ window.Dataset = {
       id: "4",
       title: "Introduce tax for plastic packaging",
       votes: 10124,
+      comments: 123,
       description: "yay",
       stages: [
         {
@@ -128,6 +132,7 @@ window.Dataset = {
       id: "5",
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
+      comments: 233,
       description: "yay",
       stages: [
         {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import Comments from "./Comments";
 import Voting from "./Voting";
 import Content from "./Content";
 import Stages from "./Stages";
@@ -23,13 +24,14 @@ export default class Active extends Component {
             <React.Fragment>
               <Card key={item.id}>
                 <Stages stages={item.stages ? item.stages : []} />
-                <Accordion.Toggle
-                  as={Card.Header}
-                  eventKey={item.id}
-                ></Accordion.Toggle>
-                <div className="voting-and-title">
+                <div className="separator"></div>
+                <h5>{item.title}</h5>
+                <div className="separator"></div>
+                <div className="action-section">
                   <Voting votes={item.votes} />
-                  <h5>{item.title}</h5>
+                  <Accordion.Toggle as={Card.Header} eventKey={item.id}>
+                    <Comments comments={item.comments} />
+                  </Accordion.Toggle>
                 </div>
                 <Accordion.Collapse eventKey={item.id}>
                   <Card.Body>
@@ -38,8 +40,6 @@ export default class Active extends Component {
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
-              <br></br>
-              <br></br>
             </React.Fragment>
           );
         })}

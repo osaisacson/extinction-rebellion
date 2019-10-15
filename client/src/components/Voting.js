@@ -1,5 +1,4 @@
-import React from 'react';
-import CountUp from 'react-countup';
+import React from "react";
 
 export class Voting extends React.Component {
   constructor(props) {
@@ -15,12 +14,12 @@ export class Voting extends React.Component {
 
   render() {
     return (
-      <div className="voting">
-        <button className="countUp" onClick={this.increment}>
+      <div className="icon-section">
+        <button className="fa-icons countUp" onClick={this.increment}>
           <i className="fas fa-caret-up"></i>
         </button>
         <h6>{this.state.score}</h6>
-        <button className="countDown" onClick={this.decrement}>
+        <button className="fa-icons countDown" onClick={this.decrement}>
           <i className="fas fa-caret-down"></i>
         </button>
       </div>

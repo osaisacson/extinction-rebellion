@@ -1,7 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Franklin:100,400,600,900&display=swap);
 
 //Colors
-$primary-text-color: #666;
+$primary-text-color: #000;
+
+//Variables
+$inside-card-l-r-margin: 8px;
 
 //Main
 html {
@@ -40,9 +43,18 @@ h2 {
 }
 
 .card {
+  margin-bottom: 8px;
   background-color: rgba(255, 255, 255, .2) !important;
+
+  h5 {
+    margin: 25px $inside-card-l-r-margin;
+  }
 }
 
+.separator {
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
 
 //Helpers
 .one-line-spread {
@@ -61,11 +73,6 @@ h2 {
   @extend .one-line-spread;
   flex-direction: column;
   margin: 15px 0;
-}
-
-//Sections
-.section {
-  margin: 10px 15px;
 }
 
 
@@ -102,10 +109,6 @@ h2 {
   justify-content: space-between;
 }
 
-.accordion-custom-title-countup-section {
-  flex-grow: 2;
-}
-
 .accordion-custom-title {
   font-size: 18px;
   color: #000;
@@ -121,6 +124,7 @@ h2 {
 //Stages
 .stages-section {
   @extend .one-line-left;
+  margin: 6px $inside-card-l-r-margin 2px;
 
   h6 {
     color: $primary-text-color;
@@ -154,59 +158,52 @@ h2 {
   }
 }
 
-//Voting
-.voting-and-title {
-  display: flex;
-  align-items: center;
-}
+//Voting & Comments
+.action-section {
+  @extend .one-line-spread;
+  padding-left: 5px;
+ }
 
-.voting {
+.icon-section {
+  display: flex;
   align-items: center;
 
   h6 {
-    width: 80px;
-    font-weight: 600;
+    color: $primary-text-color;
+    margin: 0;
   }
 }
 
-.countUp,
-.countDown {
+.fa-icons {
   border: 0;
   font-family: 'FontAwesome';
   background-color: transparent;
+  
+  i {
+    color: $primary-text-color;
+    font-size: 1.3rem;
+    font-style: normal;
+    transition: 0.2s;
+  }
+
+  i:hover, i:active, i:focus, i.active {
+    color: #000;
+  }
+
 }
 
 .countUp {
+  padding: 0 15px;
   content: '\f0d8';
-  padding: 10px 20px 30px 20px;
 }
 
 .countDown {
+  padding: 0 15px;
   content: '\f0d7';
-  padding: 30px 20px 10px 20px;
 }
 
-//Progress
-.progress-section {
-  display: flex;
-}
-
-.progress {
-  font-family: 'Libre Franklin', sans-serif;
-  text-transform: uppercase;
-  font-weight: 100;
-  font-size: 10px;
-  width: fit-content;
-  padding: 10px;
-  background: #000;
-  color: #fff;
-  margin-right: 3px;
-}
-
-.take-action {
-  background-color: red;
-  color: black;
-  font-weight: 400;
+.commentIcon {
+  content: '\f075';
 }
 
 //Bootstrap overrides
