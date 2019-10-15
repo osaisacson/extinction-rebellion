@@ -31,31 +31,23 @@ class App extends React.Component {
           <Tab eventKey="home" title="XR">
             <div className="section">
               <h2>How it works</h2>
+
               <p>
-                Since nobody has time for long and tedious discussions, the
-                collaborative demand system instead works like this
-              </p>
-              <br></br>
-              <p>
-                - Anyone can suggest a demand, these end up in the bottom
-                'suggested' section
+                - Anyone can suggest a demand in the 'suggested' section. This
+                is basically the seed for a petition.
               </p>
               <p>
-                - If 1000 people agree with your demand, it moves to the
-                'Discussed' section
+                - If 500 people agree with your demand it moves to the
+                'Discussed' section and its comments section gets unlocked.
               </p>
               <p>
-                - Once in 'Discussed' the options for adding suggested
-                improvements to your demand are open
+                - The top comments get automatically accepted into the demand
+                description when they reach 500 upvotes.
               </p>
               <p>
-                - If 20 people agree with a suggested change then that change is
-                accepted to the demand description
-              </p>
-              <p>
-                - Once the demand definition is completed and has 10,000 upvotes
-                it gets sent as a petition to the representative who can make
-                the next move, and the demand moves to the 'active' section.
+                - Once the discussion has 10,000 upvotes and is marked as
+                'complete' it gets sent as a petition to the relevant
+                representative. Then the demand moves to the 'active' section.
               </p>
               <p>
                 - In 'Active' we can see where the demand is at, and what you
@@ -71,11 +63,9 @@ class App extends React.Component {
             <AwesomeCard cardcontent={this.state.active} />
           </Tab>
           <Tab eventKey="discussed" title="Discussed">
-            Discussed
             <AwesomeCard cardcontent={this.state.discussed} />
           </Tab>
           <Tab eventKey="suggested" title="Suggested">
-            Suggested
             <AwesomeCard cardcontent={this.state.suggested} />
           </Tab>
         </Tabs>
