@@ -12,7 +12,7 @@ export class MainHeader extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="card-section small-card-header">
         <h6>{this.state.issue}</h6>
         <h6>{this.state.postedBy}</h6>
       </div>

@@ -2,6 +2,8 @@
 
 //Colors
 $primary-text-color: #000;
+$secondary-text-color: #666;
+
 
 //Variables
 $inside-card-l-r-margin: 8px;
@@ -28,9 +30,6 @@ body {
   font-family: 'Libre Franklin', sans-serif;
 }
 
-.section {
-  padding: 10px;
-}
 
 //Text
 
@@ -66,18 +65,34 @@ h2 {
   justify-content: space-between;
 }
 
-.one-line-left {
+.flex-left {
   display: flex;
   align-items: center;
   justify-content: left;
 }
 
-.one-line-column {
-  @extend .one-line-spread;
+.flex-column {
+  display: flex;
   flex-direction: column;
-  margin: 15px 0;
 }
 
+//Sections
+.section {
+  padding: 10px;
+}
+
+.card-section {
+  margin: 5px $inside-card-l-r-margin;
+}
+
+.small-card-header {
+  @extend .flex-column;
+
+  h6 {
+    font-size: .9rem;
+    color: #666;
+  }
+}
 
 //Items
 .avatar {
@@ -101,18 +116,14 @@ h2 {
 
 //Stages
 .stages-section {
-  @extend .one-line-left;
+  @extend .flex-left;
   margin: 6px $inside-card-l-r-margin 2px;
 
   h6 {
-    color: $primary-text-color;
+    font-size: .9rem;
+    color: $secondary-text-color;
     font-family: "Libre Franklin";
     margin: 0;
-
-    &.act {
-      color: red;
-      font-weigth: 600;
-    }
   }
 
   .stage {
@@ -123,13 +134,25 @@ h2 {
   }
 
   .stage::after {
-    content: " > ";
-    color: $primary-text-color;
-    margin: 0 5px 4px;
+    content: '\f054';
+    color: $secondary-text-color;
+    margin: 0 8px;
+    font-size: 8px;
   }
 
   .stage:last-of-type::after {
     content: "";
+  }
+
+  .stage:last-of-type {
+    h6 {
+      color: $primary-text-color;
+      font-weight: 600;
+
+      &.act {
+        color: red;
+      }
+    }
   }
 }
 

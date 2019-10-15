@@ -2,9 +2,7 @@ import React from "react";
 import "./sass/main.scss";
 import "./dataset.js";
 
-import Active from "./components/Active";
-import Discussed from "./components/Discussed";
-import Suggested from "./components/Suggested";
+import AwesomeCard from "./components/AwesomeCard";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
@@ -12,7 +10,11 @@ import Tab from "react-bootstrap/Tab";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      active: window.Dataset.active,
+      discussed: window.Dataset.discussed,
+      suggested: window.Dataset.suggested
+    };
     // To use the 'this' keyword, we need to bind it to our function
     // this.handleClick = this.handleClick.bind(this);
   }
@@ -66,15 +68,15 @@ class App extends React.Component {
             </div>
           </Tab>
           <Tab eventKey="active" title="Active">
-            <Active />
+            <AwesomeCard cardcontent={this.state.active} />
           </Tab>
           <Tab eventKey="discussed" title="Discussed">
             Discussed
-            {/* <Discussed /> */}
+            <AwesomeCard cardcontent={this.state.discussed} />
           </Tab>
           <Tab eventKey="suggested" title="Suggested">
             Suggested
-            {/* <Suggested /> */}
+            <AwesomeCard cardcontent={this.state.suggested} />
           </Tab>
         </Tabs>
       </div>
