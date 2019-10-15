@@ -28,6 +28,9 @@ body {
   font-family: 'Libre Franklin', sans-serif;
 }
 
+.section {
+  padding: 10px;
+}
 
 //Text
 
@@ -96,31 +99,6 @@ h2 {
 
 //COMPONENTS
 
-//Accordion custom
-
-.accordion-info {
-  @extend .one-line-spread;
-  justify-content: space-between;
-  margin: 0 20px;
-}
-
-.accordion-custom-trigger-section {
-  @extend .one-line-spread;
-  justify-content: space-between;
-}
-
-.accordion-custom-title {
-  font-size: 18px;
-  color: #000;
-  line-height: normal;
-}
-
-.accordion-custom-countup {
-  font-size: 25px;
-  color: #000;
-  font-weight: 800;
-}
-
 //Stages
 .stages-section {
   @extend .one-line-left;
@@ -133,11 +111,8 @@ h2 {
 
     &.act {
       color: red;
+      font-weigth: 600;
     }
-  }
-
-  h6:last-of-type {
-    font-weight: 600;
   }
 
   .stage {
@@ -216,5 +191,32 @@ a.active {
 }
 
 .nav-tabs .nav-link.active {
+  border: 0;
+  font-weight: 600;
+  color: $primary-text-color;
   background-color: transparent;
+}
+
+.card-header {
+  border-bottom: 0;
+  cursor: pointer;
+
+  i {
+    transition: 1s;
+  }
+
+  i:hover,
+  i:active,
+  i:focus {
+    color: red;
+  }
+}
+
+.card-header:hover,
+.card-header:active,
+.card-header:focus,
+.card-header.active {
+  i {
+    color: red;
+  }
 }

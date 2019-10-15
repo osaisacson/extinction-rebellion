@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import Comments from "./Comments";
-import Voting from "./Voting";
-import Content from "./Content";
-import Stages from "./Stages";
+import React, { Component } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import MainHeader from './MainHeader';
+import Comments from './Comments';
+import Voting from './Voting';
+import Content from './Content';
+import Stages from './Stages';
 
 export default class Active extends Component {
   // Then we add our constructor which receives our props
@@ -23,9 +24,10 @@ export default class Active extends Component {
           return (
             <React.Fragment>
               <Card key={item.id}>
-                <Stages stages={item.stages ? item.stages : []} />
-                <div className="separator"></div>
+                <MainHeader issue={item.issue} postedBy={item.postedBy} />
                 <h5>{item.title}</h5>
+                <div className="separator"></div>
+                <Stages stages={item.stages ? item.stages : []} />
                 <div className="separator"></div>
                 <div className="action-section">
                   <Voting votes={item.votes} />

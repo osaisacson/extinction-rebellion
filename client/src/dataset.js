@@ -13,6 +13,8 @@ window.Dataset = {
   active: [
     {
       id: "1",
+      issue: "r/c02",
+      postedBy: "phDing",
       title: "Impose penalties on companies not meeting their c02 targets",
       votes: 12315,
       comments: 231,
@@ -45,6 +47,8 @@ window.Dataset = {
     },
     {
       id: "2",
+      postedBy: "howDareYou",
+      issue: "r/c02",
       title: "Ration fossil fuels to a set limit/capita",
       votes: 11561,
       comments: 123,
@@ -72,6 +76,8 @@ window.Dataset = {
     },
     {
       id: "3",
+      postedBy: "theVaughn",
+      issue: "r/transport",
       title: "Introduce tax breaks for railways",
       votes: 11222,
       comments: 126,
@@ -99,6 +105,8 @@ window.Dataset = {
     },
     {
       id: "4",
+      postedBy: "butDontListenToMe",
+      issue: "r/plastic",
       title: "Introduce tax for plastic packaging",
       votes: 10124,
       comments: 123,
@@ -130,6 +138,8 @@ window.Dataset = {
     },
     {
       id: "5",
+      postedBy: "mrFuzzyPants",
+      issue: "r/plastic",
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
       comments: 233,
@@ -154,81 +164,6 @@ window.Dataset = {
           test: "Cases"
         }
       ]
-    }
-  ],
-
-  harvest: [
-    {
-      id: "1",
-      img:
-        "https://images.unsplash.com/photo-1508595165502-3e2652e5a405?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-      title: "Basilika",
-      subtitle: "Extra söt denna veckan!",
-      clickedText: "Redo att hämtas imorgon 12:00",
-      class: "bokad",
-      lastUpdated: "2 mins ago"
-    },
-    {
-      id: "2",
-      img:
-        "https://images.unsplash.com/photo-1508061461508-cb18c242f556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
-      title: "Pak Choi",
-      clickedText: "Redo att hämtas på fredag 12:00",
-      class: "bokad",
-      lastUpdated: "3 hours ago"
-    },
-    {
-      id: "3",
-      img:
-        "https://images.unsplash.com/photo-1528796940112-4979b4a98424?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80",
-      title: "Koriander",
-      clickedText: "Redo att hämtas på torsdag 18:00",
-      class: "bokad",
-      lastUpdated: "yesterday"
-    }
-  ],
-
-  neighbours: [
-    {
-      id: "1",
-      profileImg:
-        "https://i1.wp.com/linuxcreations.tips/wp-content/uploads/2019/01/migliorare-foto.jpg?resize=160%2C160&ssl=1",
-      name: "May Brunby",
-      description: "På fjärde våningen and loving it!"
-    },
-    {
-      id: "2",
-      profileImg:
-        "https://content-static.upwork.com/uploads/2014/10/01073435/profilephoto5.jpg",
-      name: "Pontus Meyer",
-      description: "På andra våningen and loving it!"
-    },
-    {
-      id: "3",
-      profileImg:
-        "https://content-static.upwork.com/uploads/2014/10/02123010/profilephoto_goodcrop.jpg",
-      name: "Carl Moss",
-      description: "På första våningen and loving it!"
-    },
-    {
-      id: "4",
-      profileImg:
-        "https://content-static.upwork.com/blog/uploads/sites/4/2014/10/27173913/BLOG-Upwork-profile-photo-face.png",
-      name: "Fatima Scharman",
-      description: "På första våningen and loving it!"
-    }
-  ],
-
-  notifications: [
-    {
-      id: "1",
-      description: "Basilika redo att hämtas imorgon 12:00!",
-      class: "bokad"
-    },
-    {
-      id: "2",
-      description: "Din vattenkonsumtion är högre än vanligt.",
-      class: "warning"
     }
   ]
 };

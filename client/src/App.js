@@ -2,8 +2,6 @@ import React from "react";
 import "./sass/main.scss";
 import "./dataset.js";
 
-import Notifications from "./components/Notifications.js";
-
 import Active from "./components/Active";
 import Discussed from "./components/Discussed";
 import Suggested from "./components/Suggested";
@@ -30,14 +28,10 @@ class App extends React.Component {
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="XR">
             <div className="section">
-              <br></br>
-              <h1>DEMANDS</h1>
-              <br></br>
               <h2>How it works</h2>
               <p>
                 Since nobody has time for long and tedious discussions, the
-                collaborative demand system instead works like this (a merry mix
-                of reddit, github and wikipedia):
+                collaborative demand system instead works like this
               </p>
               <br></br>
               <p>
@@ -75,10 +69,12 @@ class App extends React.Component {
             <Active />
           </Tab>
           <Tab eventKey="discussed" title="Discussed">
-            <Discussed />
+            Discussed
+            {/* <Discussed /> */}
           </Tab>
           <Tab eventKey="suggested" title="Suggested">
-            <Suggested />
+            Suggested
+            {/* <Suggested /> */}
           </Tab>
         </Tabs>
       </div>
