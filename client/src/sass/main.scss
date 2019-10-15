@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Franklin:100,400,600,900&display=swap);
 
+//Colors
+$primary-text-color: #666;
 
 //Main
 html {
@@ -50,7 +52,7 @@ h2 {
 }
 
 .one-line-left {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: left;
 }
@@ -62,7 +64,6 @@ h2 {
 }
 
 //Sections
-
 .section {
   margin: 10px 15px;
 }
@@ -119,19 +120,37 @@ h2 {
 
 //Stages
 .stages-section {
-  display: flex;
+  @extend .one-line-left;
 
-  .stage {
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(0,0,0,0.2);
-    padding: 7px 20px 7px 13px;
-    margin-right: 1px;
-    min-width: 90px;
-    border-radius: 0 100px 100px 0;
+  h6 {
+    color: $primary-text-color;
+    font-family: "Libre Franklin";
+    margin: 0;
+
+    &.act {
+      color: red;
+    }
   }
 
-  .act {
-    background-color: red;
+  h6:last-of-type {
+    font-weight: 600;
+  }
+
+  .stage {
+    display: flex;
+    align-items: center;
+    font-family: "FontAwesome";
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .stage::after {
+    content: " > ";
+    color: $primary-text-color;
+    margin: 0 5px 4px;
+  }
+
+  .stage:last-of-type::after {
+    content: "";
   }
 }
 
@@ -190,3 +209,15 @@ h2 {
   font-weight: 400;
 }
 
+//Bootstrap overrides
+a {
+  color: #666;
+}
+
+a.active {
+  color: #000;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+}

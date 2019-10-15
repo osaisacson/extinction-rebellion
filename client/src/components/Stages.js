@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Stages extends Component {
   // Then we add our constructor which receives our props
@@ -15,13 +15,13 @@ export default class Stages extends Component {
           return (
             <React.Fragment>
               <div className="stage" key={item.id}>
-                {item.name}
+                <h6>{item.name}</h6>
               </div>
 
-              {item.name === 'Denied' ? (
-                <button type="button" className="btn btn-danger">
-                  Rebel
-                </button>
+              {item.name === "Denied" ? (
+                <div className="stage" href="#">
+                  <h6 className="act">Rebel</h6>
+                </div>
               ) : null}
             </React.Fragment>
           );

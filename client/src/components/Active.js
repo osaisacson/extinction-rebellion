@@ -21,14 +21,16 @@ export default class Active extends Component {
         {this.state.active.map(function(item) {
           return (
             <React.Fragment>
-              <Stages stages={item.stages ? item.stages : []} />
               <Card key={item.id}>
-                <Accordion.Toggle as={Card.Header} eventKey={item.id}>
-                  <div className="voting-and-title">
-                    <Voting votes={item.votes} />
-                    <h5>{item.title}</h5>
-                  </div>
-                </Accordion.Toggle>
+                <Stages stages={item.stages ? item.stages : []} />
+                <Accordion.Toggle
+                  as={Card.Header}
+                  eventKey={item.id}
+                ></Accordion.Toggle>
+                <div className="voting-and-title">
+                  <Voting votes={item.votes} />
+                  <h5>{item.title}</h5>
+                </div>
                 <Accordion.Collapse eventKey={item.id}>
                   <Card.Body>
                     <p>{item.description}</p>
