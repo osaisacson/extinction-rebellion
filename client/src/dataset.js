@@ -10,472 +10,537 @@ window.Dataset = {
     return set;
   })(0, 10), //starts at 0, ends at 10
 
-  active: [
+  cards: [
     {
-      id: "1",
-      issue: "xr/c02",
-      postedBy: "mrTaanstaafl",
-      title: "Impose penalties on companies not meeting their c02 targets",
+      id: '1',
+      isActive: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      issue: 'xr/c02',
+      postedBy: 'mrTaanstaafl',
+      title: 'Impose penalties on companies not meeting their c02 targets',
       votes: 12315,
       comments: 231,
-      description: "yay",
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied",
-          class: "active"
+          id: '3',
+          name: 'Denied'
+        },
+        {
+          id: '4',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '5',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '6',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "2",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
-      title: "Ration fossil fuels to a set limit/capita",
+      id: '7',
+      isActive: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
+      title: 'Ration fossil fuels to a set limit/capita',
       votes: 11561,
       comments: 123,
-      description: "yay",
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '8',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '9',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '10',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '11',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "3",
-      postedBy: "drKnucklefinger",
-      issue: "xr/transport",
-      title: "Introduce tax breaks for railways",
+      id: '12',
+      isActive: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'drKnucklefinger',
+      issue: 'xr/transport',
+      title: 'Introduce tax breaks for railways',
       votes: 11222,
       comments: 126,
-      description: "yay",
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '13',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '14',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '15',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '16',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "4",
-      postedBy: "butDontListenToMe",
-      issue: "xr/plastic",
-      title: "Introduce tax for plastic packaging",
+      id: '17',
+      isActive: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'butDontListenToMe',
+      issue: 'xr/plastic',
+      title: 'Introduce tax for plastic packaging',
       votes: 10124,
       comments: 123,
-      description: "yay",
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '18',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '19',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '20',
+          name: 'Denied'
+        },
+        {
+          id: '21',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '22',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '23',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "5",
-      postedBy: "mrFuzzyPants",
-      issue: "xr/plastic",
-      title: "Ban plastic bags in all supermarkets",
+      id: '24',
+      isActive: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'mrFuzzyPants',
+      issue: 'xr/plastic',
+      title: 'Ban plastic bags in all supermarkets',
       votes: 10023,
       comments: 233,
-      description: "yay",
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '25',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '26',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '27',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '28',
+          test: 'Cases'
         }
       ]
-    }
-  ],
-
-  discussed: [
+    },
     {
-      id: "1",
-      issue: "xr/c02",
-      postedBy: "grrrrrrrr",
-      title: "Remove kalium from water cleaning",
+      id: '29',
+      isDiscussed: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      issue: 'xr/c02',
+      postedBy: 'grrrrrrrr',
+      title: 'Remove kalium from water cleaning',
       votes: 12315,
       comments: 231,
-      description: "yay",
+      description: 'Discussion goes here',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '30',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '31',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied",
-          class: "active"
+          id: '32',
+          name: 'Denied'
+        },
+        {
+          id: '33',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '34',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '35',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "2",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
-      title: "Ration fossil fuels to a set limit/capita",
+      id: '36',
+      isDiscussed: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
+      title: 'Ration fossil fuels to a set limit/capita',
       votes: 11561,
       comments: 123,
-      description: "yay",
+      description: 'Discussion goes here',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '37',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '38',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '39',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '40',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "3",
-      postedBy: "drKnucklefinger",
-      issue: "xr/transport",
-      title: "Introduce tax breaks for railways",
+      id: '41',
+      isDiscussed: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'drKnucklefinger',
+      issue: 'xr/transport',
+      title: 'Introduce tax breaks for railways',
       votes: 11222,
       comments: 126,
-      description: "yay",
+      description: 'Discussion goes here',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '42',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '43',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '44',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '45',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "4",
-      postedBy: "butDontListenToMe",
-      issue: "xr/plastic",
-      title: "Introduce tax for plastic packaging",
+      id: '46',
+      isDiscussed: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'butDontListenToMe',
+      issue: 'xr/plastic',
+      title: 'Introduce tax for plastic packaging',
       votes: 10124,
       comments: 123,
-      description: "yay",
+      description: 'Discussion goes here',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '47',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '48',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '49',
+          name: 'Denied'
+        },
+        {
+          id: '50',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '51',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '52',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "5",
-      postedBy: "mrFuzzyPants",
-      issue: "xr/plastic",
-      title: "Ban plastic bags in all supermarkets",
+      id: '53',
+      isDiscussed: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'mrFuzzyPants',
+      issue: 'xr/plastic',
+      title: 'Ban plastic bags in all supermarkets',
       votes: 10023,
       comments: 233,
-      description: "yay",
+      description: 'Discussion goes here',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '54',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '55',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '56',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '57',
+          test: 'Cases'
         }
       ]
-    }
-  ],
-
-  suggested: [
+    },
     {
-      id: "1",
-      issue: "xr/c02",
-      postedBy: "mrroooaaar",
-      title: "This is a test",
+      id: '58',
+      isSuggested: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      issue: 'xr/c02',
+      postedBy: 'mrroooaaar',
+      title: 'This is a test',
       votes: 12315,
       comments: 231,
-      description: "yay",
+      description: 'yay',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '59',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '60',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied",
-          class: "active"
+          id: '61',
+          name: 'Denied'
+        },
+        {
+          id: '62',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '63',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '64',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "2",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
-      title: "Ration fossil fuels to a set limit/capita",
+      id: '65',
+      isSuggested: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
+      title: 'Ration fossil fuels to a set limit/capita',
       votes: 11561,
       comments: 123,
-      description: "yay",
+      description: 'yay',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '66',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '67',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '68',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '69',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "3",
-      postedBy: "drKnucklefinger",
-      issue: "xr/transport",
-      title: "Introduce tax breaks for railways",
+      id: '70',
+      isSuggested: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'drKnucklefinger',
+      issue: 'xr/transport',
+      title: 'Introduce tax breaks for railways',
       votes: 11222,
       comments: 126,
-      description: "yay",
+      description: 'yay',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '71',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '72',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '73',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '74',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "4",
-      postedBy: "butDontListenToMe",
-      issue: "xr/plastic",
-      title: "Introduce tax for plastic packaging",
+      id: '75',
+      isSuggested: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'butDontListenToMe',
+      issue: 'xr/plastic',
+      title: 'Introduce tax for plastic packaging',
       votes: 10124,
       comments: 123,
-      description: "yay",
+      description: 'yay',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '76',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '77',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '78',
+          name: 'Denied'
+        },
+        {
+          id: '79',
+          name: 'Rebel'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '80',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '81',
+          test: 'Cases'
         }
       ]
     },
     {
-      id: "5",
-      postedBy: "mrFuzzyPants",
-      issue: "xr/plastic",
-      title: "Ban plastic bags in all supermarkets",
+      id: '82',
+      isSuggested: true,
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'mrFuzzyPants',
+      issue: 'xr/plastic',
+      title: 'Ban plastic bags in all supermarkets',
       votes: 10023,
       comments: 233,
-      description: "yay",
+      description: 'yay',
       stages: [
         {
-          id: "1",
-          name: "Defined"
+          id: '83',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '84',
+          name: 'Sent'
         }
       ],
       content: [
         {
-          id: "1",
-          test: "Background"
+          id: '85',
+          test: 'Background'
         },
         {
-          id: "2",
-          test: "Cases"
+          id: '86',
+          test: 'Cases'
         }
       ]
     }

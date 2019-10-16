@@ -13,16 +13,12 @@ export default class Stages extends Component {
       <div className="stages-section">
         {this.props.stages.map(function(item) {
           return (
-            <React.Fragment>
-              <div className="stage" key={item.id}>
-                <h6>{item.name}</h6>
+            <React.Fragment key={item.id}>
+              <div className="stage">
+                <h6 className={item.name === "Rebel" ? "act" : null}>
+                  {item.name}
+                </h6>
               </div>
-
-              {item.name === "Denied" ? (
-                <div className="stage" key={item.name} href="#">
-                  <h6 className="act">Rebel</h6>
-                </div>
-              ) : null}
             </React.Fragment>
           );
         })}

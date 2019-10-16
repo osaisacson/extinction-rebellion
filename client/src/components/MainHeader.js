@@ -5,6 +5,8 @@ export class MainHeader extends React.Component {
     super(props);
 
     this.state = {
+      country: this.props.country,
+      city: this.props.city,
       issue: this.props.issue,
       postedBy: this.props.postedBy
     };
@@ -13,8 +15,15 @@ export class MainHeader extends React.Component {
   render() {
     return (
       <div className="card-section small-card-header">
-        <h6>{this.state.issue}</h6>
-        <h6>{this.state.postedBy}</h6>
+        <div>
+          <h6>{this.state.issue}</h6>
+          <h6>{this.state.postedBy}</h6>
+        </div>
+        <div>
+          <h6>
+            {this.state.city}, {this.state.country}
+          </h6>
+        </div>
       </div>
     );
   }

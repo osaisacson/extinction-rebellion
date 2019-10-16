@@ -2,7 +2,8 @@
 
 //Colors
 $primary-text-color: #000;
-$secondary-text-color: #666;
+$secondary-text-color: rgb(56, 56, 56);
+$card-background-color: rgba(255, 255, 255, .5);
 
 
 //Variables
@@ -46,7 +47,7 @@ h2 {
 
 .card {
   margin-bottom: 8px;
-  background-color: rgba(255, 255, 255, .2) !important;
+  background-color: $card-background-color;
 
   h5 {
     margin: 25px $inside-card-l-r-margin;
@@ -86,11 +87,15 @@ h2 {
 }
 
 .small-card-header {
-  @extend .flex-column;
+  @extend .one-line-spread;
+
+  div + div {
+    text-align: right;
+  }
 
   h6 {
     font-size: .9rem;
-    color: #666;
+    color: $secondary-text-color;
   }
 }
 
@@ -159,6 +164,7 @@ h2 {
 //Voting & Comments
 .action-section {
   @extend .one-line-spread;
+  height: 55px;
   padding-left: 5px;
  }
 
@@ -200,8 +206,16 @@ h2 {
   content: '\f0d7';
 }
 
+.actionIcon {
+  content: '\f6de'
+}
+
 .commentIcon {
   content: '\f075';
+}
+
+.petitionIcon {
+  content: '\f02d'
 }
 
 //Bootstrap overrides

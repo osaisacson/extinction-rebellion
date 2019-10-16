@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import MainHeader from "./MainHeader";
-import Comments from "./Comments";
 import Voting from "./Voting";
 import Stages from "./Stages";
 
@@ -21,9 +20,14 @@ export default class AwesomeCard extends Component {
       <Accordion>
         {this.state.cardcontent.map(function(item) {
           return (
-            <React.Fragment>
-              <Card key={item.id}>
-                <MainHeader issue={item.issue} postedBy={item.postedBy} />
+            <React.Fragment key={item.id}>
+              <Card>
+                <MainHeader
+                  country={item.country}
+                  city={item.city}
+                  issue={item.issue}
+                  postedBy={item.postedBy}
+                />
                 <h5>{item.title}</h5>
                 <div className="separator"></div>
                 <Stages stages={item.stages ? item.stages : []} />
@@ -31,7 +35,27 @@ export default class AwesomeCard extends Component {
                 <div className="action-section">
                   <Voting votes={item.votes} />
                   <Accordion.Toggle as={Card.Header} eventKey={item.id}>
-                    <Comments comments={item.comments} />
+                    {item.isActive ? (
+                      <div className="icon-section">
+                        <button className="fa-icons petitionIcon">
+                          <i className="fas fa-file"></i>
+                        </button>
+                      </div>
+                    ) : null}
+                    {item.isDiscussed ? (
+                      <div className="icon-section">
+                        <button className="fa-icons commentIcon">
+                          <i className="fas fa-comment"></i>
+                        </button>
+                      </div>
+                    ) : null}
+                    {item.isActive && item.stages === "Rebel" ? (
+                      <div className="icon-section">
+                        <button className="fa-icons actionIcon">
+                          <i className="fas fa-fist-raised"></i>
+                        </button>
+                      </div>
+                    ) : null}
                   </Accordion.Toggle>
                 </div>
                 <Accordion.Collapse eventKey={item.id}>

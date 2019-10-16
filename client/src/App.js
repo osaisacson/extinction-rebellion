@@ -1,19 +1,17 @@
-import React from "react";
-import "./sass/main.scss";
-import "./dataset.js";
+import React from 'react';
+import './sass/main.scss';
+import './dataset.js';
 
-import AwesomeCard from "./components/AwesomeCard";
+import AwesomeCard from './components/AwesomeCard';
 
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
+import Tabs from 'react-bootstrap/Tabs';
+import Tab from 'react-bootstrap/Tab';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: window.Dataset.active,
-      discussed: window.Dataset.discussed,
-      suggested: window.Dataset.suggested
+      cards: window.Dataset.cards
     };
     // To use the 'this' keyword, we need to bind it to our function
     // this.handleClick = this.handleClick.bind(this);
@@ -24,7 +22,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="section">
-          <img src={"/xr-logo.png"} className="logo" alt="logo" />
+          <img src={'/xr-logo.png'} className="logo" alt="logo" />
         </header>
 
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
@@ -60,13 +58,19 @@ class App extends React.Component {
             </div>
           </Tab>
           <Tab eventKey="active" title="Active">
-            <AwesomeCard cardcontent={this.state.active} />
+            <AwesomeCard
+              cardcontent={this.state.cards.filter(card => card.isActive)}
+            />
           </Tab>
           <Tab eventKey="discussed" title="Discussed">
-            <AwesomeCard cardcontent={this.state.discussed} />
+            <AwesomeCard
+              cardcontent={this.state.cards.filter(card => card.isDiscussed)}
+            />{' '}
           </Tab>
           <Tab eventKey="suggested" title="Suggested">
-            <AwesomeCard cardcontent={this.state.suggested} />
+            <AwesomeCard
+              cardcontent={this.state.cards.filter(card => card.isSuggested)}
+            />{' '}
           </Tab>
         </Tabs>
       </div>
