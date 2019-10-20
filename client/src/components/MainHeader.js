@@ -20,9 +20,10 @@ export class MainHeader extends React.Component {
           <h6>{this.state.postedBy}</h6>
         </div>
         <div>
-          <h6>
-            {this.state.city}, {this.state.country}
-          </h6>
+          <div className="header-with-background">
+            {this.state.city},{" "}
+            <span className="bold">{this.state.country}</span>
+          </div>
         </div>
       </div>
     );

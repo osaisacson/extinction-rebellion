@@ -4,6 +4,7 @@
 $primary-text-color: #000;
 $secondary-text-color: rgb(56, 56, 56);
 $card-background-color: rgba(255, 255, 255, .5);
+$gradient-background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
 
 
 //Variables
@@ -41,6 +42,8 @@ h2 {
   box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
 
   h5 {
+    font-size: 1rem;
+    font-weight: 600;
     margin: 25px $inside-card-l-r-margin;
   }
 }
@@ -48,6 +51,16 @@ h2 {
 .separator {
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.header-with-background {
+  background: $gradient-background;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
+  -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
+  box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
 }
 
 //Helpers
@@ -68,17 +81,22 @@ h2 {
   flex-direction: column;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 //Sections
 .section {
   padding: 10px;
 }
 
 .card-section {
-  margin: 5px $inside-card-l-r-margin;
+  margin: $inside-card-l-r-margin;
 }
 
 .small-card-header {
-  @extend .one-line-spread;
+  display: flex;
+  justify-content: space-between;
 
   div + div {
     text-align: right;
@@ -112,7 +130,7 @@ h2 {
 .search-filter:hover {
   outline: none;
   background: rgb(195,223,247);
-  background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
+  background: $gradient-background;
 }
 
 //Items
