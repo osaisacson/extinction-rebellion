@@ -39,15 +39,14 @@ class App extends React.Component {
       <div className="App">
         <header className="section">
           <img src={"/xr-logo.png"} className="logo" alt="logo" />
+          <input
+            className="search-filter"
+            type="text"
+            placeholder="Choose Country"
+            value={this.state.search}
+            onChange={this.updateSearch.bind(this)}
+          ></input>
         </header>
-
-        <input
-          className="search-filter"
-          type="text"
-          placeholder="Choose Country"
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}
-        ></input>
 
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="XR">
