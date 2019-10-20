@@ -30,7 +30,9 @@ class App extends React.Component {
     });
 
     let activeCards = filteredCards.filter(card => card.isActive);
+    let nrActiveCards = activeCards.length;
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
+    let nrSuggestedCards = suggestedCards.length;
 
     return (
       <div className="App">
@@ -70,12 +72,12 @@ class App extends React.Component {
               </p>
             </div>
           </Tab>
-          <Tab eventKey="active" title="Active">
+          <Tab eventKey="active" title={`Active (${nrActiveCards})`}>
             {activeCards.map(card => {
               return <CardItem cardcontent={card} key={card.id}></CardItem>;
             })}
           </Tab>
-          <Tab eventKey="suggested" title="Suggested">
+          <Tab eventKey="suggested" title={`Suggested (${nrSuggestedCards})`}>
             {suggestedCards.map(card => {
               return <CardItem cardcontent={card} key={card.id}></CardItem>;
             })}
