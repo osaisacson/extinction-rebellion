@@ -1,29 +1,50 @@
-import React from 'react';
-import './sass/main.scss';
-import './dataset.js';
+import React from "react";
+import "./sass/main.scss";
+import "./dataset.js";
 
-import AwesomeCard from './components/AwesomeCard';
-
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
+import CardItem from "./components/CardItem";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cards: window.Dataset.cards
+      cards: window.Dataset.cards,
+      search: ""
     };
     // To use the 'this' keyword, we need to bind it to our function
-    // this.handleClick = this.handleClick.bind(this);
+    // this.updateByCountry = this.updateByCountry.bind(this);
   }
 
-  // const [show, setShow] = React.useState(true);
+  updateSearch(event) {
+    this.setState({
+      search: event.target.value.substr(0, 20)
+    });
+  }
+
   render() {
+    //Return only cards which country name matches what's entered in the search field
+    let filteredCards = this.state.cards.filter(card => {
+      return card.country.indexOf(this.state.search) !== -1;
+    });
+
+    let activeCards = filteredCards.filter(card => card.isActive);
+    let suggestedCards = filteredCards.filter(card => card.isDiscussed);
+
     return (
       <div className="App">
         <header className="section">
-          <img src={'/xr-logo.png'} className="logo" alt="logo" />
+          <img src={"/xr-logo.png"} className="logo" alt="logo" />
         </header>
+
+        <input
+          className="search-filter"
+          type="text"
+          placeholder="Choose Country"
+          value={this.state.search}
+          onChange={this.updateSearch.bind(this)}
+        ></input>
 
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="XR">
@@ -31,16 +52,8 @@ class App extends React.Component {
               <h2>How it works</h2>
 
               <p>
-                - Anyone can suggest a demand in the 'suggested' section. This
-                is basically the seed for a petition.
-              </p>
-              <p>
-                - If 500 people agree with your demand it moves to the
-                'Discussed' section and its comments section gets unlocked.
-              </p>
-              <p>
-                - The top comments get automatically accepted into the demand
-                description when they reach 500 upvotes.
+                - Anyone can suggest a demand in the 'Suggested' section. This
+                is the seed for a petition.
               </p>
               <p>
                 - Once the discussion has 10,000 upvotes and is marked as
@@ -58,19 +71,14 @@ class App extends React.Component {
             </div>
           </Tab>
           <Tab eventKey="active" title="Active">
-            <AwesomeCard
-              cardcontent={this.state.cards.filter(card => card.isActive)}
-            />
-          </Tab>
-          <Tab eventKey="discussed" title="Discussed">
-            <AwesomeCard
-              cardcontent={this.state.cards.filter(card => card.isDiscussed)}
-            />{' '}
+            {activeCards.map(card => {
+              return <CardItem cardcontent={card} key={card.id}></CardItem>;
+            })}
           </Tab>
           <Tab eventKey="suggested" title="Suggested">
-            <AwesomeCard
-              cardcontent={this.state.cards.filter(card => card.isSuggested)}
-            />{' '}
+            {suggestedCards.map(card => {
+              return <CardItem cardcontent={card} key={card.id}></CardItem>;
+            })}
           </Tab>
         </Tabs>
       </div>

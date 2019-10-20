@@ -33,7 +33,6 @@ body {
 
 
 //Text
-
 h1,
 h2,
 h3 {
@@ -97,6 +96,23 @@ h2 {
     font-size: .9rem;
     color: $secondary-text-color;
   }
+}
+
+.search-filter {
+  background: transparent;
+  border: .5px solid $primary-text-color;
+  border-radius: 4px;
+  padding: 5px;
+  transition: 1s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.search-filter:focus,
+.search-filter:hover {
+  outline: none;
+  background: $card-background-color;
 }
 
 //Items
@@ -221,15 +237,25 @@ h2 {
 //Bootstrap overrides
 a {
   color: #666;
+  transition: 1s;
 }
 
-a.active {
-  color: #000;
+.nav {
+  justify-content: space-between;
 }
 
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-link {
   border: 0;
-  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus, 
+a:active,
+a:hover,
+a:focus {
+  border: 0;
+  border-color: transparent;
   color: $primary-text-color;
   background-color: transparent;
 }
