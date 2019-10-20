@@ -2,6 +2,7 @@ import React from "react";
 import "./sass/main.scss";
 import "./dataset.js";
 
+import Accordion from "react-bootstrap/Accordion";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import CardItem from "./components/CardItem";
@@ -73,14 +74,18 @@ class App extends React.Component {
             </div>
           </Tab>
           <Tab eventKey="active" title={`Active (${nrActiveCards})`}>
-            {activeCards.map(card => {
-              return <CardItem cardcontent={card} key={card.id}></CardItem>;
-            })}
+            <Accordion>
+              {activeCards.map(card => {
+                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+              })}
+            </Accordion>
           </Tab>
           <Tab eventKey="suggested" title={`Suggested (${nrSuggestedCards})`}>
-            {suggestedCards.map(card => {
-              return <CardItem cardcontent={card} key={card.id}></CardItem>;
-            })}
+            <Accordion>
+              {suggestedCards.map(card => {
+                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+              })}
+            </Accordion>
           </Tab>
         </Tabs>
       </div>

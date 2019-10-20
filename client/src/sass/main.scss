@@ -11,19 +11,8 @@ $inside-card-l-r-margin: 8px;
 
 //Main
 html {
-  background: rgba(92,129,202,1);
-  background: 
-    -moz-linear-gradient(
-      left, 
-      rgba(92,129,202,1) 0%, 
-      rgba(249,140,112,1) 100%
-  );
-  background:
-    -webkit-linear-gradient(
-        left, 
-        rgba(92,129,202,1) 0%, 
-        rgba(249,140,112,1) 100%
-  );
+  background: rgb(195,223,247);
+  background: linear-gradient(90deg, rgba(195,223,247,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
 }
 
 body {
@@ -47,6 +36,9 @@ h2 {
 .card {
   margin-bottom: 8px;
   background-color: $card-background-color;
+  -webkit-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
+  -moz-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
+  box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
 
   h5 {
     margin: 25px $inside-card-l-r-margin;
@@ -242,6 +234,10 @@ a {
 
 .nav {
   justify-content: space-between;
+}
+
+.nav-tabs {
+  border-bottom: .5px solid $primary-text-color;
 }
 
 .nav-tabs .nav-link {
