@@ -121,7 +121,6 @@ window.Dataset = {
     {
       id: "17",
       isActive: true,
-      hasBalls: true,
       country: "Sweden",
       city: "Stockholm",
       postedBy: "butDontListenToMe",
