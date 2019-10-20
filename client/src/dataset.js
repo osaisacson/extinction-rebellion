@@ -13,7 +13,7 @@ window.Dataset = {
   cards: [
     {
       id: "1",
-      isActive: true,
+      isRebel: true,
       country: "Belgium",
       city: "Brussels",
       issue: "xr/c02",
@@ -54,7 +54,7 @@ window.Dataset = {
     },
     {
       id: "7",
-      isActive: true,
+      isRebel: true,
       country: "Belgium",
       city: "Brussels",
       postedBy: "greyMatter",
@@ -66,12 +66,20 @@ window.Dataset = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
       stages: [
         {
-          id: "8",
+          id: "1",
           name: "Defined"
         },
         {
-          id: "9",
+          id: "2",
           name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
         }
       ],
       content: [
@@ -141,11 +149,7 @@ window.Dataset = {
         },
         {
           id: "20",
-          name: "Denied"
-        },
-        {
-          id: "21",
-          name: "Rebel"
+          name: "In court"
         }
       ],
       content: [

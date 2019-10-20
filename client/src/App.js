@@ -34,6 +34,7 @@ class App extends React.Component {
     let nrActiveCards = activeCards.length;
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
     let nrSuggestedCards = suggestedCards.length;
+    let rebelCards = filteredCards.filter(card => card.isRebel);
 
     return (
       <div className="App">
@@ -71,15 +72,24 @@ class App extends React.Component {
                 rebel.
               </p>
             </div>
+
+            <Accordion>
+              {rebelCards.map(card => {
+                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+              })}
+            </Accordion>
           </Tab>
-          <Tab eventKey="active" title={`Active (${nrActiveCards})`}>
+          <Tab eventKey="active" title={`Demands (${nrActiveCards})`}>
             <Accordion>
               {activeCards.map(card => {
                 return <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>
-          <Tab eventKey="suggested" title={`Suggested (${nrSuggestedCards})`}>
+          <Tab
+            eventKey="suggested"
+            title={`Being defined (${nrSuggestedCards})`}
+          >
             <Accordion>
               {suggestedCards.map(card => {
                 return <CardItem cardcontent={card} key={card.id}></CardItem>;
