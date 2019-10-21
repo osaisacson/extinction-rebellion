@@ -14,12 +14,8 @@ export default class Stories extends Component {
   render() {
     return (
       <div className="story">
-        <div class="mask">
-          <img
-            src={this.state.storycontent.img}
-            alt="Avatar"
-            className="avatar"
-          ></img>
+        <div className="mask">
+          <img src={this.state.storycontent.img} alt="Avatar"></img>
         </div>
         <h5>{this.state.storycontent.city}</h5>
         <h5>{this.state.storycontent.country}</h5>

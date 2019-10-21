@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export class MainHeader extends React.Component {
   constructor(props) {
@@ -10,20 +10,22 @@ export class MainHeader extends React.Component {
       issue: this.props.issue,
       postedBy: this.props.postedBy,
       representative: this.props.representative,
-      timeSent: this.props.timeSent
+      timeSent: this.props.timeSent,
+      status: this.props.status,
+      isRebel: this.props.isRebel
     };
   }
 
   render() {
     return (
       <div className="card-section small-card-header">
-        <div>
-          <h6>{this.state.issue}</h6>
-          <h6>{this.state.postedBy}</h6>
+        <div className="tight-header">
+          <p className="grey">{this.state.issue}</p>
+          <p className="grey">By: {this.state.postedBy}</p>
         </div>
         <div>
           <div className="header-with-background">
-            {this.state.city},{" "}
+            {this.state.city},{' '}
             <span className="bold">{this.state.country}</span>
           </div>
           <div className="tight-header">
@@ -35,10 +37,15 @@ export class MainHeader extends React.Component {
             <p className="bold">
               {this.state.representative
                 ? this.state.representative
-                : "To be defined"}
+                : 'To be defined'}
             </p>
             {this.state.timeSent ? <p>{this.state.timeSent}</p> : null}
           </div>
+          {this.state.status ? (
+            <p className={`pill ${this.state.isRebel ? 'red' : 'darkblue'}`}>
+              {this.state.status}
+            </p>
+          ) : null}
         </div>
       </div>
     );

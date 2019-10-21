@@ -100,6 +100,18 @@ class App extends React.Component {
             </Accordion>
           </Tab>
           <Tab eventKey="suggested" title={`WIP (${nrSuggestedCards})`}>
+            <div className="section tight-header">
+              <p>These suggested demands are works in progress.</p>
+              <p>
+                Defining a petition is intensive stuff, so lets help eachother
+                with the heavy lifting.
+              </p>
+              <p>
+                To become an accepted demand the petition needs to have all
+                parts defined, and be as clear, measurable and corraborated as
+                possible.
+              </p>
+            </div>
             <Accordion>
               {suggestedCards.map(card => {
                 return <CardItem cardcontent={card} key={card.id}></CardItem>;

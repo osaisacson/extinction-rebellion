@@ -19,29 +19,12 @@ window.Dataset = {
       issue: "xr/c02",
       postedBy: "mrTaanstaafl",
       votes: 12315,
-      comments: 231,
+      comments: 41,
       timeSent: "46 days ago",
       representative: "John Smith",
-      stages: [
-        {
-          id: "1",
-          name: "Defined"
-        },
-        {
-          id: "2",
-          name: "Sent"
-        },
-        {
-          id: "3",
-          name: "Denied"
-        },
-        {
-          id: "4",
-          name: "Rebel"
-        }
-      ],
+      status: "Denied",
       title: "Impose penalties on companies not meeting their c02 targets",
-      purpose:
+      summary:
         "A significant reduction of c02 released by the commercial sector in Belgium",
       background:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
@@ -72,47 +55,35 @@ window.Dataset = {
       isRebel: true,
       country: "Spain",
       city: "Barcelona",
-      postedBy: "greyMatter",
+      postedBy: "Jose Manuel Santos",
       issue: "xr/c02",
       votes: 11561,
-      comments: 123,
+      comments: 35,
       timeSent: "72 days ago",
+      representative: "Miguel Ferrer",
+      status: "Denied",
       title: "Ration fossil fuels to a set limit/capita",
-      representative: "Johnny Paycheck",
-      stages: [
-        {
-          id: "1",
-          name: "Defined"
-        },
-        {
-          id: "2",
-          name: "Sent"
-        },
-        {
-          id: "3",
-          name: "Denied"
-        },
-        {
-          id: "4",
-          name: "Rebel"
-        }
-      ],
+      summary:
+        "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+      background:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      affectedRegion: "Belgium",
+      successIndicators: "Reduce the use of fossil fuels in Barcelona by 21%",
       appendices: [
         {
           id: "5",
-          title: "Majority of European firms have no CO2 reduction targets",
+          title: "Energy statistics - an overview",
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            "https://ec.europa.eu/eurostat/statistics-explained/pdfscache/29046.pdf",
+          source: "European Commission",
+          date: "18 March 2019"
         },
         {
           id: "6",
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
+            "Traversing the mountaintop: world fossil fuel production to 2050",
+          href: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2781836/",
+          source: "National Library of Medicine, National Institutes of Health",
           date: "10 July 2019"
         }
       ]
@@ -126,19 +97,10 @@ window.Dataset = {
       issue: "xr/transport",
       title: "Introduce tax breaks for railways",
       votes: 11222,
-      comments: 126,
+      comments: 15,
       timeSent: "23 days ago",
       representative: "Clara Bow",
-      stages: [
-        {
-          id: "13",
-          name: "Defined"
-        },
-        {
-          id: "14",
-          name: "Sent"
-        }
-      ],
+      status: "In parliament",
       appendices: [
         {
           id: "5",
@@ -168,23 +130,10 @@ window.Dataset = {
       issue: "xr/plastic",
       title: "Introduce tax for plastic packaging",
       votes: 10124,
-      comments: 123,
+      comments: 14,
       timeSent: "16 days ago",
       representative: "Maura Grim",
-      stages: [
-        {
-          id: "18",
-          name: "Defined"
-        },
-        {
-          id: "19",
-          name: "Sent"
-        },
-        {
-          id: "20",
-          name: "In court"
-        }
-      ],
+      status: "In parliament",
       appendices: [
         {
           id: "5",
@@ -210,23 +159,14 @@ window.Dataset = {
       isActive: true,
       country: "Belgium",
       city: "Brussels",
-      postedBy: "mrFuzzyPants",
+      postedBy: "Elhar Muminovic",
       issue: "xr/plastic",
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
-      comments: 233,
+      comments: 23,
       timeSent: "19 days ago",
       representative: "Benjamin Harrods",
-      stages: [
-        {
-          id: "25",
-          name: "Defined"
-        },
-        {
-          id: "26",
-          name: "Sent"
-        }
-      ],
+      status: "In parliament",
       appendices: [
         {
           id: "5",
@@ -256,8 +196,27 @@ window.Dataset = {
       postedBy: "grrrrrrrr",
       title: "Remove kalium from water cleaning",
       votes: 12315,
-      comments: 231,
-      representative: "Yvette Ungers"
+      comments: 11,
+      representative: "Yvette Ungers",
+      status: "Being defined",
+      edits: [
+        {
+          id: "1",
+          date: "2 hours ago",
+          name: "Sara Johansson, PhD",
+          title: "Lets make the summary more summarized",
+          votes: "21",
+          edit: "This is the edit"
+        },
+        {
+          id: "2",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "More accurate measurements",
+          votes: "26",
+          edit: "This is the edit"
+        }
+      ]
     },
     {
       id: "36",
@@ -268,7 +227,26 @@ window.Dataset = {
       issue: "xr/c02",
       title: "Ration fossil fuels to a set limit/capita",
       votes: 11561,
-      comments: 123
+      comments: 12,
+      status: "Being defined",
+      edits: [
+        {
+          id: "1",
+          date: "2 hours ago",
+          name: "Sara Johansson, PhD",
+          title: "Lets make the summary more summarized",
+          votes: "21",
+          edit: "This is the edit"
+        },
+        {
+          id: "2",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "More accurate measurements",
+          votes: "26",
+          edit: "This is the edit"
+        }
+      ]
     },
     {
       id: "41",
@@ -279,8 +257,27 @@ window.Dataset = {
       issue: "xr/transport",
       title: "Introduce tax breaks for railways",
       votes: 11222,
-      comments: 126,
-      representative: "Michael Schultz"
+      comments: 16,
+      representative: "Michael Schultz",
+      status: "Being defined",
+      edits: [
+        {
+          id: "1",
+          date: "2 hours ago",
+          name: "Sara Johansson, PhD",
+          title: "Lets make the summary more summarized",
+          votes: "21",
+          edit: "This is the edit"
+        },
+        {
+          id: "2",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "More accurate measurements",
+          votes: "26",
+          edit: "This is the edit"
+        }
+      ]
     },
     {
       id: "46",
@@ -291,7 +288,26 @@ window.Dataset = {
       issue: "xr/plastic",
       title: "Introduce tax for plastic packaging",
       votes: 10124,
-      comments: 123
+      comments: 14,
+      status: "Being defined",
+      edits: [
+        {
+          id: "1",
+          date: "2 hours ago",
+          name: "Sara Johansson, PhD",
+          title: "Lets make the summary more summarized",
+          votes: "21",
+          edit: "This is the edit"
+        },
+        {
+          id: "2",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "More accurate measurements",
+          votes: "26",
+          edit: "This is the edit"
+        }
+      ]
     },
     {
       id: "53",
@@ -302,7 +318,26 @@ window.Dataset = {
       issue: "xr/plastic",
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
-      comments: 233
+      comments: 14,
+      status: "Being defined",
+      edits: [
+        {
+          id: "1",
+          date: "2 hours ago",
+          name: "Sara Johansson, PhD",
+          title: "Lets make the summary more summarized",
+          votes: "21",
+          edit: "This is the edit"
+        },
+        {
+          id: "2",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "More accurate measurements",
+          votes: "26",
+          edit: "This is the edit"
+        }
+      ]
     }
   ],
 

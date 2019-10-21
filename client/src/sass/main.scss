@@ -42,7 +42,7 @@ h2 {
   box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
 
   h5 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 25px $inside-card-l-r-margin;
   }
@@ -109,11 +109,6 @@ h2 {
   div + div {
     text-align: right;
   }
-
-  h6 {
-    font-size: .9rem;
-    color: $secondary-text-color;
-  }
 }
 
 .search-filter {
@@ -149,6 +144,7 @@ h2 {
   white-space: nowrap;
 
   .story {
+    text-align: center;
     margin-right: 30px;
     display: inline-block;
 
@@ -175,13 +171,33 @@ h2 {
    }
 }
 
+.pill {
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  width: fit-content;
+  float: right;
+
+  &.red {
+    background-color: red;
+  }
+
+  &.darkblue {
+    background-color: darkslateblue;
+  }
+}
+
 .mask {
   display: inline-block;
   width: 50px;
   max-height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  img{
+  
+  img {
     height: 50px;
     width: 50px;
     object-fit: cover;
@@ -255,6 +271,8 @@ h2 {
   align-items: center;
 
   h6 {
+    font-size: .9rem;
+    font-family: 'Libre Franklin', sans-serif;
     color: $primary-text-color;
     margin: 0;
   }
@@ -265,15 +283,18 @@ h2 {
   font-family: 'FontAwesome';
   background-color: transparent;
   
-  i {
+  * {
     color: $primary-text-color;
     font-size: 1.3rem;
     font-style: normal;
     transition: 0.2s;
   }
 
-  i:hover, i:active, i:focus, i.active {
-    color: #000;
+  *:hover, 
+  *:active, 
+  *:focus, 
+  *.active {
+    color: red;
   }
 
 }
@@ -328,6 +349,7 @@ button:focus {
 a:active,
 a:hover,
 a:focus {
+  outline: none;
   font-weight: 600;
   border: 0;
   border-color: transparent;
@@ -358,10 +380,4 @@ a:focus {
   i {
     color: red;
   }
-}
-
-.accordion>.card .card-header {
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.18);
-  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.18);
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.18);
 }
