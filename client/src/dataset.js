@@ -18,11 +18,10 @@ window.Dataset = {
       city: "Brussels",
       issue: "xr/c02",
       postedBy: "mrTaanstaafl",
-      title: "Impose penalties on companies not meeting their c02 targets",
       votes: 12315,
       comments: 231,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      timeSent: "46 days ago",
+      representative: "John Smith",
       stages: [
         {
           id: "1",
@@ -41,14 +40,30 @@ window.Dataset = {
           name: "Rebel"
         }
       ],
-      content: [
+      title: "Impose penalties on companies not meeting their c02 targets",
+      purpose:
+        "A significant reduction of c02 released by the commercial sector in Belgium",
+      background:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      affectedRegion: "Belgium",
+      successIndicators: "c02 reduced by 12% in Belgium",
+      appendices: [
         {
           id: "5",
-          test: "Background"
+          title: "Majority of European firms have no CO2 reduction targets",
+          href:
+            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
+          source: "The Guardian",
+          date: "19 Feb 2019"
         },
         {
           id: "6",
-          test: "Cases"
+          title:
+            "Vast majority of CO2 emitting firms will not meet climate targets",
+          href:
+            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
+          source: "Engineering & Technology",
+          date: "10 July 2019"
         }
       ]
     },
@@ -59,11 +74,11 @@ window.Dataset = {
       city: "Brussels",
       postedBy: "greyMatter",
       issue: "xr/c02",
-      title: "Ration fossil fuels to a set limit/capita",
       votes: 11561,
       comments: 123,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      timeSent: "72 days ago",
+      title: "Ration fossil fuels to a set limit/capita",
+      representative: "Johnny Paycheck",
       stages: [
         {
           id: "1",
@@ -82,14 +97,23 @@ window.Dataset = {
           name: "Rebel"
         }
       ],
-      content: [
+      appendices: [
         {
-          id: "10",
-          test: "Background"
+          id: "5",
+          title: "Majority of European firms have no CO2 reduction targets",
+          href:
+            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
+          source: "The Guardian",
+          date: "19 Feb 2019"
         },
         {
-          id: "11",
-          test: "Cases"
+          id: "6",
+          title:
+            "Vast majority of CO2 emitting firms will not meet climate targets",
+          href:
+            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
+          source: "Engineering & Technology",
+          date: "10 July 2019"
         }
       ]
     },
@@ -103,8 +127,8 @@ window.Dataset = {
       title: "Introduce tax breaks for railways",
       votes: 11222,
       comments: 126,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      timeSent: "23 days ago",
+      representative: "Clara Bow",
       stages: [
         {
           id: "13",
@@ -115,14 +139,23 @@ window.Dataset = {
           name: "Sent"
         }
       ],
-      content: [
+      appendices: [
         {
-          id: "15",
-          test: "Background"
+          id: "5",
+          title: "Majority of European firms have no CO2 reduction targets",
+          href:
+            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
+          source: "The Guardian",
+          date: "19 Feb 2019"
         },
         {
-          id: "16",
-          test: "Cases"
+          id: "6",
+          title:
+            "Vast majority of CO2 emitting firms will not meet climate targets",
+          href:
+            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
+          source: "Engineering & Technology",
+          date: "10 July 2019"
         }
       ]
     },
@@ -136,8 +169,8 @@ window.Dataset = {
       title: "Introduce tax for plastic packaging",
       votes: 10124,
       comments: 123,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      timeSent: "16 days ago",
+      representative: "Maura Grim",
       stages: [
         {
           id: "18",
@@ -152,14 +185,23 @@ window.Dataset = {
           name: "In court"
         }
       ],
-      content: [
+      appendices: [
         {
-          id: "22",
-          test: "Background"
+          id: "5",
+          title: "Majority of European firms have no CO2 reduction targets",
+          href:
+            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
+          source: "The Guardian",
+          date: "19 Feb 2019"
         },
         {
-          id: "23",
-          test: "Cases"
+          id: "6",
+          title:
+            "Vast majority of CO2 emitting firms will not meet climate targets",
+          href:
+            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
+          source: "Engineering & Technology",
+          date: "10 July 2019"
         }
       ]
     },
@@ -173,8 +215,8 @@ window.Dataset = {
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
       comments: 233,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      timeSent: "19 days ago",
+      representative: "Benjamin Harrods",
       stages: [
         {
           id: "25",
@@ -185,14 +227,23 @@ window.Dataset = {
           name: "Sent"
         }
       ],
-      content: [
+      appendices: [
         {
-          id: "27",
-          test: "Background"
+          id: "5",
+          title: "Majority of European firms have no CO2 reduction targets",
+          href:
+            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
+          source: "The Guardian",
+          date: "19 Feb 2019"
         },
         {
-          id: "28",
-          test: "Cases"
+          id: "6",
+          title:
+            "Vast majority of CO2 emitting firms will not meet climate targets",
+          href:
+            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
+          source: "Engineering & Technology",
+          date: "10 July 2019"
         }
       ]
     },
@@ -206,17 +257,7 @@ window.Dataset = {
       title: "Remove kalium from water cleaning",
       votes: 12315,
       comments: 231,
-      description: "Discussion goes here",
-      content: [
-        {
-          id: "34",
-          test: "Background"
-        },
-        {
-          id: "35",
-          test: "Cases"
-        }
-      ]
+      representative: "Yvette Ungers"
     },
     {
       id: "36",
@@ -227,18 +268,7 @@ window.Dataset = {
       issue: "xr/c02",
       title: "Ration fossil fuels to a set limit/capita",
       votes: 11561,
-      comments: 123,
-      description: "Discussion goes here",
-      content: [
-        {
-          id: "39",
-          test: "Background"
-        },
-        {
-          id: "40",
-          test: "Cases"
-        }
-      ]
+      comments: 123
     },
     {
       id: "41",
@@ -250,17 +280,7 @@ window.Dataset = {
       title: "Introduce tax breaks for railways",
       votes: 11222,
       comments: 126,
-      description: "Discussion goes here",
-      content: [
-        {
-          id: "44",
-          test: "Background"
-        },
-        {
-          id: "45",
-          test: "Cases"
-        }
-      ]
+      representative: "Michael Schultz"
     },
     {
       id: "46",
@@ -271,18 +291,7 @@ window.Dataset = {
       issue: "xr/plastic",
       title: "Introduce tax for plastic packaging",
       votes: 10124,
-      comments: 123,
-      description: "Discussion goes here",
-      content: [
-        {
-          id: "51",
-          test: "Background"
-        },
-        {
-          id: "52",
-          test: "Cases"
-        }
-      ]
+      comments: 123
     },
     {
       id: "53",
@@ -293,18 +302,7 @@ window.Dataset = {
       issue: "xr/plastic",
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
-      comments: 233,
-      description: "Discussion goes here",
-      content: [
-        {
-          id: "56",
-          test: "Background"
-        },
-        {
-          id: "57",
-          test: "Cases"
-        }
-      ]
+      comments: 233
     }
   ]
 };

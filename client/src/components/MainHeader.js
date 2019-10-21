@@ -8,7 +8,9 @@ export class MainHeader extends React.Component {
       country: this.props.country,
       city: this.props.city,
       issue: this.props.issue,
-      postedBy: this.props.postedBy
+      postedBy: this.props.postedBy,
+      representative: this.props.representative,
+      timeSent: this.props.timeSent
     };
   }
 
@@ -23,6 +25,19 @@ export class MainHeader extends React.Component {
           <div className="header-with-background">
             {this.state.city},{" "}
             <span className="bold">{this.state.country}</span>
+          </div>
+          <div className="tight-header">
+            {this.state.timeSent ? (
+              <p>Sent to representative</p>
+            ) : (
+              <p>Responsible representative</p>
+            )}
+            <p className="bold">
+              {this.state.representative
+                ? this.state.representative
+                : "To be defined"}
+            </p>
+            {this.state.timeSent ? <p>{this.state.timeSent}</p> : null}
           </div>
         </div>
       </div>

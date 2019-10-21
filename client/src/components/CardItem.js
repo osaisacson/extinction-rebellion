@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+
+import Appendices from './Appendices';
+import PetitionDefinition from './PetitionDefinition';
 import MainHeader from './MainHeader';
 import Voting from './Voting';
 import Stages from './Stages';
@@ -24,6 +27,8 @@ export default class CardItem extends Component {
           city={this.state.cardcontent.city}
           issue={this.state.cardcontent.issue}
           postedBy={this.state.cardcontent.postedBy}
+          representative={this.state.cardcontent.representative}
+          timeSent={this.state.cardcontent.timeSent}
         />
         <h5>{this.state.cardcontent.title}</h5>
 
@@ -41,7 +46,8 @@ export default class CardItem extends Component {
             as={Card.Header}
             eventKey={this.state.cardcontent.id}
           >
-            {this.state.cardcontent.isActive ? (
+            {this.state.cardcontent.isActive ||
+            this.state.cardcontent.isRebel ? (
               <div className="icon-section">
                 <button className="fa-icons petitionIcon">
                   <i className="fas fa-file"></i>
@@ -55,8 +61,7 @@ export default class CardItem extends Component {
                 </button>
               </div>
             ) : null}
-            {this.state.cardcontent.isActive &&
-            this.state.cardcontent.stages === 'Rebel' ? (
+            {this.state.cardcontent.isRebel ? (
               <div className="icon-section">
                 <button className="fa-icons actionIcon">
                   <i className="fas fa-fist-raised"></i>
@@ -68,6 +73,21 @@ export default class CardItem extends Component {
         <Accordion.Collapse eventKey={this.state.cardcontent.id}>
           <Card.Body>
             <p>{this.state.cardcontent.description}</p>
+
+            <PetitionDefinition
+              purpose={this.state.cardcontent.purpose}
+              background={this.state.cardcontent.background}
+              affectedRegion={this.state.cardcontent.affectedRegion}
+              successIndicators={this.state.cardcontent.successIndicators}
+            ></PetitionDefinition>
+
+            <Appendices
+              appendices={
+                this.state.cardcontent.appendices
+                  ? this.state.cardcontent.appendices
+                  : []
+              }
+            ></Appendices>
             {/* <Content content={item.content ? item.content : []} /> */}
           </Card.Body>
         </Accordion.Collapse>
