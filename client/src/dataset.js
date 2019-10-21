@@ -231,18 +231,34 @@ window.Dataset = {
       votes: 11561,
       comments: 12,
       status: "Being defined",
+      summary:
+        "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+      background:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
+      affectedRegion: "Belgium",
+      successIndicators: "Reduce the use of fossil fuels in Barcelona by 21%",
       edits: [
         {
           id: "1",
           section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
-          title: "Lets make the summary more summarized",
+          title: "Added summary section",
           votes: "21",
-          edit: "This is the edit"
+          edit:
+            "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
         },
         {
           id: "2",
+          section: "Summary",
+          date: "4 hours ago",
+          name: "Moritz Movits, PhD",
+          title: "Adding something more on the main issue here",
+          votes: "15",
+          edit: "This is the edit"
+        },
+        {
+          id: "3",
           section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",

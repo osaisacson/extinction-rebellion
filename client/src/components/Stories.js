@@ -6,8 +6,7 @@ export default class Stories extends Component {
     super(props);
 
     this.state = {
-      storycontent: this.props.storycontent,
-      key: this.props.key
+      storycontent: this.props.storycontent
     };
   }
 

@@ -21,7 +21,6 @@ body {
   font-family: 'Libre Franklin', sans-serif;
 }
 
-
 //Text
 h1,
 h2,
@@ -51,46 +50,6 @@ h2 {
 .separator {
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.125);
-}
-
-.header-with-background {
-  background: $gradient-background;
-  padding: 3px 6px;
-  border-radius: 3px;
-  font-size: 12px;
-  -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-  -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-  box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-}
-
-.tight-header {
-  p {
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-//Helpers
-.one-line-spread {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex-left {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.bold {
-  font-weight: 600;
 }
 
 //Sections
@@ -160,7 +119,47 @@ h2 {
   }
 }
 
+//Helpers
+.bold {
+  font-weight: 600;
+}
 
+.flex-spread {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.gradient-w-shadow {
+  background: $gradient-background;
+  -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
+  -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
+  box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
+  border-radius: 3px;
+}
+
+.gradient-w-shadow-outset {
+  background: $gradient-background;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+  -moz-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+  border-radius: 3px;
+}
+
+.margin-bottom-10px {
+  margin-bottom: 10px;
+}
 
 //Items
 .appendice {
@@ -169,6 +168,66 @@ h2 {
     color: darkblue;
     font-style: italic;
    }
+}
+
+.changes {
+  background-color: lightgreen;
+}
+
+.collapsible-in-card {
+  @extend .gradient-w-shadow-outset;
+  padding: 10px 10px 5px;
+  margin-bottom: 20px;
+}
+
+.collapsible-content {
+  transition: .5s;
+  width: 100%;
+}
+
+.compare-edits {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    font-size: 12px;
+    width: fit-content;
+    margin: 0;
+
+    &.bold {
+      margin-bottom: 10px;
+    }
+  }
+
+  .edit-section {
+    margin: 15px 0;
+    width: 50%;
+  }
+
+  .edit-section + .edit-section {
+    padding-left: 8px;
+    border-left: .5px solid grey;
+ }
+}
+
+.edit {
+  h6 {
+    margin-top: 5px;
+  }
+}
+
+.header-with-background {
+  @extend .gradient-w-shadow;
+  padding: 3px 6px;
+  font-size: 12px;
+}
+
+.tight-header {
+  p {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 .pill {
@@ -261,7 +320,7 @@ h2 {
 
 //Voting & Comments
 .action-section {
-  @extend .one-line-spread;
+  @extend .flex-spread;
   height: 55px;
   padding-left: 5px;
  }

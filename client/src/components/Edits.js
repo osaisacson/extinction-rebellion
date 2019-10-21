@@ -1,53 +1,50 @@
 import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
 
-import Voting from "./Voting";
+import Collapsible from "./Collapsible";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Edits extends Component {
   // Then we add our constructor which receives our props
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      isDiscussed: this.props.isDiscussed,
+      comments: this.props.comments,
+      originalText: this.props.originalText
+    };
   }
 
   render() {
+    let comments = this.state.comments;
+    let originalText = this.state.originalText;
+
     return (
       <>
-        {this.props.edits.map(function(item) {
-          return (
-            <Card key={item.id}>
-              <div className="edit">
-                <div className="tight-header">
-                  <div className="one-line-spread">
-                    <p>{item.name}</p>
-                    <p>{item.date}</p>
-                  </div>
-                </div>
-                <h6>{item.title}</h6>
+        {this.state.isDiscussed ? (
+          <>
+            <div className="flex-spread">
+              <div className="icon-section collapsible-indicator">
+                <h6>{this.state.comments}</h6>
+                <FontAwesomeIcon icon={faUserEdit} />
               </div>
-
-              <div className="separator"></div>
-              <div className="action-section">
-                <Voting votes={item.votes} />
-                <Accordion.Toggle as={Card.Header} eventKey={item.id + 1}>
-                  <div className="icon-section">
-                    <button>click me</button>
-                  </div>
-                </Accordion.Toggle>
-              </div>
-              <div className="separator"></div>
-
-              <Accordion.Collapse eventKey={item.id + 1}>
-                <Card.Body>
-                  {" "}
-                  <div>{item.edit}</div>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          );
-        })}
+            </div>
+            {this.props.edits.map(function(item) {
+              return (
+                <>
+                  <Collapsible
+                    comments={comments}
+                    originalText={originalText}
+                    collapsibleContent={item}
+                    key={item.id}
+                  ></Collapsible>
+                </>
+              );
+            })}
+          </>
+        ) : null}
       </>
     );
   }

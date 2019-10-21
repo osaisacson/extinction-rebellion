@@ -1,16 +1,15 @@
-import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import React, { Component } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import Appendices from "./Appendices";
-import Edits from "./Edits";
-import PetitionDefinition from "./PetitionDefinition";
-import MainHeader from "./MainHeader";
-import Voting from "./Voting";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
-import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Appendices from './Appendices';
+import Edits from './Edits';
+import PetitionDefinition from './PetitionDefinition';
+import MainHeader from './MainHeader';
+import Voting from './Voting';
+import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
+import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class CardItem extends Component {
   // Then we add our constructor which receives our props
@@ -24,7 +23,6 @@ export default class CardItem extends Component {
     };
 
     this.handlePetitionClick = this.handlePetitionClick.bind(this);
-    this.handleEditClick = this.handleEditClick.bind(this);
     this.handleRebelClick = this.handleRebelClick.bind(this);
   }
 
@@ -62,26 +60,6 @@ export default class CardItem extends Component {
               </button>
             </div>
           </Accordion.Toggle>
-
-          {this.state.cardcontent.isDiscussed ? (
-            <Accordion.Toggle
-              as={Card.Header}
-              eventKey={this.state.cardcontent.id}
-            >
-              <div className="icon-section">
-                <button
-                  id="edit"
-                  className="fa-icons commentIcon"
-                  onClick={this.handleEditClick}
-                >
-                  <div className="icon-section">
-                    <h6>{this.state.cardcontent.comments}</h6>
-                    <FontAwesomeIcon icon={faUserEdit} />
-                  </div>
-                </button>
-              </div>
-            </Accordion.Toggle>
-          ) : null}
 
           {this.state.cardcontent.isRebel ? (
             <Accordion.Toggle
@@ -130,23 +108,9 @@ export default class CardItem extends Component {
     });
   }
 
-  handleEditClick() {
-    this.setState({
-      content: (
-        <>
-          <Edits
-            edits={
-              this.state.cardcontent.edits ? this.state.cardcontent.edits : []
-            }
-          ></Edits>
-        </>
-      )
-    });
-  }
-
   handleRebelClick() {
     this.setState({
-      content: "Rebel Content"
+      content: 'Information on where and when to rebel.'
     });
   }
 }
