@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
+import React, { Component } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
-import Appendices from './Appendices';
-import Edits from './Edits';
-import PetitionDefinition from './PetitionDefinition';
-import MainHeader from './MainHeader';
-import Voting from './Voting';
-import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
-import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
+import Appendices from "./Appendices";
+import Edits from "./Edits";
+import PetitionDefinition from "./PetitionDefinition";
+import MainHeader from "./MainHeader";
+import Voting from "./Voting";
+import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class CardItem extends Component {
   // Then we add our constructor which receives our props
@@ -115,10 +115,7 @@ export default class CardItem extends Component {
           <p>{this.state.cardcontent.description}</p>
 
           <PetitionDefinition
-            summary={this.state.cardcontent.summary}
-            background={this.state.cardcontent.background}
-            affectedRegion={this.state.cardcontent.affectedRegion}
-            successIndicators={this.state.cardcontent.successIndicators}
+            cardcontent={this.state.cardcontent}
           ></PetitionDefinition>
 
           <Appendices
@@ -149,7 +146,7 @@ export default class CardItem extends Component {
 
   handleRebelClick() {
     this.setState({
-      content: 'Rebel Content'
+      content: "Rebel Content"
     });
   }
 }

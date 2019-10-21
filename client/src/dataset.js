@@ -202,6 +202,7 @@ window.Dataset = {
       edits: [
         {
           id: "1",
+          section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
           title: "Lets make the summary more summarized",
@@ -210,6 +211,7 @@ window.Dataset = {
         },
         {
           id: "2",
+          section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",
           title: "More accurate measurements",
@@ -232,6 +234,7 @@ window.Dataset = {
       edits: [
         {
           id: "1",
+          section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
           title: "Lets make the summary more summarized",
@@ -240,6 +243,7 @@ window.Dataset = {
         },
         {
           id: "2",
+          section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",
           title: "More accurate measurements",
@@ -263,6 +267,7 @@ window.Dataset = {
       edits: [
         {
           id: "1",
+          section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
           title: "Lets make the summary more summarized",
@@ -271,6 +276,7 @@ window.Dataset = {
         },
         {
           id: "2",
+          section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",
           title: "More accurate measurements",
@@ -293,6 +299,7 @@ window.Dataset = {
       edits: [
         {
           id: "1",
+          section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
           title: "Lets make the summary more summarized",
@@ -301,6 +308,7 @@ window.Dataset = {
         },
         {
           id: "2",
+          section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",
           title: "More accurate measurements",
@@ -323,6 +331,7 @@ window.Dataset = {
       edits: [
         {
           id: "1",
+          section: "Summary",
           date: "2 hours ago",
           name: "Sara Johansson, PhD",
           title: "Lets make the summary more summarized",
@@ -331,6 +340,7 @@ window.Dataset = {
         },
         {
           id: "2",
+          section: "Indicators",
           date: "4 hours ago",
           name: "Moritz Movits, PhD",
           title: "More accurate measurements",
