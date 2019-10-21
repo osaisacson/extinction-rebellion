@@ -6,12 +6,14 @@ import Accordion from "react-bootstrap/Accordion";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import CardItem from "./components/CardItem";
+import Stories from "./components/Stories";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       cards: window.Dataset.cards,
+      stories: window.Dataset.stories,
       search: ""
     };
     // To use the 'this' keyword, we need to bind it to our function
@@ -30,11 +32,16 @@ class App extends React.Component {
       return card.country.indexOf(this.state.search) !== -1;
     });
 
+    let xrFactions = this.state.stories.filter(story => {
+      return story.country.indexOf(this.state.search) !== -1;
+    });
+
     let activeCards = filteredCards.filter(card => card.isActive);
     let nrActiveCards = activeCards.length;
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
     let nrSuggestedCards = suggestedCards.length;
     let rebelCards = filteredCards.filter(card => card.isRebel);
+    let nrRebelCards = rebelCards.length;
 
     return (
       <div className="App">
@@ -49,8 +56,14 @@ class App extends React.Component {
           ></input>
         </header>
 
+        <div className="stories">
+          {xrFactions.map(story => {
+            return <Stories storycontent={story} key={story.id}></Stories>;
+          })}
+        </div>
+
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title="XR">
+          <Tab eventKey="home" title={`Act (${nrRebelCards})`}>
             {/* <div className="section">
               <h2>How it works</h2>
 
@@ -86,10 +99,7 @@ class App extends React.Component {
               })}
             </Accordion>
           </Tab>
-          <Tab
-            eventKey="suggested"
-            title={`Being defined (${nrSuggestedCards})`}
-          >
+          <Tab eventKey="suggested" title={`WIP (${nrSuggestedCards})`}>
             <Accordion>
               {suggestedCards.map(card => {
                 return <CardItem cardcontent={card} key={card.id}></CardItem>;

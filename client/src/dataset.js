@@ -70,8 +70,8 @@ window.Dataset = {
     {
       id: "7",
       isRebel: true,
-      country: "Belgium",
-      city: "Brussels",
+      country: "Spain",
+      city: "Barcelona",
       postedBy: "greyMatter",
       issue: "xr/c02",
       votes: 11561,
@@ -250,8 +250,8 @@ window.Dataset = {
     {
       id: "29",
       isDiscussed: true,
-      country: "Belgium",
-      city: "Brussels",
+      country: "Sweden",
+      city: "Gothenburg",
       issue: "xr/c02",
       postedBy: "grrrrrrrr",
       title: "Remove kalium from water cleaning",
@@ -303,6 +303,159 @@ window.Dataset = {
       title: "Ban plastic bags in all supermarkets",
       votes: 10023,
       comments: 233
+    }
+  ],
+
+  stories: [
+    {
+      id: "1",
+      country: "Belgium",
+      city: "Brussels",
+      img:
+        "https://images.unsplash.com/photo-1550481010-dfad748ad5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
+    },
+    {
+      id: "2",
+      country: "UK",
+      city: "London",
+      img:
+        "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
+    },
+    {
+      id: "3",
+      country: "Sweden",
+      city: "Stockholm",
+      img:
+        "https://images.unsplash.com/photo-1536788589593-bb9e9a2d9917?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
+    },
+    {
+      id: "4",
+      country: "Spain",
+      city: "Barcelona",
+      img:
+        "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=961&q=80",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
+    },
+    {
+      id: "5",
+      country: "Sweden",
+      city: "Gothenburg",
+      img:
+        "https://images.unsplash.com/photo-1514229917620-e7041bcb7d56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
+    },
+    {
+      id: "6",
+      country: "Spain",
+      city: "Madrid",
+      img:
+        "https://images.unsplash.com/photo-1565447162108-5a44f22d5364?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      pics: [
+        {
+          id: "1",
+          name: "Defined"
+        },
+        {
+          id: "2",
+          name: "Sent"
+        },
+        {
+          id: "3",
+          name: "Denied"
+        },
+        {
+          id: "4",
+          name: "Rebel"
+        }
+      ]
     }
   ]
 };
