@@ -51,7 +51,7 @@ class App extends React.Component {
 
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
           <Tab eventKey="home" title="XR">
-            <div className="section">
+            {/* <div className="section">
               <h2>How it works</h2>
 
               <p>
@@ -71,7 +71,7 @@ class App extends React.Component {
                 - If a demand gets stuck, you'll find here how and where you can
                 rebel.
               </p>
-            </div>
+            </div> */}
 
             <Accordion>
               {rebelCards.map(card => {
