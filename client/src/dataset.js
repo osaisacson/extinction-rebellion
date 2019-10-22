@@ -199,7 +199,7 @@ window.Dataset = {
       comments: 11,
       representative: "Yvette Ungers",
       status: "Being defined",
-      edits: [
+      commits: [
         {
           id: "1",
           section: "Summary",
@@ -237,7 +237,7 @@ window.Dataset = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
       affectedRegion: "Belgium",
       successIndicators: "Reduce the use of fossil fuels in Barcelona by 21%",
-      edits: [
+      commits: [
         {
           id: "1",
           section: "Summary",
@@ -280,7 +280,7 @@ window.Dataset = {
       comments: 16,
       representative: "Michael Schultz",
       status: "Being defined",
-      edits: [
+      commits: [
         {
           id: "1",
           section: "Summary",
@@ -312,7 +312,7 @@ window.Dataset = {
       votes: 10124,
       comments: 14,
       status: "Being defined",
-      edits: [
+      commits: [
         {
           id: "1",
           section: "Summary",
@@ -344,7 +344,7 @@ window.Dataset = {
       votes: 10023,
       comments: 14,
       status: "Being defined",
-      edits: [
+      commits: [
         {
           id: "1",
           section: "Summary",

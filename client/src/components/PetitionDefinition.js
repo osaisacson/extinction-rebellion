@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Edits from "./Edits";
+import Commits from "./Commits";
 
 export default class PetitionDefinition extends Component {
   // Then we add our constructor which receives our props
@@ -12,18 +12,18 @@ export default class PetitionDefinition extends Component {
   }
 
   render() {
-    let cardEdits = this.state.cardcontent.edits;
-    let summaryEdits = cardEdits
-      ? cardEdits.filter(edit => edit.section === "Summary")
+    let cardCommits = this.state.cardcontent.commits;
+    let summaryCommits = cardCommits
+      ? cardCommits.filter(commit => commit.section === "Summary")
       : [];
-    let backgroundEdits = cardEdits
-      ? cardEdits.filter(edit => edit.section === "Background")
+    let backgroundCommits = cardCommits
+      ? cardCommits.filter(commit => commit.section === "Background")
       : [];
-    let regionEdits = cardEdits
-      ? cardEdits.filter(edit => edit.section === "Region")
+    let regionCommits = cardCommits
+      ? cardCommits.filter(commit => commit.section === "Region")
       : [];
-    let indicatorEdits = cardEdits
-      ? cardEdits.filter(edit => edit.section === "Indicators")
+    let indicatorCommits = cardCommits
+      ? cardCommits.filter(commit => commit.section === "Indicators")
       : [];
 
     return (
@@ -34,11 +34,11 @@ export default class PetitionDefinition extends Component {
             ? this.state.cardcontent.summary
             : "TBD. Here goes a one paragraph summary of the purpose of the petition."}
         </p>
-        <Edits
+        <Commits
           isDiscussed={this.state.cardcontent.isDiscussed}
           originalText={this.state.cardcontent.summary}
-          edits={summaryEdits ? summaryEdits : []}
-        ></Edits>
+          commits={summaryCommits ? summaryCommits : []}
+        ></Commits>
         <div className="separator margin-bottom-10px"></div>
 
         <h6 className="bold">Background</h6>
@@ -47,12 +47,12 @@ export default class PetitionDefinition extends Component {
             ? this.state.cardcontent.background
             : "TBD. Define the reasons behind the petition."}
         </p>
-        <Edits
+        <Commits
           isDiscussed={this.state.cardcontent.isDiscussed}
           originalText={this.state.cardcontent.background}
-          edits={backgroundEdits ? backgroundEdits : []}
-          comments={backgroundEdits.length}
-        ></Edits>
+          commits={backgroundCommits ? backgroundCommits : []}
+          comments={backgroundCommits.length}
+        ></Commits>
         <div className="separator margin-bottom-10px"></div>
 
         <h6 className="bold">Affected region</h6>
@@ -61,12 +61,12 @@ export default class PetitionDefinition extends Component {
             ? this.state.cardcontent.affectedRegion
             : "TBD. Define the area that would be affected."}
         </p>
-        <Edits
+        <Commits
           isDiscussed={this.state.cardcontent.isDiscussed}
           originalText={this.state.cardcontent.region}
-          edits={regionEdits ? regionEdits : []}
-          comments={regionEdits.length}
-        ></Edits>
+          commits={regionCommits ? regionCommits : []}
+          comments={regionCommits.length}
+        ></Commits>
         <div className="separator margin-bottom-10px"></div>
 
         <h6 className="bold">Success Indicators</h6>
@@ -75,12 +75,12 @@ export default class PetitionDefinition extends Component {
             ? this.state.cardcontent.successIndicators
             : "TBD. List relevant measurements that will be affected here."}
         </p>
-        <Edits
+        <Commits
           isDiscussed={this.state.cardcontent.isDiscussed}
           originalText={this.state.cardcontent.indicators}
-          edits={indicatorEdits ? indicatorEdits : []}
-          comments={indicatorEdits.length}
-        ></Edits>
+          commits={indicatorCommits ? indicatorCommits : []}
+          comments={indicatorCommits.length}
+        ></Commits>
         <div className="separator margin-bottom-10px"></div>
 
         <br></br>

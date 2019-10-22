@@ -3,12 +3,10 @@ import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 
 import Appendices from './Appendices';
-import Edits from './Edits';
 import PetitionDefinition from './PetitionDefinition';
 import MainHeader from './MainHeader';
 import Voting from './Voting';
 import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
-import { faUserEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class CardItem extends Component {
@@ -86,6 +84,7 @@ export default class CardItem extends Component {
       </Card>
     );
   }
+
   handlePetitionClick() {
     this.setState({
       content: (
