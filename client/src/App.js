@@ -8,7 +8,6 @@ import Tab from "react-bootstrap/Tab";
 
 import Demand from "./components/Demand";
 import Stories from "./components/Stories";
-// import CardItem from "./components/CardItem";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,8 +17,6 @@ class App extends React.Component {
       stories: window.Dataset.stories,
       search: ""
     };
-    // To use the 'this' keyword, we need to bind it to our function
-    // this.updateByCountry = this.updateByCountry.bind(this);
   }
 
   updateSearch(event) {
@@ -46,7 +43,7 @@ class App extends React.Component {
     let nrRebelCards = rebelCards.length;
 
     return (
-      <div className="App">
+      <div className="App" style={{ background: this.state.backgroundColor }}>
         <header className="section">
           <img src={"/xr-logo.png"} className="logo" alt="logo" />
           <input
@@ -65,61 +62,41 @@ class App extends React.Component {
         </div>
 
         <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title={`Act (${nrRebelCards})`}>
-            {/* <div className="section">
-              <h2>How it works</h2>
-
-              <p>
-                - Anyone can suggest a demand in the 'Suggested' section. This
-                is the seed for a demand.
-              </p>
-              <p>
-                - Once the discussion has 10,000 upvotes and is marked as
-                'complete' it gets sent as a demand to the relevant
-                representative. Then the demand moves to the 'active' section.
-              </p>
-              <p>
-                - In 'Active' we can see where the demand is at, and what you
-                can do to push it forward.
-              </p>
-              <p>
-                - If a demand gets stuck, you'll find here how and where you can
-                rebel.
-              </p>
-            </div> */}
-
+          <Tab eventKey="home" title={`ACT NOW (${nrRebelCards})`}>
             <Accordion>
               {rebelCards.map(card => {
                 return <Demand cardcontent={card} key={card.id}></Demand>;
-                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>
-          <Tab eventKey="active" title={`Demands (${nrActiveCards})`}>
+          <Tab
+            eventKey="active"
+            title={`DEMANDS (${nrActiveCards + nrSuggestedCards})`}
+          >
             <Accordion>
+              <div className="section">
+                <h6 className="bold">Active ({nrActiveCards})</h6>
+              </div>
               {activeCards.map(card => {
                 return <Demand cardcontent={card} key={card.id}></Demand>;
-                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
-            </Accordion>
-          </Tab>
-          <Tab eventKey="suggested" title={`WIP (${nrSuggestedCards})`}>
-            <div className="section tight-header">
-              <p>These suggested demands are works in progress.</p>
-              <p>
-                Defining a petition is intensive stuff, so lets help eachother
-                with the heavy lifting.
-              </p>
-              <p>
-                To become an accepted demand the petition needs to have all
-                parts defined, and be as clear, measurable and corraborated as
-                possible.
-              </p>
-            </div>
-            <Accordion>
+              <br></br>
+              <div className="section tight-header">
+                <h6 className="bold">Being defined ({nrSuggestedCards})</h6>
+
+                <p>These suggested demands are works in progress.</p>
+                <p>
+                  Defining a petition is intensive stuff, so lets help eachother
+                  with the heavy lifting.
+                </p>
+                <p>
+                  To become an accepted demand the petition needs to have all
+                  parts defined, and be as clear, measurable and corraborated as
+                  possible.
+                </p>
+              </div>
               {suggestedCards.map(card => {
                 return <Demand cardcontent={card} cardkey={card.id}></Demand>;
-                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>

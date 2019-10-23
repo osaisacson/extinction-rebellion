@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import Header from "./DemandComponents/Header";
 import Description from "./DemandComponents/Description";
 import Voting from "./Voting";
+
 import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -24,41 +25,57 @@ export default class Demand extends Component {
   render() {
     return (
       <Card key={this.state.cardkey}>
-        {/* Header with general info */}
-        <Header
-          title={this.state.cardcontent.title}
-          country={this.state.cardcontent.country}
-          city={this.state.cardcontent.city}
-          issue={this.state.cardcontent.issue}
-          postedBy={this.state.cardcontent.postedBy}
-          representative={this.state.cardcontent.representative}
-          timeSent={this.state.cardcontent.timeSent}
-          status={this.state.cardcontent.status}
-          isRebel={this.state.cardcontent.isRebel}
-        />
+        <div className="section flex-spread">
+          {/* show rebel icon if isRebel, else show votes*/}
+          {this.state.cardcontent.isRebel ? (
+            <div className="large-icon">
+              <FontAwesomeIcon icon={faFistRaised} />
+            </div>
+          ) : null}
+          {this.state.cardcontent.isActive ? (
+            <div className="large-number">
+              <div>Petition No:</div>{" "}
+              <div>{this.state.cardcontent.petitionNo}</div>
+            </div>
+          ) : null}
+          {this.state.cardcontent.isDiscussed ? (
+            <div className="large-icon">
+              <Voting votes={this.state.cardcontent.votes} />
+            </div>
+          ) : null}
+          <div>
+            {/* Country */}
+            <div className="header-with-background">
+              {this.state.cardcontent.city},{" "}
+              <span className="bold">{this.state.cardcontent.country}</span>
+            </div>
+
+            {/* Status */}
+            {this.state.cardcontent.status ? (
+              <p
+                className={`pill ${
+                  this.state.cardcontent.isRebel ? "red" : "darkblue"
+                }`}
+              >
+                {this.state.cardcontent.status}
+              </p>
+            ) : null}
+          </div>
+        </div>
 
         <div className="separator"></div>
 
-        {/* Action section */}
-        <div className="action-section">
-          {/* Votes */}
-          <Voting votes={this.state.cardcontent.votes} />
+        {/* Toggle opening Accordion */}
+        <Accordion.Toggle
+          as={Card.Header}
+          eventKey={this.state.cardkey}
+          onClick={this.handleDemandClick}
+        >
+          <h5>{this.state.cardcontent.title}</h5>
+        </Accordion.Toggle>
 
-          {/* Demand icon toggle */}
-          <Accordion.Toggle as={Card.Header} eventKey={this.state.cardkey}>
-            <div className="icon-section">
-              <button
-                id="demand"
-                className="fa-icons demandIcon"
-                onClick={this.handleDemandClick}
-              >
-                <i className="fas fa-file"></i>
-              </button>
-            </div>
-          </Accordion.Toggle>
-
-          {/* Rebel icon toggle: Only show if card is marked as isRebel */}
-          {this.state.cardcontent.isRebel ? (
+        {/* Rebel icon toggle: Only show if card is marked as isRebel */}
+        {/* {this.state.cardcontent.isRebel ? (
             <Accordion.Toggle as={Card.Header} eventKey={this.state.cardkey}>
               <div className="icon-section">
                 <button
@@ -70,8 +87,7 @@ export default class Demand extends Component {
                 </button>
               </div>
             </Accordion.Toggle>
-          ) : null}
-        </div>
+          ) : null} */}
         <div className="separator"></div>
 
         {/* Switch content based on which icon is clicked above */}
@@ -84,7 +100,19 @@ export default class Demand extends Component {
 
   handleDemandClick() {
     this.setState({
-      content: <Description cardcontent={this.state.cardcontent} />
+      content: (
+        <>
+          {/* Header with general info */}
+          <Header
+            issue={this.state.cardcontent.issue}
+            postedBy={this.state.cardcontent.postedBy}
+            representative={this.state.cardcontent.representative}
+            timeSent={this.state.cardcontent.timeSent}
+          />
+          <div className="separator"></div>
+          <Description cardcontent={this.state.cardcontent} />
+        </>
+      )
     });
   }
 

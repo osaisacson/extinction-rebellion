@@ -326,6 +326,7 @@ window.Dataset = {
     {
       id: "3",
       isActive: true,
+      petitionNo: "0245/2019",
       country: "Belgium",
       city: "Brussels",
       postedBy: "Michael Grim",
@@ -482,6 +483,7 @@ window.Dataset = {
     {
       id: "4",
       isActive: true,
+      petitionNo: "0531/2019",
       country: "Sweden",
       city: "Stockholm",
       postedBy: "greyMatter",
@@ -638,6 +640,7 @@ window.Dataset = {
     {
       id: "5",
       isActive: true,
+      petitionNo: "0288/2019",
       country: "Belgium",
       city: "Brussels",
       postedBy: "greyMatter",
@@ -798,7 +801,7 @@ window.Dataset = {
       city: "Brussels",
       postedBy: "greyMatter",
       issue: "xr/c02",
-      votes: 11561,
+      votes: 2321,
       comments: 12,
       status: "Being defined",
       title: "Ration fossil fuels to a set limit/capita",
@@ -952,7 +955,7 @@ window.Dataset = {
       city: "London",
       postedBy: "greyMatter",
       issue: "xr/c02",
-      votes: 11561,
+      votes: 1367,
       comments: 12,
       status: "Being defined",
       title: "Ration fossil fuels to a set limit/capita",
