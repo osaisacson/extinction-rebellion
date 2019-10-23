@@ -12,926 +12,1080 @@ window.Dataset = {
 
   cards: [
     {
-      id: "1",
+      id: '1',
       isRebel: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Denied',
+      title: 'Impose penalties on companies not meeting their c02 targets',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Impose penalties on companies not meeting their c02 targets',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'A significant reduction of c02 released by the commercial sector in Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'c02 reduced by 12% in Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     },
     {
-      id: "2",
+      id: '2',
       isRebel: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'UK',
+      city: 'London',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Denied',
+      title: 'Ration fossil fuels to a set limit/capita',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'UK',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in London by 21%',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     },
     {
-      id: "3",
+      id: '3',
       isActive: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Being defined',
+      title: 'Ration fossil fuels to a set limit/capita',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in Barcelona by 21%v',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     },
     {
-      id: "4",
+      id: '4',
       isActive: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'Sweden',
+      city: 'Stockholm',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Being defined',
+      title: 'Ration fossil fuels to a set limit/capita',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in Barcelona by 21%v',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     },
     {
-      id: "5",
+      id: '5',
       isActive: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Being defined',
+      title: 'Ration fossil fuels to a set limit/capita',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in Barcelona by 21%v',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     },
     {
-      id: "6",
+      id: '6',
       isDiscussed: true,
-      country: "Belgium",
-      city: "Brussels",
-      postedBy: "greyMatter",
-      issue: "xr/c02",
+      country: 'Belgium',
+      city: 'Brussels',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
       votes: 11561,
       comments: 12,
-      status: "Being defined",
-      title: "Ration fossil fuels to a set limit/capita",
+      status: 'Being defined',
+      title: 'Ration fossil fuels to a set limit/capita',
       description: [
         {
-          id: "1",
-          section: "Title",
-          text: "Ration fossil fuels to a set limit/capita",
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Title section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "2",
-          section: "Summary",
+          id: '2',
+          section: 'Summary',
           text:
-            "Limit the individual use of fossil fuels to match the needed c02 reduction rate.",
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added summary section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "3",
-          section: "Background",
-          text: "Here is the background",
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Background section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "4",
-          section: "Affected Region",
-          text: "Belgium",
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Region section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         },
         {
-          id: "5",
-          section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in Barcelona by 21%v',
           edits: [
             {
-              id: "1",
-              date: "2 hours ago",
-              name: "Sara Johansson, PhD",
-              title: "Added Indicator section",
-              votes: "21",
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
               edit:
-                "Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate"
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
             },
             {
-              id: "2",
-              date: "4 hours ago",
-              name: "Moritz Movits, PhD",
-              title: "Adding something more on the main issue here",
-              votes: "15",
-              edit: "This is the edit"
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
             }
           ]
         }
       ],
       appendices: [
         {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
           href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
         },
         {
-          id: "2",
+          id: '2',
           title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
+            'Vast majority of CO2 emitting firms will not meet climate targets',
           href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
+        }
+      ]
+    },
+    {
+      id: '7',
+      isDiscussed: true,
+      country: 'UK',
+      city: 'London',
+      postedBy: 'greyMatter',
+      issue: 'xr/c02',
+      votes: 11561,
+      comments: 12,
+      status: 'Being defined',
+      title: 'Ration fossil fuels to a set limit/capita',
+      description: [
+        {
+          id: '1',
+          section: 'Title',
+          text: 'Ration fossil fuels to a set limit/capita',
+          edits: [
+            {
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Title section',
+              votes: '21',
+              edit:
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
+            },
+            {
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
+            }
+          ]
+        },
+        {
+          id: '2',
+          section: 'Summary',
+          text:
+            'Limit the individual use of fossil fuels to match the needed c02 reduction rate.',
+          edits: [
+            {
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added summary section',
+              votes: '21',
+              edit:
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
+            },
+            {
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
+            }
+          ]
+        },
+        {
+          id: '3',
+          section: 'Background',
+          text: 'Here is the background',
+          edits: [
+            {
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Background section',
+              votes: '21',
+              edit:
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
+            },
+            {
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
+            }
+          ]
+        },
+        {
+          id: '4',
+          section: 'Affected Region',
+          text: 'Belgium',
+          edits: [
+            {
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Region section',
+              votes: '21',
+              edit:
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
+            },
+            {
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
+            }
+          ]
+        },
+        {
+          id: '5',
+          section: 'Success Indicators',
+          text: 'Reduce the use of fossil fuels in Barcelona by 21%v',
+          edits: [
+            {
+              id: '1',
+              date: '2 hours ago',
+              name: 'Sara Johansson, PhD',
+              title: 'Added Indicator section',
+              votes: '21',
+              edit:
+                'Limit the increased individual use of fossil fuels to match the much needed c02 reduction rate'
+            },
+            {
+              id: '2',
+              date: '4 hours ago',
+              name: 'Moritz Movits, PhD',
+              title: 'Adding something more on the main issue here',
+              votes: '15',
+              edit: 'This is the edit'
+            }
+          ]
+        }
+      ],
+      appendices: [
+        {
+          id: '1',
+          title: 'Majority of European firms have no CO2 reduction targets',
+          href:
+            'https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets',
+          source: 'The Guardian',
+          date: '19 Feb 2019'
+        },
+        {
+          id: '2',
+          title:
+            'Vast majority of CO2 emitting firms will not meet climate targets',
+          href:
+            'https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/',
+          source: 'Engineering & Technology',
+          date: '10 July 2019'
         }
       ]
     }
@@ -1334,152 +1488,152 @@ window.Dataset = {
 
   stories: [
     {
-      id: "1",
-      country: "Belgium",
-      city: "Brussels",
+      id: '1',
+      country: 'Belgium',
+      city: 'Brussels',
       img:
-        "https://images.unsplash.com/photo-1550481010-dfad748ad5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
+        'https://images.unsplash.com/photo-1550481010-dfad748ad5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     },
     {
-      id: "2",
-      country: "UK",
-      city: "London",
+      id: '2',
+      country: 'UK',
+      city: 'London',
       img:
-        "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80",
+        'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1001&q=80',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     },
     {
-      id: "3",
-      country: "Sweden",
-      city: "Stockholm",
+      id: '3',
+      country: 'Sweden',
+      city: 'Stockholm',
       img:
-        "https://images.unsplash.com/photo-1536788589593-bb9e9a2d9917?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+        'https://images.unsplash.com/photo-1536788589593-bb9e9a2d9917?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     },
     {
-      id: "4",
-      country: "Spain",
-      city: "Barcelona",
+      id: '4',
+      country: 'Spain',
+      city: 'Barcelona',
       img:
-        "https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=961&q=80",
+        'https://images.unsplash.com/photo-1562883676-8c7feb83f09b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=961&q=80',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     },
     {
-      id: "5",
-      country: "Sweden",
-      city: "Gothenburg",
+      id: '5',
+      country: 'Sweden',
+      city: 'Gothenburg',
       img:
-        "https://images.unsplash.com/photo-1514229917620-e7041bcb7d56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+        'https://images.unsplash.com/photo-1514229917620-e7041bcb7d56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     },
     {
-      id: "6",
-      country: "Spain",
-      city: "Madrid",
+      id: '6',
+      country: 'Spain',
+      city: 'Madrid',
       img:
-        "https://images.unsplash.com/photo-1565447162108-5a44f22d5364?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+        'https://images.unsplash.com/photo-1565447162108-5a44f22d5364?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
       pics: [
         {
-          id: "1",
-          name: "Defined"
+          id: '1',
+          name: 'Defined'
         },
         {
-          id: "2",
-          name: "Sent"
+          id: '2',
+          name: 'Sent'
         },
         {
-          id: "3",
-          name: "Denied"
+          id: '3',
+          name: 'Denied'
         },
         {
-          id: "4",
-          name: "Rebel"
+          id: '4',
+          name: 'Rebel'
         }
       ]
     }

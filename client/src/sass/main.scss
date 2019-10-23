@@ -128,6 +128,10 @@ h2 {
   font-weight: 600;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .flex-spread {
   display: flex;
   align-items: center;
@@ -181,6 +185,8 @@ h2 {
 
 .changes {
   background-color: lightgreen;
+  border-left: 4px solid lightgreen;
+  border-right: 4px solid lightgreen;
 }
 
 .countdown {
@@ -192,7 +198,7 @@ h2 {
 
 .collapsible-in-card {
   @extend .gradient-w-shadow-outset;
-  padding: 10px 10px 5px;
+  padding: 6px 10px 5px;
   margin-bottom: 20px;
 }
 

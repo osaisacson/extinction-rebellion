@@ -22,7 +22,7 @@ export default class Description extends Component {
 
           return (
             <div key={description.id}>
-              <p className="bold">{description.section}</p>
+              <p className="bold no-margin">{description.section}</p>
               <p>{description.text ? description.text : "TBD"}</p>
               {isDiscussed ? (
                 <Edits edits={description.edits} originalText={originalText} />
@@ -30,7 +30,7 @@ export default class Description extends Component {
             </div>
           );
         })}
-        <Appendices appendices={this.state.cardcontent.edits} />
+        <Appendices appendices={this.state.cardcontent.appendices} />
       </>
     );
   }
