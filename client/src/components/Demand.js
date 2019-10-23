@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
+import React, { Component } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
-import Header from './DemandComponents/Header';
-import Description from './DemandComponents/Description';
-import Voting from './Voting';
-import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Header from "./DemandComponents/Header";
+import Description from "./DemandComponents/Description";
+import Voting from "./Voting";
+import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Demand extends Component {
   constructor(props) {
@@ -84,17 +84,13 @@ export default class Demand extends Component {
 
   handleDemandClick() {
     this.setState({
-      content: (
-        <div className="section">
-          <Description cardcontent={this.state.cardcontent} />
-        </div>
-      )
+      content: <Description cardcontent={this.state.cardcontent} />
     });
   }
 
   handleRebelClick() {
     this.setState({
-      content: 'Information on where and when to rebel.'
+      content: "Information on where and when to rebel."
     });
   }
 }
