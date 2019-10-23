@@ -1,23 +1,20 @@
-import React, { Component } from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import React, { Component } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import Appendices from "./Appendices";
-import Petition from "./Petition";
-import MainHeader from "./MainHeader";
-import Voting from "./Voting";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Header from './DemandComponents/Header';
+import Description from './DemandComponents/Description';
+import Voting from './Voting';
+import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default class CardItem extends Component {
-  // Then we add our constructor which receives our props
+export default class Demand extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       cardcontent: this.props.cardcontent,
-      key: this.props.key,
-      content: this.props.votes
+      cardkey: this.props.key
     };
 
     this.handleDemandClick = this.handleDemandClick.bind(this);
@@ -26,11 +23,10 @@ export default class CardItem extends Component {
 
   render() {
     return (
-      <Card key={this.state.key}>
-        <h5>{this.state.cardcontent.title}</h5>
-        <div className="separator"></div>
-
-        <MainHeader
+      <Card key={this.state.cardkey}>
+        {/* Header with general info */}
+        <Header
+          title={this.state.cardcontent.title}
           country={this.state.cardcontent.country}
           city={this.state.cardcontent.city}
           issue={this.state.cardcontent.issue}
@@ -42,13 +38,14 @@ export default class CardItem extends Component {
         />
 
         <div className="separator"></div>
+
+        {/* Action section */}
         <div className="action-section">
+          {/* Votes */}
           <Voting votes={this.state.cardcontent.votes} />
 
-          <Accordion.Toggle
-            as={Card.Header}
-            eventKey={this.state.cardcontent.id}
-          >
+          {/* Demand icon toggle */}
+          <Accordion.Toggle as={Card.Header} eventKey={this.state.cardkey}>
             <div className="icon-section">
               <button
                 id="demand"
@@ -60,11 +57,9 @@ export default class CardItem extends Component {
             </div>
           </Accordion.Toggle>
 
+          {/* Rebel icon toggle: Only show if card is marked as isRebel */}
           {this.state.cardcontent.isRebel ? (
-            <Accordion.Toggle
-              as={Card.Header}
-              eventKey={this.state.cardcontent.id}
-            >
+            <Accordion.Toggle as={Card.Header} eventKey={this.state.cardkey}>
               <div className="icon-section">
                 <button
                   id="action"
@@ -79,7 +74,8 @@ export default class CardItem extends Component {
         </div>
         <div className="separator"></div>
 
-        <Accordion.Collapse eventKey={this.state.cardcontent.id}>
+        {/* Switch content based on which icon is clicked above */}
+        <Accordion.Collapse eventKey={this.state.cardkey}>
           <Card.Body>{this.state.content}</Card.Body>
         </Accordion.Collapse>
       </Card>
@@ -89,26 +85,16 @@ export default class CardItem extends Component {
   handleDemandClick() {
     this.setState({
       content: (
-        <>
-          <p>{this.state.cardcontent.description}</p>
-
-          <Petition cardcontent={this.state.cardcontent}></Petition>
-
-          <Appendices
-            appendices={
-              this.state.cardcontent.appendices
-                ? this.state.cardcontent.appendices
-                : []
-            }
-          ></Appendices>
-        </>
+        <div className="section">
+          <Description cardcontent={this.state.cardcontent} />
+        </div>
       )
     });
   }
 
   handleRebelClick() {
     this.setState({
-      content: "Information on where and when to rebel."
+      content: 'Information on where and when to rebel.'
     });
   }
 }

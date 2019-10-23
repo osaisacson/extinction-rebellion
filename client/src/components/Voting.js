@@ -5,7 +5,9 @@ export class Voting extends React.Component {
     super(props);
 
     this.state = {
-      score: this.props.votes
+      score: this.props.votes,
+      specialClass: this.props.specialClass,
+      acceptedVoteNumber: this.props.acceptedVoteNumber
     };
 
     this.increment = this.increment.bind(this);
@@ -14,14 +16,21 @@ export class Voting extends React.Component {
 
   render() {
     return (
-      <div className="icon-section">
-        <button className="fa-icons countUp" onClick={this.increment}>
-          <i className="fas fa-caret-up"></i>
-        </button>
-        <h6>{this.state.score}</h6>
-        <button className="fa-icons countDown" onClick={this.decrement}>
-          <i className="fas fa-caret-down"></i>
-        </button>
+      <div>
+        <div className={`icon-section ${this.state.specialClass}`}>
+          <button className="fa-icons countUp" onClick={this.increment}>
+            <i className="fas fa-caret-up"></i>
+          </button>
+          <h6>{this.state.score}</h6>
+          <button className="fa-icons countDown" onClick={this.decrement}>
+            <i className="fas fa-caret-down"></i>
+          </button>
+        </div>
+        {this.state.acceptedVoteNumber ? (
+          <div className="countdown">
+            Edit will be accepted at {this.state.acceptedVoteNumber} votes
+          </div>
+        ) : null}
       </div>
     );
   }

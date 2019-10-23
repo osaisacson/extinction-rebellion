@@ -1,40 +1,28 @@
-import React, { Component } from "react";
-import Commits from "./Commits";
+import React, { Component } from 'react';
 
-export default class PetitionDefinition extends Component {
+export default class Description extends Component {
   // Then we add our constructor which receives our props
   constructor(props) {
     super(props);
 
     this.state = {
-      cardcontent: this.props.cardcontent
+      header: this.props.section,
+      text: this.props.text
     };
   }
 
   render() {
-    let cardCommits = this.state.cardcontent.commits;
-    let summaryCommits = cardCommits
-      ? cardCommits.filter(commit => commit.section === "Summary")
-      : [];
-    let backgroundCommits = cardCommits
-      ? cardCommits.filter(commit => commit.section === "Background")
-      : [];
-    let regionCommits = cardCommits
-      ? cardCommits.filter(commit => commit.section === "Region")
-      : [];
-    let indicatorCommits = cardCommits
-      ? cardCommits.filter(commit => commit.section === "Indicators")
-      : [];
-
     return (
       <>
-        <h6 className="bold">Summary</h6>
-        <p>
-          {this.state.cardcontent.summary
-            ? this.state.cardcontent.summary
-            : "TBD. Here goes a one paragraph summary of the purpose of the petition."}
-        </p>
-        <Commits
+        <h6 className="bold">{this.state.header}</h6>
+        <p>{this.state.text ? this.state.text : 'TBD'}</p>
+      </>
+    );
+  }
+}
+
+{
+  /* <Commits
           isDiscussed={this.state.cardcontent.isDiscussed}
           originalText={this.state.cardcontent.summary}
           commits={summaryCommits ? summaryCommits : []}
@@ -83,8 +71,5 @@ export default class PetitionDefinition extends Component {
         ></Commits>
         <div className="separator margin-bottom-10px"></div>
 
-        <br></br>
-      </>
-    );
-  }
+        <br></br> */
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Voting from "./Voting";
 
-export default class Commits extends Component {
+export default class Commit extends Component {
   // Then we add our constructor which receives our props
   constructor(props) {
     super(props);
@@ -32,6 +32,10 @@ export default class Commits extends Component {
       ? this.state.originalText
       : "No text";
     const editedText = commits.edit ? commits.edit : "No edit";
+
+    let filteredCommits = commits
+      ? commits.filter(commit => commit.section === "Summary")
+      : [];
 
     // function findDiff(str1, str2) {
     //   let diff = "";

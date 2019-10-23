@@ -5,8 +5,10 @@ import "./dataset.js";
 import Accordion from "react-bootstrap/Accordion";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import CardItem from "./components/CardItem";
+
+import Demand from "./components/Demand";
 import Stories from "./components/Stories";
+// import CardItem from "./components/CardItem";
 
 class App extends React.Component {
   constructor(props) {
@@ -69,11 +71,11 @@ class App extends React.Component {
 
               <p>
                 - Anyone can suggest a demand in the 'Suggested' section. This
-                is the seed for a petition.
+                is the seed for a demand.
               </p>
               <p>
                 - Once the discussion has 10,000 upvotes and is marked as
-                'complete' it gets sent as a petition to the relevant
+                'complete' it gets sent as a demand to the relevant
                 representative. Then the demand moves to the 'active' section.
               </p>
               <p>
@@ -88,14 +90,16 @@ class App extends React.Component {
 
             <Accordion>
               {rebelCards.map(card => {
-                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+                return <Demand cardcontent={card} key={card.id}></Demand>;
+                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>
           <Tab eventKey="active" title={`Demands (${nrActiveCards})`}>
             <Accordion>
               {activeCards.map(card => {
-                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+                return <Demand cardcontent={card} key={card.id}></Demand>;
+                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>
@@ -114,7 +118,8 @@ class App extends React.Component {
             </div>
             <Accordion>
               {suggestedCards.map(card => {
-                return <CardItem cardcontent={card} key={card.id}></CardItem>;
+                return <Demand cardcontent={card} cardkey={card.id}></Demand>;
+                // <CardItem cardcontent={card} key={card.id}></CardItem>;
               })}
             </Accordion>
           </Tab>

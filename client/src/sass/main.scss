@@ -6,6 +6,9 @@ $secondary-text-color: rgb(56, 56, 56);
 $card-background-color: rgba(255, 255, 255, .5);
 $gradient-background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
 
+.grey-color {
+  color: grey;
+}
 
 //Variables
 $inside-card-l-r-margin: 8px;
@@ -43,7 +46,8 @@ h2 {
   h5 {
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 25px $inside-card-l-r-margin;
+    padding: 25px $inside-card-l-r-margin;
+    margin: 0;
   }
 }
 
@@ -157,6 +161,11 @@ h2 {
   border-radius: 3px;
 }
 
+.border-left {
+  border-left: .5px solid grey;
+  margin-left: 10px;
+}
+
 .margin-bottom-10px {
   margin-bottom: 10px;
 }
@@ -172,6 +181,13 @@ h2 {
 
 .changes {
   background-color: lightgreen;
+}
+
+.countdown {
+  font-size: 10px;
+  text-align: center;
+  width: 95px;
+  float: right;
 }
 
 .collapsible-in-card {
@@ -376,7 +392,7 @@ h2 {
   content: '\f075';
 }
 
-.petitionIcon {
+.demandIcon {
   content: '\f02d'
 }
 
@@ -396,6 +412,7 @@ button:focus {
 
 .nav-tabs {
   border-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .nav-tabs .nav-link {
@@ -439,4 +456,8 @@ a:focus {
   i {
     color: red;
   }
+}
+
+.tab-content {
+  margin-bottom: 200px;
 }
