@@ -33,9 +33,8 @@ export default class Demand extends Component {
             </div>
           ) : null}
           {this.state.cardcontent.isActive ? (
-            <div className="large-number">
-              <div>Petition No:</div>{" "}
-              <div>{this.state.cardcontent.petitionNo}</div>
+            <div className="large-number tight-header">
+              <p>Petition No</p> <div>{this.state.cardcontent.petitionNo}</div>
             </div>
           ) : null}
           {this.state.cardcontent.isDiscussed ? (
