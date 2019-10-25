@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
-import Tabs from 'react-bootstrap/Tabs';
-import Tab from 'react-bootstrap/Tab';
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
+import Tabs from "react-bootstrap/Tabs";
+import Tab from "react-bootstrap/Tab";
 
-import Demand from './Demand';
-import Description from './DemandComponents/Description';
-import Header from './DemandComponents/Header';
-import Voting from './Voting';
+import Demand from "./Demand";
+import Description from "./DemandComponents/Description";
+import Header from "./DemandComponents/Header";
+import Voting from "./Voting";
 
 export default class Demands extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export default class Demands extends Component {
   render() {
     return (
       <>
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="active-demands" id="uncontrolled-tab-example">
           {/* Tab of active demands */}
           <Tab
             eventKey="active-demands"

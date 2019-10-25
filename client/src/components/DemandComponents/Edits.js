@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Voting from "./../Voting";
 import Edit from "./Edit";
 
 import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
