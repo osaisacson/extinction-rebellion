@@ -279,7 +279,7 @@ h2 {
 
 .header-with-background {
   @extend .inner-shadows-inset;
-  background: $home-color;
+  background: transparent;
   border-radius: 2px 2px 0;
   padding: 3px 6px;
   font-size: 12px;
