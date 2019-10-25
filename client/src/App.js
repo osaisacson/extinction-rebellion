@@ -6,6 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
+import Demands from "./components/Demands";
 import Demand from "./components/Demand";
 import Stories from "./components/Stories";
 
@@ -36,10 +37,10 @@ class App extends React.Component {
     });
 
     let activeCards = filteredCards.filter(card => card.isActive);
-    let nrActiveCards = activeCards.length;
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
-    let nrSuggestedCards = suggestedCards.length;
     let rebelCards = filteredCards.filter(card => card.isRebel);
+    let nrActiveCards = activeCards.length;
+    let nrSuggestedCards = suggestedCards.length;
     let nrRebelCards = rebelCards.length;
 
     return (
@@ -73,32 +74,12 @@ class App extends React.Component {
             eventKey="active"
             title={`DEMANDS (${nrActiveCards + nrSuggestedCards})`}
           >
-            <Accordion>
-              <div className="section">
-                <h6 className="bold">Active ({nrActiveCards})</h6>
-              </div>
-              {activeCards.map(card => {
-                return <Demand cardcontent={card} key={card.id}></Demand>;
-              })}
-              <br></br>
-              <div className="section tight-header">
-                <h6 className="bold">Being defined ({nrSuggestedCards})</h6>
-
-                <p>These suggested demands are works in progress.</p>
-                <p>
-                  Defining a petition is intensive stuff, so lets help eachother
-                  with the heavy lifting.
-                </p>
-                <p>
-                  To become an accepted demand the petition needs to have all
-                  parts defined, and be as clear, measurable and corraborated as
-                  possible.
-                </p>
-              </div>
-              {suggestedCards.map(card => {
-                return <Demand cardcontent={card} cardkey={card.id}></Demand>;
-              })}
-            </Accordion>
+            <Demands
+              activeCards={activeCards}
+              suggestedCards={suggestedCards}
+              nrActiveCards={nrActiveCards}
+              nrSuggestedCards={nrSuggestedCards}
+            ></Demands>
           </Tab>
         </Tabs>
       </div>

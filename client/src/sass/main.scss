@@ -7,10 +7,13 @@ $card-background-color: rgba(255, 255, 255, .5);
 $action-color: #71d0f1;
 $demand-color: #ed9bc4;
 $home-color: #21a73d;
-$gradient-main-background: $home-color;
-$gradient-background: $home-color;
+$collapsible-in-card-background-color: transparent;
 // $gradient-main-background: linear-gradient(90deg, rgba(195,223,247,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
 // $gradient-background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
+
+//Variables
+$card-padding: 8px;
+$inside-card-l-r-margin: 8px;
 
 .action-background-color {
   background-color: $action-color !important;;
@@ -24,13 +27,24 @@ $gradient-background: $home-color;
   color: grey;
 }
 
-//Variables
-$inside-card-l-r-margin: 8px;
+.inner-shadows-inset {
+  -webkit-box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
+  box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
+}
+
+
+.inner-shadows-outset {
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+  -moz-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+}
+
 
 //Main
 html {
   background: rgb(195,223,247);
-  background: $gradient-main-background;
+  background: $home-color;
 }
 
 body {
@@ -68,6 +82,7 @@ h2 {
 .separator {
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.125);
+  padding-top: 5px;
 }
 
 //Sections
@@ -89,6 +104,7 @@ h2 {
 }
 
 .search-filter {
+  @extend .inner-shadows-inset;
   background: transparent;
   font-size: 12px;
   text-align: center;
@@ -101,16 +117,14 @@ h2 {
   position: absolute;
   top: 10px;
   right: 10px;
-  -webkit-box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
-  -moz-box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
-  box-shadow: inset 1px 1px 3px 2px rgba(0,0,0,0.2);
+
 }
 
 .search-filter:focus,
 .search-filter:hover {
   outline: none;
   background: rgb(195,223,247);
-  background: $gradient-background;
+  background: $home-color;
 }
 
 .stories {
@@ -151,6 +165,14 @@ h2 {
   margin: 0;
 }
 
+.fit-content {
+  width: fit-content;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .flex-spread {
   display: flex;
   align-items: center;
@@ -168,18 +190,10 @@ h2 {
   flex-direction: column;
 }
 
-.gradient-w-shadow {
-  background: $gradient-background;
-  -webkit-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-  -moz-box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-  box-shadow: inset 1px 1px 2px 2px rgba(0,0,0,0.11);
-}
-
-.gradient-w-shadow-outset {
-  background: $gradient-background;
-  -webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
-  -moz-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
-  box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.11);
+.flex-column-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .border-left {
@@ -214,9 +228,10 @@ h2 {
 }
 
 .collapsible-in-card {
-  background: $gradient-background;
-  padding: 6px 10px 5px;
-  margin-bottom: 20px;
+  cursor: pointer;
+  background: $collapsible-in-card-background-color;
+  padding: 0 5px;
+  margin-bottom: 25px;
 }
 
 .collapsible-content {
@@ -256,7 +271,8 @@ h2 {
 }
 
 .header-with-background {
-  @extend .gradient-w-shadow;
+  @extend .inner-shadows-inset;
+  background: $home-color;
   border-radius: 2px 2px 0;
   padding: 3px 6px;
   font-size: 12px;
@@ -361,6 +377,14 @@ h2 {
 
 //Voting & Comments
 
+.voting-section {
+  @extend .inner-shadows-inset;
+  background-color: $home-color;
+  float: right;
+  margin-top: $card-padding;
+  margin-right: $card-padding;
+}
+
 .icon-section {
   display: flex;
   align-items: center;
@@ -461,6 +485,7 @@ a:focus {
 }
 
 .card-header {
+  padding: $card-padding;
   background-color: transparent;
   border-bottom: 0;
   cursor: pointer;
@@ -483,6 +508,10 @@ a:focus {
   i {
     color: red;
   }
+}
+
+.card-body {
+  padding: $card-padding;
 }
 
 .tab-content {

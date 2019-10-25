@@ -16,7 +16,7 @@ export class Voting extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="voting-section">
         <div className={`icon-section ${this.state.specialClass}`}>
           <button className="fa-icons countUp" onClick={this.increment}>
             <i className="fas fa-caret-up"></i>
@@ -26,11 +26,9 @@ export class Voting extends React.Component {
             <i className="fas fa-caret-down"></i>
           </button>
         </div>
-        {this.state.acceptedVoteNumber ? (
-          <div className="countdown">
-            Edit will be accepted at {this.state.acceptedVoteNumber} votes
-          </div>
-        ) : null}
+        {/* {this.state.acceptedVoteNumber ? (
+          <div className="countdown">/{this.state.acceptedVoteNumber}</div>
+        ) : null} */}
       </div>
     );
   }
