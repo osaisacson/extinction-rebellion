@@ -16,11 +16,11 @@ $card-padding: 8px;
 $inside-card-l-r-margin: 8px;
 
 .action-background-color {
-  background-color: $action-color;
+  background-color: $action-color !important; //Remove this
 }
 
 .demand-background-color {
-  background-color: $demand-color;
+  background-color: $demand-color !important; //Remove this
 }
 
 .grey-color {
