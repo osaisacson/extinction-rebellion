@@ -44,7 +44,7 @@ $inside-card-l-r-margin: 8px;
 }
 
 .main-border-color {
-  border: .5px solid $home-color;
+  border: .5px solid #666;
 }
 
 
@@ -386,7 +386,7 @@ h2 {
 
 .voting-section {
   @extend .inner-shadows-inset;
-  background-color: $home-color;
+  background-color: transparent;
   float: right;
   margin-top: $card-padding;
   margin-right: $card-padding;
