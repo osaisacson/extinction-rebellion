@@ -3,11 +3,14 @@ import "./sass/main.scss";
 import "./dataset.js";
 
 import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 
 import Demands from "./components/Demands";
 import Demand from "./components/Demand";
+import Description from "./components/DemandComponents/Description";
+import Header from "./components/DemandComponents/Header";
 import Stories from "./components/Stories";
 
 class App extends React.Component {
@@ -66,7 +69,28 @@ class App extends React.Component {
           <Tab eventKey="home" title={`ACT NOW (${nrRebelCards})`}>
             <Accordion>
               {rebelCards.map(card => {
-                return <Demand cardcontent={card} key={card.id}></Demand>;
+                return (
+                  <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey={card.id}>
+                      <Demand cardcontent={card}></Demand>
+                    </Accordion.Toggle>
+
+                    {/* Opened collapsible with full demand details */}
+                    <Accordion.Collapse eventKey={card.id}>
+                      <Card.Body>
+                        <div className="separator"></div>
+                        <Header
+                          issue={card.issue}
+                          postedBy={card.postedBy}
+                          representative={card.representative}
+                          timeSent={card.timeSent}
+                        />
+                        <div className="separator"></div>
+                        <Description cardcontent={card} />
+                      </Card.Body>
+                    </Accordion.Collapse>
+                  </Card>
+                );
               })}
             </Accordion>
           </Tab>
