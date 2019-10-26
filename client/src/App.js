@@ -5,10 +5,7 @@ import "./dataset.js";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
-import Demands from "./components/Demands";
-import Demand from "./components/Demand";
-import Description from "./components/DemandComponents/Description";
-import Header from "./components/DemandComponents/Header";
+import AccordionCards from "./components/AccordionCards";
 import Stories from "./components/Stories";
 
 class App extends React.Component {
@@ -37,12 +34,10 @@ class App extends React.Component {
       return story.country.indexOf(this.state.search) !== -1;
     });
 
+    // Define subsets of main card set
     let activeCards = filteredCards.filter(card => card.isActive);
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
     let rebelCards = filteredCards.filter(card => card.isRebel);
-    let nrActiveCards = activeCards.length;
-    let nrSuggestedCards = suggestedCards.length;
-    let nrRebelCards = rebelCards.length;
 
     return (
       <div className="App" style={{ background: this.state.backgroundColor }}>
@@ -64,59 +59,50 @@ class App extends React.Component {
         </div>
 
         <Accordion>
-          <Card className="action-background-color">
-            <Accordion.Toggle as={Card.Header} eventKey="0">
-              <h2>ACT NOW ({nrRebelCards})</h2>
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-              <Card.Body>
-                {" "}
-                <Accordion>
-                  {rebelCards.map(card => {
-                    return (
-                      <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey={card.id}>
-                          <Demand cardcontent={card}></Demand>
-                        </Accordion.Toggle>
+          {/* isRebel cards */}
+          <AccordionCards
+            header="DENIED"
+            subheader="Our demands that have been denied in parliament. Find how to protest against this here."
+            backgroundColor="action-background-color"
+            eventKey="0"
+            cards={rebelCards}
+            isRebel={true}
+          ></AccordionCards>
 
-                        {/* Opened collapsible with full demand details */}
-                        <Accordion.Collapse eventKey={card.id}>
-                          <Card.Body>
-                            <div className="separator"></div>
-                            <Header
-                              issue={card.issue}
-                              postedBy={card.postedBy}
-                              representative={card.representative}
-                              timeSent={card.timeSent}
-                            />
-                            <div className="separator"></div>
-                            <Description cardcontent={card} />
-                          </Card.Body>
-                        </Accordion.Collapse>
-                      </Card>
-                    );
-                  })}
-                </Accordion>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
-          <Card className="demand-background-color">
-            <Accordion.Toggle as={Card.Header} eventKey="1">
-              <h2>DEMANDS ({nrActiveCards + nrSuggestedCards})</h2>
-            </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>
-                {" "}
-                <Demands
-                  activeCards={activeCards}
-                  suggestedCards={suggestedCards}
-                  nrActiveCards={nrActiveCards}
-                  nrSuggestedCards={nrSuggestedCards}
-                ></Demands>
-              </Card.Body>
-            </Accordion.Collapse>
-          </Card>
+          {/* isActive cards */}
+          <AccordionCards
+            header="DEFINED"
+            subheader="Demands that have been defined. Vote on their priority and get engaged in campaigns to push them through ASAP."
+            backgroundColor="demand-background-color"
+            eventKey="1"
+            cards={activeCards}
+            isActive={true}
+          ></AccordionCards>
+
+          {/* isSuggested cards */}
+          <AccordionCards
+            header="DEFINE"
+            subheader="Suggested demands. Get involved and flesh these out here."
+            backgroundColor="tweak-background-color"
+            eventKey="2"
+            cards={suggestedCards}
+            isSuggested={true}
+          ></AccordionCards>
         </Accordion>
+
+        {/* Add new card */}
+        <Card className="add-background-color">
+          <Accordion.Toggle as={Card.Header} eventKey="3">
+            <h2>ADD +</h2>
+          </Accordion.Toggle>
+          <Accordion.Collapse eventKey="3">
+            <Card.Body>
+              <Accordion>
+                <h4>Functionality to add a new demand goes here</h4>
+              </Accordion>
+            </Card.Body>
+          </Accordion.Collapse>
+        </Card>
       </div>
     );
   }

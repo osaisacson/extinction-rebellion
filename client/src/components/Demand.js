@@ -8,91 +8,64 @@ export default class Demand extends Component {
     super(props);
 
     this.state = {
-      cardcontent: this.props.cardcontent
+      card: this.props.card
     };
-
-    // this.handleDemandClick = this.handleDemandClick.bind(this);
-    // this.handleRebelClick = this.handleRebelClick.bind(this);
   }
 
   render() {
     return (
       <>
-        <h5>{this.state.cardcontent.title}</h5>
+        <h5>{this.state.card.title}</h5>
         <div className="separator"></div>
 
         <div>
           {/* show rebel icon if isRebel, and petition nr if isActive*/}
-          {this.state.cardcontent.isRebel ? (
+          {this.state.card.isRebel ? (
             <div className="large-icon">
               <FontAwesomeIcon icon={faFistRaised} />
             </div>
           ) : null}
-          {this.state.cardcontent.isActive ? (
+          {this.state.card.isActive ? (
             <div className="large-number tight-header">
-              <p>Petition No</p> <div>{this.state.cardcontent.petitionNo}</div>
+              <p>Petition No</p> <div>{this.state.card.petitionNo}</div>
             </div>
           ) : null}
 
           <div className="flex-column-right">
             {/* Country */}
             <div className="header-with-background">
-              {this.state.cardcontent.city},{" "}
-              <span className="bold">{this.state.cardcontent.country}</span>
+              {this.state.card.city},{" "}
+              <span className="bold">{this.state.card.country}</span>
             </div>
 
             {/* Status */}
-            {this.state.cardcontent.status ? (
+            {this.state.card.status ? (
               <p
                 className={`pill ${
-                  this.state.cardcontent.isRebel ? "red" : "darkblue"
+                  this.state.card.isRebel ? "red" : "darkblue"
                 }`}
               >
-                {this.state.cardcontent.status}
+                {this.state.card.status}
               </p>
             ) : null}
           </div>
         </div>
-
-        {/* Rebel icon toggle: Only show if card is marked as isRebel */}
-        {/* {this.state.cardcontent.isRebel ? (
-            <Accordion.Toggle as={Card.Header} eventKey={this.state.cardkey}>
-              <div className="icon-section">
-                <button
-                  id="action"
-                  className="fa-icons actionIcon"
-                  onClick={this.handleRebelClick}
-                >
-                  <FontAwesomeIcon icon={faFistRaised} />
-                </button>
-              </div>
-            </Accordion.Toggle>
-          ) : null} */}
       </>
     );
   }
-
-  // handleDemandClick() {
-  //   this.setState({
-  //     content: (
-  //       <>
-  //         {/* Header with general info */}
-  //         <Header
-  //           issue={this.state.cardcontent.issue}
-  //           postedBy={this.state.cardcontent.postedBy}
-  //           representative={this.state.cardcontent.representative}
-  //           timeSent={this.state.cardcontent.timeSent}
-  //         />
-  //         <div className="separator"></div>
-  //         <Description cardcontent={this.state.cardcontent} />
-  //       </>
-  //     )
-  //   });
-  // }
-
-  // handleRebelClick() {
-  //   this.setState({
-  //     content: "Information on where and when to rebel."
-  //   });
-  // }
 }
+
+//  <div className="section tight-header">
+//        <h6 className="bold">Being defined ({nrSuggestedCards})</h6>
+
+//        <p>These suggested demands are works in progress.</p>
+//       <p>
+//         Defining a petition is intensive stuff, so lets help eachother
+//         with the heavy lifting.
+//       </p>
+//       <p>
+//         To become an accepted demand the petition needs to have all
+//         parts defined, and be as clear, measurable and corraborated as
+//         possible.
+//       </p>
+//     </div>

@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
-import Appendices from './Appendices';
-import Edits from './Edits';
+import React, { Component } from "react";
+import Appendices from "./Appendices";
+import Edits from "./Edits";
 
 export default class Description extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cardcontent: this.props.cardcontent
+      card: this.props.card
     };
   }
 
   render() {
-    let isDiscussed = this.state.cardcontent.isDiscussed;
+    let isDiscussed = this.state.card.isDiscussed;
 
     return (
       <>
-        {this.state.cardcontent.description.map(description => {
+        {this.state.card.description.map(description => {
           let originalText = description.text;
 
           return (
             <div key={description.id}>
               {isDiscussed ? <div className="separator"></div> : null}
               <p className="bold no-margin">{description.section}</p>
-              <p>{description.text ? description.text : 'TBD'}</p>
+              <p>{description.text ? description.text : "TBD"}</p>
               {isDiscussed ? (
                 <Edits edits={description.edits} originalText={originalText} />
               ) : null}
             </div>
           );
         })}
-        <Appendices appendices={this.state.cardcontent.appendices} />
+        <Appendices appendices={this.state.card.appendices} />
       </>
     );
   }

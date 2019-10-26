@@ -4,9 +4,11 @@
 $primary-text-color: #000;
 $secondary-text-color: rgb(56, 56, 56);
 $card-background-color: rgba(255, 255, 255, .5);
+$home-color: #21a73d;
 $action-color: #71d0f1;
 $demand-color: #ed9bc4;
-$home-color: #21a73d;
+$tweak-color: #bd66ffd1;
+$add-color: #fcd705;
 $collapsible-in-card-background-color: transparent;
 // $gradient-main-background: linear-gradient(90deg, rgba(195,223,247,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
 // $gradient-background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
@@ -21,6 +23,14 @@ $inside-card-l-r-margin: 8px;
 
 .demand-background-color {
   background-color: $demand-color !important; //Remove this
+}
+
+.tweak-background-color {
+  background-color: $tweak-color !important; //Remove this
+}
+
+.add-background-color {
+  background-color: $add-color !important; //Remove this
 }
 
 .grey-color {
@@ -57,6 +67,10 @@ html {
 body {
   background-color: transparent;
   font-family: 'Libre Franklin', sans-serif;
+}
+
+.App {
+  padding-bottom: 200px;
 }
 
 //Text

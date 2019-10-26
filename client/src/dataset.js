@@ -438,7 +438,7 @@ window.Dataset = {
         {
           id: "5",
           section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          text: "Reduce the use of fossil fuels in Barcelona by 21%",
           edits: [
             {
               id: "1",
@@ -595,7 +595,7 @@ window.Dataset = {
         {
           id: "5",
           section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          text: "Reduce the use of fossil fuels in Barcelona by ",
           edits: [
             {
               id: "1",
@@ -752,7 +752,7 @@ window.Dataset = {
         {
           id: "5",
           section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          text: "Reduce the use of fossil fuels in Barcelona by ",
           edits: [
             {
               id: "1",
@@ -906,7 +906,7 @@ window.Dataset = {
         {
           id: "5",
           section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          text: "Reduce the use of fossil fuels in Barcelona by ",
           edits: [
             {
               id: "1",
@@ -1060,7 +1060,7 @@ window.Dataset = {
         {
           id: "5",
           section: "Success Indicators",
-          text: "Reduce the use of fossil fuels in Barcelona by 21%v",
+          text: "Reduce the use of fossil fuels in Barcelona by ",
           edits: [
             {
               id: "1",
@@ -1347,7 +1347,7 @@ window.Dataset = {
     //     {
     //       id: "5",
     //       section: "Success Indicators",
-    //       text: "Reduce the use of fossil fuels in Barcelona by 21%v"
+    //       text: "Reduce the use of fossil fuels in Barcelona by "
     //     }
     //   ],
     //   appendices: [
