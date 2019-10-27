@@ -86,7 +86,7 @@ h2 {
 }
 
 .card {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
   background-color: $card-background-color;
   -webkit-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
   -moz-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
@@ -197,6 +197,12 @@ h2 {
 .flex-spread {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.flex-spread-end {
+  display: flex;
+  align-items: flex-end;
   justify-content: space-between;
 }
 
