@@ -86,6 +86,7 @@ h2 {
 }
 
 .card {
+  width: 100%;
   margin-bottom: 15px;
   background-color: $card-background-color;
   -webkit-box-shadow: 3px 3px 3px -1px rgba(0,0,0,0.16);
@@ -111,6 +112,10 @@ h2 {
   padding: 10px;
 }
 
+.small-section {
+  margin: 3px;
+}
+
 .small-card-header {
   display: flex;
   justify-content: space-between;
@@ -118,6 +123,11 @@ h2 {
   div + div {
     text-align: right;
   }
+}
+
+.action-section {
+  background-color: #000;
+  color: #fff;
 }
 
 .search-filter {
@@ -199,6 +209,12 @@ h2 {
 .flex-spread-end {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
+}
+
+.flex-spread-start {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
 

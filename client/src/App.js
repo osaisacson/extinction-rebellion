@@ -1,13 +1,13 @@
-import React from "react";
-import "./sass/main.scss";
-import "./dataset.js";
+import React from 'react';
+import './sass/main.scss';
+import './dataset.js';
 
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import AccordionCards from "./components/AccordionCards";
-import Search from "./components/Search";
-import Stories from "./components/Stories";
+import AccordionCards from './components/AccordionCards';
+import Search from './components/Search';
+import Stories from './components/Stories';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       cards: window.Dataset.cards,
       stories: window.Dataset.stories,
-      search: ""
+      search: ''
     };
 
     this.updateSearch = this.updateSearch.bind(this);
@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <div className="App" style={{ background: this.state.backgroundColor }}>
         <header className="section">
-          <img src={"/xr-logo.png"} className="logo" alt="logo" />
+          <img src={'/xr-logo.png'} className="logo" alt="logo" />
 
           {/* Searchfield */}
           <Search
@@ -65,7 +65,7 @@ class App extends React.Component {
           <AccordionCards
             search={this.state.search}
             header="ACT NOW"
-            subheader="Demands that need immediate action. Find how to act on these here."
+            subheader="Upcoming actions for demands. Join by indicating so on the right, you'll get sent a telegram invitation with more info."
             backgroundColor="action-background-color"
             eventKey="0"
             cards={rebelCards}
@@ -87,7 +87,7 @@ class App extends React.Component {
           <AccordionCards
             search={this.state.search}
             header="NEW"
-            subheader="Suggested demands. Get involved and flesh these out here."
+            subheader="Suggested demands. Collaboratively flesh them out here."
             backgroundColor="tweak-background-color"
             eventKey="2"
             cards={suggestedCards}

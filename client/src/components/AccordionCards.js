@@ -128,6 +128,41 @@ export default class AccordionCards extends Component {
                         </Card.Body>
                       </Accordion.Collapse>
                     </Card>
+
+                    {card.actions
+                      ? card.actions.map(action => {
+                          return (
+                            <React.Fragment key={action.id}>
+                              <div className="flex-spread-start">
+                                {/* Fight icon */}
+                                <div className="small-section">
+                                  <FontAwesomeIcon icon={faFistRaised} />
+                                </div>
+                                {/* Collapsible */}
+                                <Card className="action-section">
+                                  {/* Main card header */}
+                                  <Accordion.Toggle
+                                    as={Card.Header}
+                                    eventKey={action.id}
+                                  >
+                                    {action.date}, {action.time}
+                                  </Accordion.Toggle>
+                                  {/* Opened collapsible with full demand details */}
+                                  <Accordion.Collapse eventKey={action.id}>
+                                    <Card.Body>{action.details}</Card.Body>
+                                  </Accordion.Collapse>
+                                </Card>
+                                {/* Joined people */}
+                                <div className="small-section">
+                                  <Voting
+                                    votes={action.joined ? action.joined : 0}
+                                  ></Voting>
+                                </div>
+                              </div>
+                            </React.Fragment>
+                          );
+                        })
+                      : null}
                   </React.Fragment>
                 );
               })}

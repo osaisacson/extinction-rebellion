@@ -6,7 +6,6 @@ export class Voting extends React.Component {
 
     this.state = {
       score: this.props.votes,
-      specialClass: this.props.specialClass,
       acceptedVoteNumber: this.props.acceptedVoteNumber
     };
 
@@ -17,7 +16,7 @@ export class Voting extends React.Component {
   render() {
     return (
       <div className="voting-section">
-        <div className={`icon-section ${this.state.specialClass}`}>
+        <div className="icon-section">
           <button className="fa-icons countUp" onClick={this.increment}>
             <i className="fas fa-caret-up"></i>
           </button>
