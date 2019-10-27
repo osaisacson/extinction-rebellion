@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class Header extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Header extends Component {
   render() {
     return (
       <>
-        <div className="card-section small-card-header">
+        <div className="small-card-header">
           <div className="tight-header">
             <p className="grey">{this.state.issue}</p>
             <p className="grey">By: {this.state.postedBy}</p>
@@ -30,7 +30,7 @@ export default class Header extends Component {
               <p className="bold">
                 {this.state.representative
                   ? this.state.representative
-                  : "To be defined"}
+                  : 'To be defined'}
               </p>
               {this.state.timeSent ? <p>{this.state.timeSent}</p> : null}
             </div>

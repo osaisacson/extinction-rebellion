@@ -28,12 +28,20 @@ export default class AccordionCards extends Component {
   }
 
   render() {
+    let filteredCards = this.state.cards.filter(card => {
+      return card.country.indexOf(this.props.search) !== -1;
+    });
+
+    let noOfCards = !filteredCards
+      ? this.state.noOfCards
+      : filteredCards.length;
+
     return (
       <Card className={this.state.backgroundColor}>
         {/* Accordion header with name of section and number of cards */}
         <Accordion.Toggle as={Card.Header} eventKey={this.state.eventKey}>
           <h2>
-            {this.state.header} ({this.state.noOfCards})
+            {this.state.header} ({noOfCards})
           </h2>
           <div className="tight-header no-margin">
             <p>{this.state.subheader}</p>
@@ -43,14 +51,20 @@ export default class AccordionCards extends Component {
         <Accordion.Collapse eventKey={this.state.eventKey}>
           <Card.Body>
             <Accordion>
-              {this.state.cards.map(card => {
+              {!filteredCards.length ? (
+                <div className="tight-header">
+                  <p className="text-center">(Nothing here yet.)</p>
+                </div>
+              ) : null}
+              {filteredCards.map(card => {
                 return (
                   <React.Fragment key={card.id}>
                     {/* Country and status indicator, shows outside card */}
                     <div className="flex-spread-end">
                       {/* Country */}
                       <div className="header-with-background">
-                        {card.city},<span className="bold">{card.country}</span>
+                        {card.city},{" "}
+                        <span className="bold">{card.country}</span>
                       </div>
 
                       {/* Show voting section if card isSuggested is true */}

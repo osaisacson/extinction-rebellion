@@ -6,6 +6,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
 import AccordionCards from "./components/AccordionCards";
+import Search from "./components/Search";
 import Stories from "./components/Stories";
 
 class App extends React.Component {
@@ -16,6 +17,8 @@ class App extends React.Component {
       stories: window.Dataset.stories,
       search: ""
     };
+
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
   updateSearch(event) {
@@ -43,13 +46,12 @@ class App extends React.Component {
       <div className="App" style={{ background: this.state.backgroundColor }}>
         <header className="section">
           <img src={"/xr-logo.png"} className="logo" alt="logo" />
-          <input
-            className="search-filter"
-            type="text"
-            placeholder="Choose Country"
-            value={this.state.search}
-            onChange={this.updateSearch.bind(this)}
-          ></input>
+
+          {/* Searchfield */}
+          <Search
+            search={this.state.search}
+            updateSearch={this.updateSearch}
+          ></Search>
         </header>
 
         <div className="stories">
@@ -61,8 +63,9 @@ class App extends React.Component {
         <Accordion>
           {/* isRebel cards */}
           <AccordionCards
-            header="DENIED"
-            subheader="Our demands that have been denied in parliament. Find how to protest against this here."
+            search={this.state.search}
+            header="ACT NOW"
+            subheader="Demands that need immediate action. Find how to act on these here."
             backgroundColor="action-background-color"
             eventKey="0"
             cards={rebelCards}
@@ -71,7 +74,8 @@ class App extends React.Component {
 
           {/* isActive cards */}
           <AccordionCards
-            header="DEFINED"
+            search={this.state.search}
+            header="ACTIVE"
             subheader="Demands that have been defined. Vote on their priority and get engaged in campaigns to push them through ASAP."
             backgroundColor="demand-background-color"
             eventKey="1"
@@ -81,7 +85,8 @@ class App extends React.Component {
 
           {/* isSuggested cards */}
           <AccordionCards
-            header="DEFINE"
+            search={this.state.search}
+            header="NEW"
             subheader="Suggested demands. Get involved and flesh these out here."
             backgroundColor="tweak-background-color"
             eventKey="2"
