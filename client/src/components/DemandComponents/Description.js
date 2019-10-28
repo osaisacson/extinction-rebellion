@@ -12,13 +12,9 @@ export default class Description extends Component {
   }
 
   render() {
-    let isDiscussed = this.state.card.isDiscussed;
-
     return (
       <>
         {this.state.card.description.map(description => {
-          let originalText = description.text;
-
           return (
             <div key={description.id}>
               <p className="bold no-margin">{description.section}</p>

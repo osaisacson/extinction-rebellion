@@ -220,6 +220,7 @@ export default class AccordionCards extends Component {
                                 {/* Joined people */}
                                 <div className="small-section">
                                   <Voting
+                                    showAsRebel={true}
                                     votes={action.joined ? action.joined : 0}
                                   ></Voting>
                                 </div>

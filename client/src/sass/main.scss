@@ -69,6 +69,8 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -132,7 +134,7 @@ h2 {
 }
 
 .action-section {
-  flex-grow: 2;
+  max-width: 250px;
 }
 
 .card-stats-section {

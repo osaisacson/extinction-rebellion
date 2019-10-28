@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export class Voting extends React.Component {
   constructor(props) {
@@ -6,7 +6,7 @@ export class Voting extends React.Component {
 
     this.state = {
       score: this.props.votes,
-      acceptedVoteNumber: this.props.acceptedVoteNumber
+      showAsRebel: this.props.showAsRebel
     };
 
     this.increment = this.increment.bind(this);
@@ -16,16 +16,25 @@ export class Voting extends React.Component {
   render() {
     return (
       <div className="voting-section">
-        <div className="icon-section">
-          <button className="fa-icons countUp" onClick={this.increment}>
-            <i className="fas fa-caret-up"></i>
-          </button>
-          <h6>{this.state.score}</h6>
-          <button className="fa-icons countDown" onClick={this.decrement}>
-            <i className="fas fa-caret-down"></i>
-          </button>
-        </div>
-        {/* {this.state.acceptedVoteNumber ? (
+        {this.state.showAsRebel ? (
+          <div className="icon-section">
+            <h6>{this.state.score}</h6>
+            <button className="fa-icons countUp" onClick={this.increment}>
+              <i className="fas fa-caret-up"></i>
+            </button>
+          </div>
+        ) : (
+          <div className="icon-section">
+            <button className="fa-icons countUp" onClick={this.increment}>
+              <i className="fas fa-caret-up"></i>
+            </button>
+            <h6>{this.state.score}</h6>
+            <button className="fa-icons countDown" onClick={this.decrement}>
+              <i className="fas fa-caret-down"></i>
+            </button>
+          </div>
+        )}
+        {/* {this.props.is ? (
           <div className="countdown">/{this.state.acceptedVoteNumber}</div>
         ) : null} */}
       </div>
