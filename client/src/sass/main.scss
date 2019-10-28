@@ -126,6 +126,7 @@ h2 {
 
 .search-filter {
   @extend .inner-shadows-inset;
+  border: .5px solid #fff;
   background: transparent;
   font-size: 12px;
   text-align: center;
@@ -144,8 +145,12 @@ h2 {
 .search-filter:focus,
 .search-filter:hover {
   outline: none;
-  background: rgb(195,223,247);
-  background: $home-color;
+  background-color: rgba(0, 0, 0, .3);
+  opacity: .7;
+}
+
+input::placeholder {
+  color: #fff;
 }
 
 .stories {
