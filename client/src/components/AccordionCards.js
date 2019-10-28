@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import Description from "./DemandComponents/Description";
-import Header from "./DemandComponents/Header";
-import Edits from "./DemandComponents/Edits";
+import Description from './DemandComponents/Description';
+import Header from './DemandComponents/Header';
+import Edits from './DemandComponents/Edits';
 
-import Voting from "./Voting";
+import Voting from './Voting';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
-import Appendices from "./DemandComponents/Appendices";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faFistRaised } from '@fortawesome/free-solid-svg-icons';
+import Appendices from './DemandComponents/Appendices';
 
 export default class AccordionCards extends Component {
   constructor(props) {
@@ -75,7 +75,7 @@ export default class AccordionCards extends Component {
                     <div className="flex-spread-end">
                       {/* Country */}
                       <div className="header-with-background">
-                        {card.city},{" "}
+                        {card.city},{' '}
                         <span className="bold">{card.country}</span>
                       </div>
 
@@ -91,7 +91,7 @@ export default class AccordionCards extends Component {
                       {!this.state.isSuggested && card.status ? (
                         <p
                           className={`pill ${
-                            this.state.isRebel ? "red" : "darkblue"
+                            this.state.isRebel ? 'red' : 'darkblue'
                           }`}
                         >
                           {card.status}
@@ -115,7 +115,6 @@ export default class AccordionCards extends Component {
                         <div
                           className="icon-section"
                           onClick={this.handleAppendiceClick}
-                          eventKey={card.id}
                         >
                           <h6>
                             {card.appendices ? card.appendices.length : 0}
@@ -125,7 +124,6 @@ export default class AccordionCards extends Component {
                         <div
                           className="icon-section"
                           onClick={this.handleEditClick}
-                          eventKey={card.id}
                         >
                           <h6>{card.edits ? card.edits.length : 0}</h6>
                           <FontAwesomeIcon icon={faPen} />
@@ -133,7 +131,6 @@ export default class AccordionCards extends Component {
                         <div
                           className="icon-section"
                           onClick={this.handleRebelClick}
-                          eventKey={card.id}
                         >
                           <h6>{card.actions ? card.actions.length : 0}</h6>
                           <FontAwesomeIcon icon={faFistRaised} />
@@ -150,7 +147,7 @@ export default class AccordionCards extends Component {
                             {this.state.isActive ? (
                               <>
                                 <div className="large-number tight-header">
-                                  <p>Petition No</p>{" "}
+                                  <p>Petition No</p>{' '}
                                   <div>{card.petitionNo}</div>
                                 </div>
                                 <div className="separator"></div>
@@ -159,7 +156,7 @@ export default class AccordionCards extends Component {
                             {this.state.isSuggested ? (
                               <>
                                 <div className="tight-header">
-                                  <p>Being defined. Edit and add below.</p>{" "}
+                                  <p>Being defined. Edit and add below.</p>{' '}
                                 </div>
                                 <div className="separator"></div>
                               </>
