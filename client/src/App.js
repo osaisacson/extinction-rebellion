@@ -1,13 +1,13 @@
-import React from 'react';
-import './sass/main.scss';
-import './dataset.js';
+import React from "react";
+import "./sass/main.scss";
+import "./dataset.js";
 
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
-import AccordionCards from './components/AccordionCards';
-import Search from './components/Search';
-import Stories from './components/Stories';
+import AccordionCards from "./components/AccordionCards";
+import Search from "./components/Search";
+import Stories from "./components/Stories";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class App extends React.Component {
     this.state = {
       cards: window.Dataset.cards,
       stories: window.Dataset.stories,
-      search: ''
+      search: ""
     };
 
     this.updateSearch = this.updateSearch.bind(this);
@@ -45,7 +45,7 @@ class App extends React.Component {
     return (
       <div className="App" style={{ background: this.state.backgroundColor }}>
         <header className="section">
-          <img src={'/xr-logo.png'} className="logo" alt="logo" />
+          <img src={"/xr-logo.png"} className="logo" alt="logo" />
 
           {/* Searchfield */}
           <Search
@@ -54,10 +54,13 @@ class App extends React.Component {
           ></Search>
         </header>
 
-        <div className="stories">
-          {xrFactions.map(story => {
-            return <Stories storycontent={story} key={story.id}></Stories>;
-          })}
+        <div className="story-section stories-background-color">
+          <h2>RECENT ACTIONS</h2>
+          <div className="stories">
+            {xrFactions.map(story => {
+              return <Stories storycontent={story} key={story.id}></Stories>;
+            })}
+          </div>
         </div>
 
         <Accordion>

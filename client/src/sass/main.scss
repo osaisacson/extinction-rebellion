@@ -17,6 +17,10 @@ $collapsible-in-card-background-color: transparent;
 $card-padding: 8px;
 $inside-card-l-r-margin: 8px;
 
+.stories-background-color {
+  background-color: $home-color;
+}
+
 .action-background-color {
   background-color: $action-color !important; //Remove this
 }
@@ -116,6 +120,17 @@ h2 {
   }
 }
 
+.story-section {
+  margin: 50px 0 10px 0;
+
+  h2 {
+    padding-left: $inside-card-l-r-margin;
+    padding-right: $inside-card-l-r-margin;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
 .action-section {
   flex-grow: 2;
 }
@@ -127,7 +142,7 @@ h2 {
 .search-filter {
   @extend .inner-shadows-inset;
   border: .5px solid #fff;
-  background: transparent;
+  background-color: rgba(0, 0, 0, .3);
   font-size: 12px;
   text-align: center;
   border: 0;
@@ -145,7 +160,7 @@ h2 {
 .search-filter:focus,
 .search-filter:hover {
   outline: none;
-  background-color: rgba(0, 0, 0, .3);
+  background: transparent;
   opacity: .7;
 }
 
@@ -156,8 +171,8 @@ input::placeholder {
 .stories {
   @extend .flex-left;
   @extend .section;
-  background-color: $home-color;
-  margin: 30px 0;
+  padding-left: 10px;
+  padding-bottom: 10px;
   overflow: auto;
   white-space: nowrap;
 
@@ -366,49 +381,6 @@ input::placeholder {
   margin-right: 15px;
 }
 
-//COMPONENTS
-
-//Stages
-.stages-section {
-  @extend .flex-left;
-  margin: 6px $inside-card-l-r-margin 2px;
-
-  h6 {
-    font-size: .9rem;
-    color: $secondary-text-color;
-    font-family: "Libre Franklin";
-    margin: 0;
-  }
-
-  .stage {
-    display: flex;
-    align-items: center;
-    font-family: "FontAwesome";
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .stage::after {
-    content: '\f054';
-    color: $secondary-text-color;
-    margin: 0 8px;
-    font-size: 8px;
-  }
-
-  .stage:last-of-type::after {
-    content: "";
-  }
-
-  .stage:last-of-type {
-    h6 {
-      color: $primary-text-color;
-      font-weight: 600;
-
-      &.act {
-        color: red;
-      }
-    }
-  }
-}
 
 //Voting & Comments
 
