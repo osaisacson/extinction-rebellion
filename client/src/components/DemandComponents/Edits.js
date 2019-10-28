@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Edit from "./Edit";
 
-import { faUserEdit } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Edits extends Component {
@@ -11,17 +11,14 @@ export default class Edits extends Component {
     this.state = {
       open: false,
       originalText: this.props.originalText,
-      edits: this.props.edits
+      edits: this.props.edits,
+      section: this.props.section
     };
     this.togglePanel = this.togglePanel.bind(this);
   }
 
   togglePanel(e) {
     this.setState({ open: !this.state.open });
-  }
-
-  componentDidUpdate() {
-    // this.props.onToggle(this.props.index);
   }
 
   render() {
@@ -33,11 +30,11 @@ export default class Edits extends Component {
             onClick={e => this.togglePanel(e)}
             className="collapsible-trigger"
           >
-            <div className="edit">
-              <div>
-                {" "}
+            <div className="edit flex-spread">
+              <h6> {this.state.section}</h6>
+              <div className="icon-section">
                 {this.state.edits.length}
-                <FontAwesomeIcon icon={faUserEdit} />
+                <FontAwesomeIcon icon={faPen} />
               </div>
             </div>
           </div>

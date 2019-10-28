@@ -5,10 +5,15 @@ import Card from "react-bootstrap/Card";
 
 import Description from "./DemandComponents/Description";
 import Header from "./DemandComponents/Header";
+import Edits from "./DemandComponents/Edits";
+
 import Voting from "./Voting";
 
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+import Appendices from "./DemandComponents/Appendices";
 
 export default class AccordionCards extends Component {
   constructor(props) {
@@ -23,8 +28,15 @@ export default class AccordionCards extends Component {
       backgroundColor: this.props.backgroundColor,
       isRebel: this.props.isRebel,
       isActive: this.props.isActive,
-      isSuggested: this.props.isSuggested
+      isSuggested: this.props.isSuggested,
+      showAppendiceSection: false,
+      showEditSection: false,
+      showRebelSection: false
     };
+
+    this.handleAppendiceClick = this.handleAppendiceClick.bind(this);
+    this.handleEditClick = this.handleEditClick.bind(this);
+    this.handleRebelClick = this.handleRebelClick.bind(this);
   }
 
   render() {
@@ -58,7 +70,7 @@ export default class AccordionCards extends Component {
               ) : null}
               {filteredCards.map(card => {
                 return (
-                  <React.Fragment key={card.id}>
+                  <div className="card-wrapper" key={card.id}>
                     {/* Country and status indicator, shows outside card */}
                     <div className="flex-spread-end">
                       {/* Country */}
@@ -93,30 +105,66 @@ export default class AccordionCards extends Component {
                         <h5>{card.title}</h5>
                       </Accordion.Toggle>
 
+                      {/* Section with card stats, appears outside toggle so can use the voting functionality */}
+                      <div className="separator"></div>
+                      <div className="card-stats-section flex-spread">
+                        <div className="flex-left">
+                          <Voting votes={card.votes} />
+                          {/* <FontAwesomeIcon icon={faUserEdit} /> */}
+                        </div>
+                        <div
+                          className="icon-section"
+                          onClick={this.handleAppendiceClick}
+                          eventKey={card.id}
+                        >
+                          <h6>
+                            {card.appendices ? card.appendices.length : 0}
+                          </h6>
+                          <FontAwesomeIcon icon={faBook} />
+                        </div>
+                        <div
+                          className="icon-section"
+                          onClick={this.handleEditClick}
+                          eventKey={card.id}
+                        >
+                          <h6>{card.edits ? card.edits.length : 0}</h6>
+                          <FontAwesomeIcon icon={faPen} />
+                        </div>
+                        <div
+                          className="icon-section"
+                          onClick={this.handleRebelClick}
+                          eventKey={card.id}
+                        >
+                          <h6>{card.actions ? card.actions.length : 0}</h6>
+                          <FontAwesomeIcon icon={faFistRaised} />
+                        </div>
+                      </div>
+
                       {/* Opened collapsible with full demand details */}
                       <Accordion.Collapse eventKey={card.id}>
                         <Card.Body>
                           <div className="separator"></div>
 
                           <div>
-                            {/* show rebel icon if isRebel, and petition nr if isActive*/}
-                            {this.state.isRebel ? (
-                              <div className="large-icon">
-                                <FontAwesomeIcon icon={faFistRaised} />
-                              </div>
-                            ) : null}
+                            {/* Summary section*/}
                             {this.state.isActive ? (
-                              <div className="large-number tight-header">
-                                <p>Petition No</p> <div>{card.petitionNo}</div>
-                              </div>
+                              <>
+                                <div className="large-number tight-header">
+                                  <p>Petition No</p>{" "}
+                                  <div>{card.petitionNo}</div>
+                                </div>
+                                <div className="separator"></div>
+                              </>
                             ) : null}
                             {this.state.isSuggested ? (
-                              <div className="tight-header">
-                                <p>Being defined. Edit and add below.</p>{" "}
-                              </div>
+                              <>
+                                <div className="tight-header">
+                                  <p>Being defined. Edit and add below.</p>{" "}
+                                </div>
+                                <div className="separator"></div>
+                              </>
                             ) : null}
                           </div>
-                          <div className="separator"></div>
                           <Header
                             issue={card.issue}
                             postedBy={card.postedBy}
@@ -129,15 +177,32 @@ export default class AccordionCards extends Component {
                       </Accordion.Collapse>
                     </Card>
 
-                    {card.actions
+                    {/* Show appendice section on click */}
+                    {this.state.showAppendiceSection && card.appendices ? (
+                      <Appendices appendices={card.appendices} />
+                    ) : null}
+
+                    {/* Show edit section on click */}
+                    {this.state.showEditSection && card.description
+                      ? card.description.map(description => {
+                          let originalText = description.text;
+                          let sectionTitle = description.section;
+                          return (
+                            <Edits
+                              edits={description.edits}
+                              originalText={originalText}
+                              section={sectionTitle}
+                            />
+                          );
+                        })
+                      : null}
+
+                    {/* Show action section on click */}
+                    {this.state.showRebelSection && card.actions
                       ? card.actions.map(action => {
                           return (
                             <React.Fragment key={action.id}>
                               <div className="flex-spread-start">
-                                {/* Fight icon */}
-                                <div className="small-section">
-                                  <FontAwesomeIcon icon={faFistRaised} />
-                                </div>
                                 {/* Collapsible */}
                                 <Card className="action-section">
                                   {/* Main card header */}
@@ -163,7 +228,7 @@ export default class AccordionCards extends Component {
                           );
                         })
                       : null}
-                  </React.Fragment>
+                  </div>
                 );
               })}
             </Accordion>
@@ -171,5 +236,29 @@ export default class AccordionCards extends Component {
         </Accordion.Collapse>
       </Card>
     );
+  }
+
+  handleAppendiceClick() {
+    this.setState({
+      showAppendiceSection: true,
+      showRebelSection: false,
+      showEditSection: false
+    });
+  }
+
+  handleEditClick() {
+    this.setState({
+      showAppendiceSection: false,
+      showRebelSection: false,
+      showEditSection: true
+    });
+  }
+
+  handleRebelClick() {
+    this.setState({
+      showAppendiceSection: false,
+      showRebelSection: true,
+      showEditSection: false
+    });
   }
 }
