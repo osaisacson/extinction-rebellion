@@ -1,30 +1,35 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import Description from "./DemandComponents/Description";
-import Header from "./DemandComponents/Header";
-import Edits from "./DemandComponents/Edits";
+import Appendices from './DemandComponents/Appendices';
+import Edits from './DemandComponents/Edits';
+import Description from './DemandComponents/Description';
+import Header from './DemandComponents/Header';
 
-import Voting from "./Voting";
+import Voting from './Voting';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook } from "@fortawesome/free-solid-svg-icons";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
-import Appendices from "./DemandComponents/Appendices";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBook,
+  faQuoteRight,
+  faPen,
+  faFistRaised
+} from '@fortawesome/free-solid-svg-icons';
 
 export default class Demands extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      showDemandSection: false,
       showAppendiceSection: false,
       showEditSection: false,
       showRebelSection: false
     };
 
+    this.handleDemandClick = this.handleDemandClick.bind(this);
     this.handleAppendiceClick = this.handleAppendiceClick.bind(this);
     this.handleEditClick = this.handleEditClick.bind(this);
     this.handleRebelClick = this.handleRebelClick.bind(this);
@@ -37,7 +42,7 @@ export default class Demands extends Component {
         <div className="flex-spread-end">
           {/* Country */}
           <div className="header-with-background">
-            {this.props.card.city},{" "}
+            {this.props.card.city},{' '}
             <span className="bold">{this.props.card.country}</span>
           </div>
 
@@ -51,139 +56,192 @@ export default class Demands extends Component {
           ) : null}
           {/* Status */}
           {!this.props.isSuggested && this.props.card.status ? (
-            <p className={`pill ${this.props.isRebel ? "red" : "darkblue"}`}>
+            <p className={`pill ${this.props.isRebel ? 'red' : 'darkblue'}`}>
               {this.props.card.status}
             </p>
           ) : null}
         </div>
 
         <Card>
-          {/* Main card header */}
-          <Accordion.Toggle as={Card.Header} eventKey={this.props.card.id}>
+          <div className="demand-header">
+            {/* Section with votes, appears outside toggle so can use the voting functionality */}
+            <Voting votes={this.props.card.votes} />
+            {/* Main card header */}
             <h5>{this.props.card.title}</h5>
-          </Accordion.Toggle>
-
-          {/* Section with card stats, appears outside toggle so can use the voting functionality */}
+          </div>
           <div className="separator"></div>
+
+          {/* TRIGGERS */}
           <div className="card-stats-section flex-spread">
-            <div className="flex-left">
-              <Voting votes={this.props.card.votes} />
-              {/* <FontAwesomeIcon icon={faUserEdit} /> */}
-            </div>
-            <div className="icon-section" onClick={this.handleAppendiceClick}>
+            {/* Show full demand */}
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey={`${this.props.card.id}demands`}
+              onClick={this.handleDemandClick}
+            >
+              <FontAwesomeIcon icon={faBook} />
+            </Accordion.Toggle>
+            {/* Show edits */}
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey={`${this.props.card.id}edits`}
+              className="icon-section"
+              onClick={this.handleEditClick}
+            >
+              <h6>
+                {this.props.card.edits ? this.props.card.edits.length : 0}
+              </h6>
+              <FontAwesomeIcon icon={faPen} />
+            </Accordion.Toggle>
+            {/* Show appendices */}
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey={`${this.props.card.id}appendices`}
+              className="icon-section"
+              onClick={this.handleAppendiceClick}
+            >
               <h6>
                 {this.props.card.appendices
                   ? this.props.card.appendices.length
                   : 0}
               </h6>
-              <FontAwesomeIcon icon={faBook} />
-            </div>
-            <div className="icon-section" onClick={this.handleEditClick}>
-              <h6>
-                {this.props.card.edits ? this.props.card.edits.length : 0}
-              </h6>
-              <FontAwesomeIcon icon={faPen} />
-            </div>
-            <div className="icon-section" onClick={this.handleRebelClick}>
+              <FontAwesomeIcon icon={faQuoteRight} />
+            </Accordion.Toggle>
+            {/* Show rebel actions */}
+            <Accordion.Toggle
+              as={Card.Header}
+              eventKey={`${this.props.card.id}rebel`}
+              className="icon-section"
+              onClick={this.handleRebelClick}
+            >
               <h6>
                 {this.props.card.actions ? this.props.card.actions.length : 0}
               </h6>
               <FontAwesomeIcon icon={faFistRaised} />
-            </div>
+            </Accordion.Toggle>
           </div>
 
-          {/* Opened collapsible with full demand details */}
-          <Accordion.Collapse eventKey={this.props.card.id}>
-            <Card.Body>
-              <div className="separator"></div>
+          {/* CONTENT */}
 
-              <div>
-                {/* Summary section*/}
-                {this.props.isActive ? (
-                  <>
-                    <div className="large-number tight-header">
-                      <p>Petition No</p> <div>{this.props.card.petitionNo}</div>
-                    </div>
-                    <div className="separator"></div>
-                  </>
-                ) : null}
-                {this.props.isSuggested ? (
-                  <>
-                    <div className="tight-header">
-                      <p>Being defined. Edit and add below.</p>{" "}
-                    </div>
-                    <div className="separator"></div>
-                  </>
-                ) : null}
-              </div>
-              <Header
-                issue={this.props.card.issue}
-                postedBy={this.props.card.postedBy}
-                representative={this.props.card.representative}
-                timeSent={this.props.card.timeSent}
-              />
-              <div className="separator"></div>
-              <Description card={this.props.card} />
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card>
-
-        {/* Show appendice section on click */}
-        {this.state.showAppendiceSection && this.props.card.appendices ? (
-          <Appendices appendices={this.props.card.appendices} />
-        ) : null}
-
-        {/* Show edit section on click */}
-        {this.state.showEditSection && this.props.card.description
-          ? this.props.card.description.map(description => {
-              let originalText = description.text;
-              let sectionTitle = description.section;
-              return (
-                <Edits
-                  key={description.id}
-                  edits={description.edits}
-                  originalText={originalText}
-                  section={sectionTitle}
-                />
-              );
-            })
-          : null}
-
-        {/* Show action section on click */}
-        {this.state.showRebelSection && this.props.card.actions
-          ? this.props.card.actions.map(action => {
-              return (
-                <React.Fragment key={action.id}>
-                  <div className="flex-spread-start">
-                    {/* Collapsible */}
-                    <Card className="action-section">
-                      {/* Main card header */}
-                      <Accordion.Toggle as={Card.Header} eventKey={action.id}>
-                        {action.date}, {action.time}
-                      </Accordion.Toggle>
-                      {/* Opened collapsible with full demand details */}
-                      <Accordion.Collapse eventKey={action.id}>
-                        <Card.Body>{action.details}</Card.Body>
-                      </Accordion.Collapse>
-                    </Card>
-                    {/* Joined people */}
-                    <div className="small-section">
-                      <Voting
-                        showAsRebel={true}
-                        votes={action.joined ? action.joined : 0}
-                      ></Voting>
-                    </div>
+          {/* Demand section */}
+          {this.state.showDemandSection ? (
+            <>
+              <Accordion.Collapse eventKey={`${this.props.card.id}demands`}>
+                <Card.Body>
+                  <div>
+                    {/* Summary section*/}
+                    {this.props.isActive ? (
+                      <>
+                        <div className="large-number tight-header">
+                          <p>Petition No</p>{' '}
+                          <div>{this.props.card.petitionNo}</div>
+                        </div>
+                        <div className="separator"></div>
+                      </>
+                    ) : null}
+                    {this.props.isSuggested ? (
+                      <>
+                        <div className="tight-header">
+                          <p>Being defined. Edit and add below.</p>{' '}
+                        </div>
+                        <div className="separator"></div>
+                      </>
+                    ) : null}
                   </div>
-                </React.Fragment>
-              );
-            })
-          : null}
+                  <Header
+                    issue={this.props.card.issue}
+                    postedBy={this.props.card.postedBy}
+                    representative={this.props.card.representative}
+                    timeSent={this.props.card.timeSent}
+                  />
+                  <div className="separator"></div>
+                  <Description card={this.props.card} />
+                </Card.Body>
+              </Accordion.Collapse>
+            </>
+          ) : null}
+
+          {/* Appendice section */}
+          {this.state.showAppendiceSection && this.props.card.appendices ? (
+            <>
+              <Accordion.Collapse eventKey={`${this.props.card.id}appendices`}>
+                <Card.Body>
+                  <Appendices appendices={this.props.card.appendices} />
+                </Card.Body>
+              </Accordion.Collapse>
+            </>
+          ) : null}
+
+          {/* Edit section */}
+          {this.state.showEditSection && this.props.card.description ? (
+            <>
+              <Accordion.Collapse eventKey={`${this.props.card.id}edits`}>
+                <Card.Body>
+                  {this.props.card.description.map(description => {
+                    let originalText = description.text;
+                    let sectionTitle = description.section;
+                    return (
+                      <Edits
+                        key={description.id}
+                        edits={description.edits}
+                        originalText={originalText}
+                        section={sectionTitle}
+                      />
+                    );
+                  })}
+                </Card.Body>
+              </Accordion.Collapse>
+            </>
+          ) : null}
+
+          {/* Action section */}
+          {this.state.showRebelSection && this.props.card.actions ? (
+            <>
+              <Accordion.Collapse eventKey={`${this.props.card.id}rebel`}>
+                <Card.Body>
+                  {this.props.card.actions.map(action => {
+                    return (
+                      <React.Fragment key={action.id}>
+                        <div className="action-section tight-header">
+                          <div className="flex-spread">
+                            <div>
+                              <h5>
+                                {action.date}, {action.time}
+                              </h5>
+                              {/* Opened collapsible with full demand details */}
+                              <p>{action.details}</p>
+                            </div>
+                            {/* Joined people */}
+                            <Voting
+                              showAsRebel={true}
+                              votes={action.joined ? action.joined : 0}
+                            ></Voting>
+                          </div>
+                        </div>
+                      </React.Fragment>
+                    );
+                  })}
+                </Card.Body>
+              </Accordion.Collapse>
+            </>
+          ) : null}
+        </Card>
       </div>
     );
   }
 
+  handleDemandClick() {
+    this.setState({
+      showDemandSection: true,
+      showAppendiceSection: false,
+      showRebelSection: false,
+      showEditSection: false
+    });
+  }
+
   handleAppendiceClick() {
     this.setState({
+      showDemandSection: false,
       showAppendiceSection: true,
       showRebelSection: false,
       showEditSection: false
@@ -192,6 +250,7 @@ export default class Demands extends Component {
 
   handleEditClick() {
     this.setState({
+      showDemandSection: false,
       showAppendiceSection: false,
       showRebelSection: false,
       showEditSection: true
@@ -200,6 +259,7 @@ export default class Demands extends Component {
 
   handleRebelClick() {
     this.setState({
+      showDemandSection: false,
       showAppendiceSection: false,
       showRebelSection: true,
       showEditSection: false

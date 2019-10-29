@@ -1,5 +1,8 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+
 export class Voting extends React.Component {
   constructor(props) {
     super(props);
@@ -18,9 +21,9 @@ export class Voting extends React.Component {
       <div className="voting-section">
         {this.state.showAsRebel ? (
           <div className="icon-section">
-            <h6>{this.state.score}</h6>
-            <button className="fa-icons countUp" onClick={this.increment}>
-              <i className="fas fa-caret-up"></i>
+            <button className="fa-icons" onClick={this.increment}>
+              <h6>{this.state.score}</h6>
+              <FontAwesomeIcon className="small-icon" icon={faFistRaised} />
             </button>
           </div>
         ) : (

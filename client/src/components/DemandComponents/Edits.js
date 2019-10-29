@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Edit from './Edit';
+import React, { Component } from "react";
+import Edit from "./Edit";
 
-import { faPen } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class Edits extends Component {
   constructor(props) {

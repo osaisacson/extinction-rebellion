@@ -172,11 +172,11 @@ window.Dataset = {
           date: "26 Dec",
           time: "10:00 - 14:00",
           joined: 392,
-          details: "Meet outside the parliament, bring warm clothes."
+          details: "Meet outside the parliament"
         },
         {
           id: "01",
-          date: "26 Dec",
+          date: "27 Dec",
           time: "14:00 - 18:00",
           joined: 351,
           details: "Bring your bikes, lets block the roads"
@@ -344,11 +344,11 @@ window.Dataset = {
           date: "1 Jan",
           time: "10:00 - 14:00",
           joined: 298,
-          details: "Meet outside the parliament, bring warm clothes."
+          details: "Meet outside the parliament"
         },
         {
           id: "03",
-          date: "1 Jan",
+          date: "2 Jan",
           time: "14:00 - 18:00",
           joined: 216,
           details: "Bring your bikes, lets block the roads"

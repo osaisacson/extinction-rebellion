@@ -108,6 +108,15 @@ h2 {
   margin: 3px;
 }
 
+.demand-header {
+  display: flex;
+  margin: 8px 8px 6px 0;
+
+  .voting-section {
+    width: 350px;
+  }
+}
+
 .card-wrapper {
   margin-bottom: 30px;
 }
@@ -121,6 +130,10 @@ h2 {
   }
 }
 
+.action-section {
+  margin: 20px 0;
+}
+
 .story-section {
   margin: 50px 0 10px 0;
 
@@ -132,12 +145,8 @@ h2 {
   }
 }
 
-.action-section {
-  max-width: 250px;
-}
-
 .card-stats-section {
-  margin-right: 15px;
+  margin: 0 10px;
 }
 
 .search-filter {
@@ -398,16 +407,14 @@ input::placeholder {
     font-size: .9rem;
     font-family: 'Libre Franklin', sans-serif;
     color: $primary-text-color;
-    margin: 0 2px;
+    margin-right: 5px;
+    margin-bottom: 0;
   }
-}
-
-.large-icon {
-  font-size: 2rem;
 }
 
 .fa-icons {
   border: 0;
+  display: flex;
   font-family: 'FontAwesome';
   background-color: transparent;
   
@@ -427,6 +434,14 @@ input::placeholder {
 
 }
 
+.large-icon {
+  font-size: 2rem;
+}
+
+.small-icon {
+  font-size: 1rem;
+}
+
 .countUp {
   padding: 0 15px;
   content: '\f0d8';
@@ -437,17 +452,6 @@ input::placeholder {
   content: '\f0d7';
 }
 
-.actionIcon {
-  content: '\f6de'
-}
-
-.commentIcon {
-  content: '\f075';
-}
-
-.demandIcon {
-  content: '\f02d'
-}
 
 //Bootstrap overrides
 a {
@@ -532,6 +536,7 @@ a:focus {
 }
 
 .card-body {
+  border-top: 1px solid rgba(0,0,0,.125);
   padding: $card-padding;
 }
 
