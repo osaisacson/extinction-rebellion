@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import Edit from "./Edit";
+import React, { Component } from 'react';
+import Edit from './Edit';
 
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Edits extends Component {
   constructor(props) {
@@ -41,7 +41,13 @@ export default class Edits extends Component {
           {this.state.open ? (
             <div className="collapsible-content full-width">
               {this.state.edits.map(edit => {
-                return <Edit edit={edit} originalText={originalText}></Edit>;
+                return (
+                  <Edit
+                    key={edit.id}
+                    edit={edit}
+                    originalText={originalText}
+                  ></Edit>
+                );
               })}
             </div>
           ) : null}
