@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
-import Appendices from './DemandComponents/Appendices';
-import Edits from './DemandComponents/Edits';
-import Description from './DemandComponents/Description';
-import Header from './DemandComponents/Header';
+import Appendices from "./DemandComponents/Appendices";
+import Edits from "./DemandComponents/Edits";
+import Description from "./DemandComponents/Description";
+import Header from "./DemandComponents/Header";
 
-import Voting from './Voting';
+import Voting from "./Voting";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
   faQuoteRight,
   faPen,
   faFistRaised
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 export default class Demands extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ export default class Demands extends Component {
         <div className="flex-spread-end">
           {/* Country */}
           <div className="header-with-background">
-            {this.props.card.city},{' '}
+            {this.props.card.city},{" "}
             <span className="bold">{this.props.card.country}</span>
           </div>
 
@@ -56,7 +56,7 @@ export default class Demands extends Component {
           ) : null}
           {/* Status */}
           {!this.props.isSuggested && this.props.card.status ? (
-            <p className={`pill ${this.props.isRebel ? 'red' : 'darkblue'}`}>
+            <p className={`pill ${this.props.isRebel ? "red" : "darkblue"}`}>
               {this.props.card.status}
             </p>
           ) : null}
@@ -133,7 +133,7 @@ export default class Demands extends Component {
                     {this.props.isActive ? (
                       <>
                         <div className="large-number tight-header">
-                          <p>Petition No</p>{' '}
+                          <p>Petition No</p>{" "}
                           <div>{this.props.card.petitionNo}</div>
                         </div>
                         <div className="separator"></div>
@@ -142,7 +142,7 @@ export default class Demands extends Component {
                     {this.props.isSuggested ? (
                       <>
                         <div className="tight-header">
-                          <p>Being defined. Edit and add below.</p>{' '}
+                          <p>Being defined. Edit and add below.</p>{" "}
                         </div>
                         <div className="separator"></div>
                       </>
@@ -205,9 +205,9 @@ export default class Demands extends Component {
                         <div className="action-section tight-header">
                           <div className="flex-spread">
                             <div>
-                              <h5>
+                              <h6 className="bold">
                                 {action.date}, {action.time}
-                              </h5>
+                              </h6>
                               {/* Opened collapsible with full demand details */}
                               <p>{action.details}</p>
                             </div>
