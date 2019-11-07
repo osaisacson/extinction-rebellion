@@ -3,8 +3,7 @@ import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
-import Appendices from "./DemandComponents/Appendices";
-import Edits from "./DemandComponents/Edits";
+import References from "./DemandComponents/References";
 import Description from "./DemandComponents/Description";
 import Header from "./DemandComponents/Header";
 
@@ -13,9 +12,10 @@ import Voting from "./Voting";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
-  faQuoteRight,
-  faPen,
-  faFistRaised
+  faHashtag,
+  faFistRaised,
+  faCheck,
+  faWrench
 } from "@fortawesome/free-solid-svg-icons";
 
 export default class Demands extends Component {
@@ -24,14 +24,12 @@ export default class Demands extends Component {
 
     this.state = {
       showDemandSection: false,
-      showAppendiceSection: false,
-      showEditSection: false,
+      showReferencesSection: false,
       showRebelSection: false
     };
 
     this.handleDemandClick = this.handleDemandClick.bind(this);
-    this.handleAppendiceClick = this.handleAppendiceClick.bind(this);
-    this.handleEditClick = this.handleEditClick.bind(this);
+    this.handleReferencesClick = this.handleReferencesClick.bind(this);
     this.handleRebelClick = this.handleRebelClick.bind(this);
   }
 
@@ -77,35 +75,31 @@ export default class Demands extends Component {
             <Accordion.Toggle
               as={Card.Header}
               eventKey={`${this.props.card.id}demands`}
+              className="icon-section"
               onClick={this.handleDemandClick}
             >
               <FontAwesomeIcon icon={faBook} />
+              {this.props.card.isActive || this.props.card.isRebel ? (
+                <FontAwesomeIcon
+                  icon={faCheck}
+                  className="green-color icon-margin-left"
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faWrench}
+                  className="tweak-color icon-margin-left"
+                />
+              )}
             </Accordion.Toggle>
-            {/* Show edits */}
+
+            {/* Show references */}
             <Accordion.Toggle
               as={Card.Header}
-              eventKey={`${this.props.card.id}edits`}
+              eventKey={`${this.props.card.id}references`}
               className="icon-section"
-              onClick={this.handleEditClick}
+              onClick={this.handleReferencesClick}
             >
-              <h6>
-                {this.props.card.edits ? this.props.card.edits.length : 0}
-              </h6>
-              <FontAwesomeIcon icon={faPen} />
-            </Accordion.Toggle>
-            {/* Show appendices */}
-            <Accordion.Toggle
-              as={Card.Header}
-              eventKey={`${this.props.card.id}appendices`}
-              className="icon-section"
-              onClick={this.handleAppendiceClick}
-            >
-              <h6>
-                {this.props.card.appendices
-                  ? this.props.card.appendices.length
-                  : 0}
-              </h6>
-              <FontAwesomeIcon icon={faQuoteRight} />
+              <FontAwesomeIcon icon={faHashtag} />
             </Accordion.Toggle>
             {/* Show rebel actions */}
             <Accordion.Toggle
@@ -133,8 +127,8 @@ export default class Demands extends Component {
                     {this.props.isActive ? (
                       <>
                         <div className="large-number tight-header">
-                          <p>Petition No</p>{" "}
-                          <div>{this.props.card.petitionNo}</div>
+                          <p>Petition Id</p>{" "}
+                          <div>{this.props.card.petitionId}</div>
                         </div>
                         <div className="separator"></div>
                       </>
@@ -161,34 +155,19 @@ export default class Demands extends Component {
             </>
           ) : null}
 
-          {/* Appendice section */}
-          {this.state.showAppendiceSection && this.props.card.appendices ? (
+          {/* References section */}
+          {this.state.showReferencesSection && this.props.card.petitionId ? (
             <>
-              <Accordion.Collapse eventKey={`${this.props.card.id}appendices`}>
+              <Accordion.Collapse eventKey={`${this.props.card.id}references`}>
                 <Card.Body>
-                  <Appendices appendices={this.props.card.appendices} />
-                </Card.Body>
-              </Accordion.Collapse>
-            </>
-          ) : null}
-
-          {/* Edit section */}
-          {this.state.showEditSection && this.props.card.description ? (
-            <>
-              <Accordion.Collapse eventKey={`${this.props.card.id}edits`}>
-                <Card.Body>
-                  {this.props.card.description.map(description => {
-                    let originalText = description.text;
-                    let sectionTitle = description.section;
-                    return (
-                      <Edits
-                        key={description.id}
-                        edits={description.edits}
-                        originalText={originalText}
-                        section={sectionTitle}
-                      />
-                    );
-                  })}
+                  <h6>
+                    Add references that relates to this demand by using
+                    <span className="hashtag">
+                      #{this.props.card.petitionId}
+                    </span>
+                    on Twitter. Your post will automatically be pulled here.
+                  </h6>
+                  <References hashtag={this.props.card.petitionId} />
                 </Card.Body>
               </Accordion.Collapse>
             </>
@@ -199,6 +178,10 @@ export default class Demands extends Component {
             <>
               <Accordion.Collapse eventKey={`${this.props.card.id}rebel`}>
                 <Card.Body>
+                  <h6>
+                    Join by indicating so on the right, you'll get sent a
+                    telegram invitation with more info.
+                  </h6>
                   {this.props.card.actions.map(action => {
                     return (
                       <React.Fragment key={action.id}>
@@ -233,36 +216,24 @@ export default class Demands extends Component {
   handleDemandClick() {
     this.setState({
       showDemandSection: true,
-      showAppendiceSection: false,
-      showRebelSection: false,
-      showEditSection: false
+      showReferencesSection: false,
+      showRebelSection: false
     });
   }
 
-  handleAppendiceClick() {
+  handleReferencesClick() {
     this.setState({
       showDemandSection: false,
-      showAppendiceSection: true,
-      showRebelSection: false,
-      showEditSection: false
-    });
-  }
-
-  handleEditClick() {
-    this.setState({
-      showDemandSection: false,
-      showAppendiceSection: false,
-      showRebelSection: false,
-      showEditSection: true
+      showReferencesSection: true,
+      showRebelSection: false
     });
   }
 
   handleRebelClick() {
     this.setState({
       showDemandSection: false,
-      showAppendiceSection: false,
-      showRebelSection: true,
-      showEditSection: false
+      showReferencesSection: false,
+      showRebelSection: true
     });
   }
 }

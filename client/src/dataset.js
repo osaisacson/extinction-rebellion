@@ -14,6 +14,7 @@ window.Dataset = {
     {
       id: "1",
       isRebel: true,
+      petitionId: "xr102",
       country: "Belgium",
       city: "Brussels",
       postedBy: "greyMatter",
@@ -147,25 +148,6 @@ window.Dataset = {
           ]
         }
       ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
-      ],
       actions: [
         {
           id: "00",
@@ -186,6 +168,7 @@ window.Dataset = {
     {
       id: "2",
       isRebel: true,
+      petitionId: "xr104",
       country: "UK",
       city: "London",
       postedBy: "greyMatter",
@@ -319,25 +302,6 @@ window.Dataset = {
           ]
         }
       ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
-      ],
       actions: [
         {
           id: "02",
@@ -358,7 +322,7 @@ window.Dataset = {
     {
       id: "3",
       isActive: true,
-      petitionNo: "0245/2019",
+      petitionId: "xr108",
       country: "Belgium",
       city: "Brussels",
       postedBy: "Michael Grim",
@@ -368,7 +332,7 @@ window.Dataset = {
       representative: "Clara Bow",
       timeSent: "32 days ago",
       status: "In parliament",
-      title: "Ration fossil fuels to a set limit/capita",
+      title: "Ban plastic bags in all central Brussel supermarkets",
       description: [
         {
           id: "1",
@@ -491,31 +455,12 @@ window.Dataset = {
             }
           ]
         }
-      ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
       ]
     },
     {
       id: "4",
       isActive: true,
-      petitionNo: "0531/2019",
+      petitionId: "xr119",
       country: "Sweden",
       city: "Stockholm",
       postedBy: "greyMatter",
@@ -648,31 +593,12 @@ window.Dataset = {
             }
           ]
         }
-      ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
       ]
     },
     {
       id: "5",
       isActive: true,
-      petitionNo: "0288/2019",
+      petitionId: "xr120",
       country: "Belgium",
       city: "Brussels",
       postedBy: "greyMatter",
@@ -805,30 +731,12 @@ window.Dataset = {
             }
           ]
         }
-      ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
       ]
     },
     {
       id: "6",
       isDiscussed: true,
+      petitionId: "xr121",
       country: "Belgium",
       city: "Brussels",
       postedBy: "greyMatter",
@@ -959,30 +867,12 @@ window.Dataset = {
             }
           ]
         }
-      ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
       ]
     },
     {
       id: "7",
       isDiscussed: true,
+      petitionId: "xr124",
       country: "UK",
       city: "London",
       postedBy: "greyMatter",
@@ -1113,25 +1003,6 @@ window.Dataset = {
             }
           ]
         }
-      ],
-      appendices: [
-        {
-          id: "1",
-          title: "Majority of European firms have no CO2 reduction targets",
-          href:
-            "https://www.theguardian.com/environment/2019/feb/19/majority-of-european-firms-have-no-co2-reduction-targets",
-          source: "The Guardian",
-          date: "19 Feb 2019"
-        },
-        {
-          id: "2",
-          title:
-            "Vast majority of CO2 emitting firms will not meet climate targets",
-          href:
-            "https://eandt.theiet.org/content/articles/2019/07/vast-majority-of-co2-emitting-firms-will-not-meet-climate-targets-report-finds/",
-          source: "Engineering & Technology",
-          date: "10 July 2019"
-        }
       ]
     }
 
@@ -1154,7 +1025,7 @@ window.Dataset = {
     //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
     //   affectedRegion: "Belgium",
     //   successIndicators: "c02 reduced by 12% in Belgium",
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "5",
     //       title: "Majority of European firms have no CO2 reduction targets",
@@ -1193,7 +1064,7 @@ window.Dataset = {
     //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in sem nunc. In lorem sem, scelerisque vel mauris in, consectetur blandit lorem. Sed malesuada a leo et tristique. Vestibulum volutpat sem id leo porttitor, id tincidunt mauris dapibus. Phasellus felis ex, faucibus vel auctor ut, rhoncus non tortor. Nulla scelerisque finibus blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet lacinia porta. Vivamus dapibus dapibus tempus. Nunc porta nisl turpis, a euismod sapien tempus non. Pellentesque tempus neque purus, eu semper mauris facilisis a. Nunc suscipit blandit quam, a aliquet libero dignissim at.",
     //   affectedRegion: "Belgium",
     //   successIndicators: "Reduce the use of fossil fuels in Barcelona by 21%",
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "5",
     //       title: "Energy statistics - an overview",
@@ -1225,7 +1096,7 @@ window.Dataset = {
     //   timeSent: "23 days ago",
     //   representative: "Clara Bow",
     //   status: "In parliament",
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "5",
     //       title: "Majority of European firms have no CO2 reduction targets",
@@ -1258,7 +1129,7 @@ window.Dataset = {
     //   timeSent: "16 days ago",
     //   representative: "Maura Grim",
     //   status: "In parliament",
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "5",
     //       title: "Majority of European firms have no CO2 reduction targets",
@@ -1291,7 +1162,7 @@ window.Dataset = {
     //   timeSent: "19 days ago",
     //   representative: "Benjamin Harrods",
     //   status: "In parliament",
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "5",
     //       title: "Majority of European firms have no CO2 reduction targets",
@@ -1382,7 +1253,7 @@ window.Dataset = {
     //       text: "Reduce the use of fossil fuels in Barcelona by "
     //     }
     //   ],
-    //   appendices: [
+    //   references: [
     //     {
     //       id: "1",
     //       title: "Majority of European firms have no CO2 reduction targets",
