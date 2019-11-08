@@ -17,7 +17,7 @@ export default class AccordionCards extends Component {
       noOfCards: this.props.cards.length,
       backgroundColor: this.props.backgroundColor,
       isRebel: this.props.isRebel,
-      isActive: this.props.isActive,
+      isSent: this.props.isSent,
       isSuggested: this.props.isSuggested
     };
   }
@@ -57,7 +57,7 @@ export default class AccordionCards extends Component {
                     key={card.id}
                     card={card}
                     isRebel={this.state.isRebel}
-                    isActive={this.state.isActive}
+                    isSent={this.state.isSent}
                     isSuggested={this.state.isSuggested}
                   ></Demand>
                 );

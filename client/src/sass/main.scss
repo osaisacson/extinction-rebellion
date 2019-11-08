@@ -150,7 +150,9 @@ ul {
 }
 
 .action-section {
+  background-color: $action-color;
   margin: 20px 0;
+  padding: 5px 8px;
 }
 
 .story-section {
@@ -195,6 +197,11 @@ ul {
 
 input::placeholder {
   color: #fff;
+}
+
+.form-group {
+  margin: 0;
+  line-height: .5;
 }
 
 .stories {

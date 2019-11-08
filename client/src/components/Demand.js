@@ -1,22 +1,22 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
 
-import References from "./DemandComponents/References";
-import Description from "./DemandComponents/Description";
-import Header from "./DemandComponents/Header";
+import References from './DemandComponents/References';
+import Description from './DemandComponents/Description';
+import Header from './DemandComponents/Header';
 
-import Voting from "./Voting";
+import Voting from './Voting';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBook,
   faHashtag,
   faFistRaised,
   faCheck,
   faWrench
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
 export default class Demands extends Component {
   constructor(props) {
@@ -40,7 +40,7 @@ export default class Demands extends Component {
         <div className="flex-spread-end">
           {/* Country */}
           <div className="header-with-background">
-            {this.props.card.city},{" "}
+            {this.props.card.city},{' '}
             <span className="bold">{this.props.card.country}</span>
           </div>
 
@@ -54,7 +54,9 @@ export default class Demands extends Component {
           ) : null}
           {/* Status */}
           {!this.props.isSuggested && this.props.card.status ? (
-            <p className={`pill ${this.props.isRebel ? "red" : "darkblue"}`}>
+            <p
+              className={`pill ${this.props.card.isRebel ? 'red' : 'darkblue'}`}
+            >
               {this.props.card.status}
             </p>
           ) : null}
@@ -79,7 +81,7 @@ export default class Demands extends Component {
               onClick={this.handleDemandClick}
             >
               <FontAwesomeIcon icon={faBook} />
-              {this.props.card.isActive || this.props.card.isRebel ? (
+              {this.props.card.isSent ? (
                 <FontAwesomeIcon
                   icon={faCheck}
                   className="green-color icon-margin-left"
@@ -124,19 +126,11 @@ export default class Demands extends Component {
                 <Card.Body>
                   <div>
                     {/* Summary section*/}
-                    {this.props.isActive ? (
-                      <>
-                        <div className="large-number tight-header">
-                          <p>Petition Id</p>{" "}
-                          <div>{this.props.card.petitionId}</div>
-                        </div>
-                        <div className="separator"></div>
-                      </>
-                    ) : null}
+
                     {this.props.isSuggested ? (
                       <>
                         <div className="tight-header">
-                          <p>Being defined. Edit and add below.</p>{" "}
+                          <h6>Being defined. Edit and add below.</h6>
                         </div>
                         <div className="separator"></div>
                       </>
@@ -161,7 +155,7 @@ export default class Demands extends Component {
               <Accordion.Collapse eventKey={`${this.props.card.id}references`}>
                 <Card.Body>
                   <h6>
-                    Add references that relates to this demand by using
+                    Add references that support this demand by using
                     <span className="hashtag">
                       #{this.props.card.petitionId}
                     </span>
@@ -174,36 +168,99 @@ export default class Demands extends Component {
           ) : null}
 
           {/* Action section */}
-          {this.state.showRebelSection && this.props.card.actions ? (
+          {this.state.showRebelSection ? (
             <>
               <Accordion.Collapse eventKey={`${this.props.card.id}rebel`}>
                 <Card.Body>
-                  <h6>
-                    Join by indicating so on the right, you'll get sent a
-                    telegram invitation with more info.
-                  </h6>
-                  {this.props.card.actions.map(action => {
-                    return (
-                      <React.Fragment key={action.id}>
-                        <div className="action-section tight-header">
-                          <div className="flex-spread">
-                            <div>
-                              <h6 className="bold">
-                                {action.date}, {action.time}
-                              </h6>
-                              {/* Opened collapsible with full demand details */}
-                              <p>{action.details}</p>
+                  {this.props.card.actions ? (
+                    <>
+                      <h6>
+                        Join by indicating so on the right, you'll get sent a
+                        telegram invitation with more info.
+                      </h6>
+                      {this.props.card.actions.map(action => {
+                        return (
+                          <React.Fragment key={action.id}>
+                            <div className="action-section tight-header">
+                              <div className="flex-spread">
+                                <div>
+                                  <h6 className="bold">
+                                    {action.date}, {action.time}
+                                  </h6>
+                                  {/* Opened collapsible with full demand details */}
+                                  <p>{action.details}</p>
+                                </div>
+                                {/* Joined people */}
+                                <Voting
+                                  showAsRebel={true}
+                                  votes={action.joined ? action.joined : 0}
+                                ></Voting>
+                              </div>
                             </div>
-                            {/* Joined people */}
-                            <Voting
-                              showAsRebel={true}
-                              votes={action.joined ? action.joined : 0}
-                            ></Voting>
-                          </div>
-                        </div>
-                      </React.Fragment>
-                    );
-                  })}
+                          </React.Fragment>
+                        );
+                      })}
+                    </>
+                  ) : null}
+                  {!this.props.card.actions ? (
+                    <>
+                      <br></br>
+                      <h6>There are no actions yet, start one below</h6>
+                    </>
+                  ) : null}
+                  <div className="separator"></div>
+                  <form action="/" method="post">
+                    <div className="flex-spread">
+                      <div className="form-group">
+                        <label htmlFor="date"></label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="date"
+                          placeholder="Date"
+                        />
+                      </div>
+                      <div className="form-group">
+                        <label htmlFor="time"></label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="time"
+                          placeholder="Time"
+                        />
+                      </div>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="where"></label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="where"
+                        placeholder="Where"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="description"></label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="notes"
+                        placeholder="Notes"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="telegram"></label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="telegram"
+                        placeholder="Telegram"
+                      />
+                    </div>
+                  </form>
+                  <br></br>
+                  <h5>Add new action</h5>
+                  <br></br>
                 </Card.Body>
               </Accordion.Collapse>
             </>

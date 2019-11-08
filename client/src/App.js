@@ -38,7 +38,7 @@ class App extends React.Component {
     });
 
     // Define subsets of main card set
-    let activeCards = filteredCards.filter(card => card.isActive);
+    let sentCards = filteredCards.filter(card => card.isSent);
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
     let rebelCards = filteredCards.filter(card => card.isRebel);
 
@@ -64,26 +64,15 @@ class App extends React.Component {
         </div>
 
         <Accordion>
-          {/* isRebel cards */}
+          {/* isSent cards */}
           <AccordionCards
             search={this.state.search}
-            header="ACT NOW"
-            subheader="Upcoming actions for demands. Join by indicating so on the right, you'll get sent a telegram invitation with more info."
+            header="DEMANDS"
+            subheader="Active demands that have been sent to parliament. Vote on their priority and join actions to push them through ASAP."
             backgroundColor="action-background-color"
             eventKey="0"
-            cards={rebelCards}
-            isRebel={true}
-          ></AccordionCards>
-
-          {/* isActive cards */}
-          <AccordionCards
-            search={this.state.search}
-            header="ACTIVE"
-            subheader="Demands that have been defined. Vote on their priority and get engaged in campaigns to push them through ASAP."
-            backgroundColor="demand-background-color"
-            eventKey="1"
-            cards={activeCards}
-            isActive={true}
+            cards={sentCards}
+            isSent={true}
           ></AccordionCards>
 
           {/* isSuggested cards */}
@@ -92,7 +81,7 @@ class App extends React.Component {
             header="NEW"
             subheader="Suggested demands. Collaboratively flesh them out here."
             backgroundColor="tweak-background-color"
-            eventKey="2"
+            eventKey="1"
             cards={suggestedCards}
             isSuggested={true}
           ></AccordionCards>
@@ -100,10 +89,10 @@ class App extends React.Component {
 
         {/* Add new card */}
         <Card className="add-background-color">
-          <Accordion.Toggle as={Card.Header} eventKey="3">
+          <Accordion.Toggle as={Card.Header} eventKey="2">
             <h2>ADD +</h2>
           </Accordion.Toggle>
-          <Accordion.Collapse eventKey="3">
+          <Accordion.Collapse eventKey="2">
             <Card.Body>
               <Accordion>
                 <h4>Functionality to add a new demand goes here</h4>
