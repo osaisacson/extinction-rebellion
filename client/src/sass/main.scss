@@ -199,6 +199,10 @@ input::placeholder {
   color: #fff;
 }
 
+input[type=checkbox] {
+  margin-right: 5px;
+}
+
 .form-group {
   margin: 0;
   line-height: .5;
@@ -439,6 +443,14 @@ input::placeholder {
     color: $primary-text-color;
     margin-right: 5px;
     margin-bottom: 0;
+  }
+
+  &.sign {
+    margin-top: 5px;
+    h6 {
+      margin-left: 10px;
+      margin-right: 8px;
+    }
   }
 }
 

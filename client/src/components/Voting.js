@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFistRaised } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFistRaised, faPenFancy } from '@fortawesome/free-solid-svg-icons';
 
 export class Voting extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      score: this.props.votes,
-      showAsRebel: this.props.showAsRebel
+      score: this.props.votes
     };
 
     this.increment = this.increment.bind(this);
@@ -19,12 +18,17 @@ export class Voting extends React.Component {
   render() {
     return (
       <div className="voting-section">
-        {this.state.showAsRebel ? (
+        {this.props.showAsRebel ? (
           <div className="icon-section">
             <button className="fa-icons" onClick={this.increment}>
               <h6>{this.state.score}</h6>
               <FontAwesomeIcon className="small-icon" icon={faFistRaised} />
             </button>
+          </div>
+        ) : this.props.isSent ? (
+          <div className="icon-section sign">
+            <h6>{this.state.score}</h6>
+            <FontAwesomeIcon icon={faPenFancy} onClick={this.increment} />
           </div>
         ) : (
           <div className="icon-section">
@@ -37,9 +41,6 @@ export class Voting extends React.Component {
             </button>
           </div>
         )}
-        {/* {this.props.is ? (
-          <div className="countdown">/{this.state.acceptedVoteNumber}</div>
-        ) : null} */}
       </div>
     );
   }

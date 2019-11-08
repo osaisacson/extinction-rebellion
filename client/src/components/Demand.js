@@ -68,7 +68,10 @@ export default class Demands extends Component {
         <Card>
           <div className="demand-header">
             {/* Section with votes, appears outside toggle so can use the voting functionality */}
-            <Voting votes={this.props.card.votes} />
+            <Voting
+              votes={this.props.card.votes}
+              isSent={this.props.card.isSent}
+            />
             {/* Main card header */}
             <h5>{this.props.card.title}</h5>
           </div>
@@ -222,6 +225,15 @@ export default class Demands extends Component {
                     </>
                   ) : null}
                   <div className="separator"></div>
+                  <br></br>
+                  <h6>
+                    Create new action. Handle all communication for this action
+                    via telegram, so start by{' '}
+                    <a href="https://blog.en.uptodown.com/how-to-create-groups-and-channels-telegram/">
+                      creating a group on telegram
+                    </a>{' '}
+                    and adding the name of it below.
+                  </h6>
                   <form action="/" method="post">
                     <div className="flex-spread">
                       <div className="form-group">
