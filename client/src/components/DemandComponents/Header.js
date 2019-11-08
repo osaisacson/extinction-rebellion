@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class Header extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      issue: this.props.issue,
-      postedBy: this.props.postedBy,
-      representative: this.props.representative,
-      timeSent: this.props.timeSent
-    };
+    this.state = {};
   }
 
   render() {
@@ -17,22 +12,21 @@ export default class Header extends Component {
       <>
         <div className="small-card-header">
           <div className="tight-header">
-            <p className="grey">{this.state.issue}</p>
-            <p className="grey">By: {this.state.postedBy}</p>
+            <p className="grey">By: {this.props.postedBy}</p>
           </div>
           <div>
             <div className="tight-header">
-              {this.state.timeSent ? (
+              {this.props.timeSent ? (
                 <p>Sent to representative</p>
               ) : (
                 <p>Responsible representative</p>
               )}
               <p className="bold">
-                {this.state.representative
-                  ? this.state.representative
-                  : 'To be defined'}
+                {this.props.representative
+                  ? this.props.representative
+                  : "To be defined"}
               </p>
-              {this.state.timeSent ? <p>{this.state.timeSent}</p> : null}
+              {this.props.timeSent ? <p>{this.props.timeSent}</p> : null}
             </div>
           </div>
         </div>

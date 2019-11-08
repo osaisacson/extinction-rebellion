@@ -9,9 +9,12 @@ import Header from './DemandComponents/Header';
 
 import Voting from './Voting';
 
+import { TwitterHashtagButton } from 'react-twitter-embed';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faBook,
+  faBookOpen,
   faHashtag,
   faFistRaised,
   faCheck,
@@ -80,17 +83,23 @@ export default class Demands extends Component {
               className="icon-section"
               onClick={this.handleDemandClick}
             >
-              <FontAwesomeIcon icon={faBook} />
               {this.props.card.isSent ? (
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className="green-color icon-margin-left"
-                />
+                <>
+                  <FontAwesomeIcon icon={faBook} />
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    className="green-color icon-margin-left"
+                  />
+                </>
               ) : (
-                <FontAwesomeIcon
-                  icon={faWrench}
-                  className="tweak-color icon-margin-left"
-                />
+                <>
+                  <FontAwesomeIcon icon={faBookOpen} />
+
+                  <FontAwesomeIcon
+                    icon={faWrench}
+                    className="tweak-color icon-margin-left"
+                  />
+                </>
               )}
             </Accordion.Toggle>
 
@@ -137,7 +146,6 @@ export default class Demands extends Component {
                     ) : null}
                   </div>
                   <Header
-                    issue={this.props.card.issue}
                     postedBy={this.props.card.postedBy}
                     representative={this.props.card.representative}
                     timeSent={this.props.card.timeSent}
@@ -155,11 +163,16 @@ export default class Demands extends Component {
               <Accordion.Collapse eventKey={`${this.props.card.id}references`}>
                 <Card.Body>
                   <h6>
-                    Add references that support this demand by using
-                    <span className="hashtag">
-                      #{this.props.card.petitionId}
-                    </span>
-                    on Twitter. Your post will automatically be pulled here.
+                    To add references that support this demand:
+                    <TwitterHashtagButton
+                      tag={this.props.card.petitionId}
+                      options={{
+                        size: 'large',
+                        screenName: null,
+                        buttonHashtag: null
+                      }}
+                    />
+                    Your tweet will automatically be pulled into the feed below.
                   </h6>
                   <References hashtag={this.props.card.petitionId} />
                 </Card.Body>
