@@ -40,7 +40,6 @@ class App extends React.Component {
     // Define subsets of main card set
     let sentCards = filteredCards.filter(card => card.isSent);
     let suggestedCards = filteredCards.filter(card => card.isDiscussed);
-    let rebelCards = filteredCards.filter(card => card.isRebel);
 
     return (
       <div className="App" style={{ background: this.state.backgroundColor }}>
