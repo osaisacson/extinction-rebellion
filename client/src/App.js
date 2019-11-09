@@ -95,7 +95,7 @@ class App extends React.Component {
                 <Accordion>
                   <h6>
                     Start a new demand. It does not have to be perfect, we can
-                    all work on making it great together afterwards.
+                    make it great together afterwards.
                   </h6>
 
                   <form action="/" method="post">
