@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import "./../sass/main.scss";
-import "../dataset.js";
-import Accordion from "react-bootstrap/Accordion";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import './../sass/main.scss';
+import '../dataset.js';
+import Accordion from 'react-bootstrap/Accordion';
+import { Link } from 'react-router-dom';
 
-import AccordionCards from "./AccordionCards";
+import AccordionCards from './AccordionCards';
 
-import Search from "./Search";
-import Stories from "./Stories";
+import Search from './Search';
+import Stories from './Stories';
 
 export default class Demands extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Demands extends Component {
     this.state = {
       cards: window.Dataset.cards,
       stories: window.Dataset.stories,
-      search: ""
+      search: ''
     };
 
     this.updateSearch = this.updateSearch.bind(this);
@@ -81,11 +81,12 @@ export default class Demands extends Component {
           ></AccordionCards>
 
           {/* Add new card */}
-          <div className="add-demand add-background-color">
-            <h2>
-              <Link to="/demand/add">ADD +</Link>
-            </h2>
-          </div>
+          <Link to="/demand/add">
+            {' '}
+            <div className="add-demand">
+              <h2>ADD +</h2>
+            </div>
+          </Link>
         </Accordion>
       </div>
     );

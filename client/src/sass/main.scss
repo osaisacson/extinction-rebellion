@@ -138,6 +138,16 @@ ul {
   }
 }
 
+.add-demand {
+  @extend .add-background-color;
+  padding: 7px;
+  
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 .card-wrapper {
   margin-bottom: 30px;
 }
@@ -299,6 +309,12 @@ input[type=checkbox] {
   display: flex;
   align-items: center;
   justify-content: left;
+}
+
+.flex-right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
 }
 
 .flex-column {
@@ -521,6 +537,16 @@ input[type=checkbox] {
 a {
   color: #666;
   transition: .5s;
+
+  &:hover, 
+   :active, 
+   :focus {
+    text-decoration: none;
+  }
+}
+
+.list-group-item {
+  background-color: $card-background-color;
 }
 
 button:focus {

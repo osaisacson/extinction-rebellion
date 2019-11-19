@@ -10,7 +10,7 @@ export default class DemandAdd extends Component {
   }
   render() {
     return (
-      <Card className="add-background-color">
+      <Card className="add-demand">
         <h6>
           Start a new demand. It does not have to be perfect, we can make it
           great together afterwards.
@@ -152,10 +152,9 @@ export default class DemandAdd extends Component {
             anything.
           </p>
           <input
-            className="form-input"
+            className="form-input tweak-background-color btn float-right"
             type="submit"
             value="Add new demand"
-            className="btn"
           />
         </form>
         <br></br>
