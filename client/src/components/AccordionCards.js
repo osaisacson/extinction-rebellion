@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
-import Demand from "./Demand";
+import DemandDetail from "./DemandDetail";
 
 export default class AccordionCards extends Component {
   constructor(props) {
@@ -53,13 +53,13 @@ export default class AccordionCards extends Component {
               ) : null}
               {filteredCards.map(card => {
                 return (
-                  <Demand
+                  <DemandDetail
                     key={card.id}
                     card={card}
                     isRebel={this.state.isRebel}
                     isSent={this.state.isSent}
                     isSuggested={this.state.isSuggested}
-                  ></Demand>
+                  ></DemandDetail>
                 );
               })}
             </Accordion>

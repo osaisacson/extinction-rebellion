@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
+import Accordion from "react-bootstrap/Accordion";
+import Card from "react-bootstrap/Card";
 
-import References from './DemandComponents/References';
-import Description from './DemandComponents/Description';
-import Header from './DemandComponents/Header';
+import References from "./DemandComponents/References";
+import Description from "./DemandComponents/Description";
+import Header from "./DemandComponents/Header";
 
-import Voting from './Voting';
+import Voting from "./Voting";
 
-import { TwitterHashtagButton } from 'react-twitter-embed';
+import { TwitterHashtagButton } from "react-twitter-embed";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
   faBookOpen,
@@ -19,9 +19,9 @@ import {
   faFistRaised,
   faCheck,
   faWrench
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
-export default class Demands extends Component {
+export default class DemandDetail extends Component {
   constructor(props) {
     super(props);
 
@@ -43,7 +43,7 @@ export default class Demands extends Component {
         <div className="flex-spread-end">
           {/* Country */}
           <div className="header-with-background">
-            {this.props.card.city},{' '}
+            {this.props.card.city},{" "}
             <span className="bold">{this.props.card.country}</span>
           </div>
 
@@ -58,7 +58,7 @@ export default class Demands extends Component {
           {/* Status */}
           {!this.props.isSuggested && this.props.card.status ? (
             <p
-              className={`pill ${this.props.card.isRebel ? 'red' : 'darkblue'}`}
+              className={`pill ${this.props.card.isRebel ? "red" : "darkblue"}`}
             >
               {this.props.card.status}
             </p>
@@ -170,7 +170,7 @@ export default class Demands extends Component {
                     <TwitterHashtagButton
                       tag={this.props.card.petitionId}
                       options={{
-                        size: 'large',
+                        size: "large",
                         screenName: null,
                         buttonHashtag: null
                       }}
@@ -228,10 +228,10 @@ export default class Demands extends Component {
                   <br></br>
                   <h6>
                     Create new action. Handle all communication for this action
-                    via telegram, so start by{' '}
+                    via telegram, so start by{" "}
                     <a href="https://blog.en.uptodown.com/how-to-create-groups-and-channels-telegram/">
                       creating a group on telegram
-                    </a>{' '}
+                    </a>{" "}
                     and adding the name of it below.
                   </h6>
                   <form action="/" method="post">
