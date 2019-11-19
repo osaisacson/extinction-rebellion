@@ -131,7 +131,9 @@ ul {
 
 .demand-header {
   display: flex;
-  margin: 8px 8px 6px 0;
+  margin-bottom: -6px;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.2);
 
   .voting-section {
     width: 350px;
