@@ -42,5 +42,9 @@
   "stories": {
     "dataSource": "db",
     "public": true
+  },
+  "actions": {
+    "dataSource": "db",
+    "public": true
   }
 }
