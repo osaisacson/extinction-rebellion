@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Voting from './../Voting';
+import React, { Component } from "react";
+import Voting from "../Voting";
 
 export default class Edit extends Component {
   constructor(props) {
@@ -37,12 +37,12 @@ export default class Edit extends Component {
             <div className="edit flex-spread">
               <div className="tight-header">
                 <p className="grey-color">
-                  {this.state.edit.date ? this.state.edit.date : 'No date'}
+                  {this.state.edit.date ? this.state.edit.date : "No date"}
                 </p>
                 <p className="bold margin-bottom-10px">
                   "{this.state.edit.title}"
                 </p>
-                <p>{this.state.edit.name ? this.state.edit.name : 'No name'}</p>
+                <p>{this.state.edit.name ? this.state.edit.name : "No name"}</p>
               </div>
             </div>
           </div>
@@ -59,7 +59,7 @@ export default class Edit extends Component {
                   <p className="bold">Edit:</p>
                   <p className="changes">{this.state.edit.edit}</p>
                 </div>
-              </div>{' '}
+              </div>{" "}
             </div>
           ) : null}
         </div>
