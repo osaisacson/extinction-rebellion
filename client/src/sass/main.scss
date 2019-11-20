@@ -103,6 +103,11 @@ h2 {
   font-weight: 800;
 }
 
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   padding-inline-start: 0;
 }
@@ -202,10 +207,13 @@ ul {
 }
 
 .demand-header {
-  display: flex;
   margin-bottom: -6px;
   padding: 8px;
   background-color: rgba(255, 255, 255, 0.2);
+
+  h6 {
+    font-size: .8rem;
+  }
 
   .voting-section {
     width: 350px;
@@ -229,16 +237,32 @@ ul {
 .small-card-header {
   display: flex;
   justify-content: space-between;
-
-  div + div {
-    text-align: right;
-  }
 }
 
 .action-section {
   background-color: $action-color;
   margin: 20px 0;
   padding: 5px 8px;
+}
+
+.rebel-card {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+
+  .rebel-content {
+    @extend .action-background-color;
+    padding: 7px;
+  }
+
+  .icon-section {
+    float: right;
+  }
+
+  .btn-icon {
+    font-size: 1.6rem;
+    background-color: $action-color;
+  }
 }
 
 .story-section {
@@ -477,12 +501,6 @@ input[type=checkbox] {
   }
 }
 
-.header-with-background {
-  background: transparent;
-  padding-left: 6px;
-  font-size: 12px;
-}
-
 .tight-header {
   p {
     font-size: 12px;
@@ -492,13 +510,14 @@ input[type=checkbox] {
 }
 
 .pill {
+  border-radius: 2px;
   padding: 2px 4px;
-  margin: 0;
-  font-size: 11px;
+  margin-top: -11px;
+  margin-left: -10px;
+  font-size: 9px;
   font-weight: 600;
   color: #fff;
   width: fit-content;
-  float: right;
 
   &.red {
     background-color: red;
@@ -548,18 +567,9 @@ input[type=checkbox] {
 
   h6 {
     font-size: .9rem;
+    margin: 0 6px;
     font-family: 'Libre Franklin', sans-serif;
     color: $primary-text-color;
-    margin-right: 5px;
-    margin-bottom: 0;
-  }
-
-  &.sign {
-    margin-top: 5px;
-    h6 {
-      margin-left: 10px;
-      margin-right: 8px;
-    }
   }
 }
 
@@ -567,16 +577,33 @@ input[type=checkbox] {
   margin-left: 3px;
 }
 
+.btn-icon {
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: 2px 2px 0 0;
+  height: 30px !important; //font awesome override
+  width: 30px !important; //font awesome override
+  padding: 5px;
+  cursor: pointer;
+
+  &:hover,
+  :active,
+  :focus {
+    color: red;
+    transform: scale(1.1);
+    transition-duration: .2s;
+  }
+}
+
 .fa-icons {
   border: 0;
   display: flex;
+  padding: 0;
+  align-items: center;
   font-family: 'FontAwesome';
   background-color: transparent;
   
   * {
     color: $primary-text-color;
-    font-size: 1.5rem;
-    font-style: normal;
     transition: 0.2s;
   }
 
@@ -588,25 +615,6 @@ input[type=checkbox] {
   }
 
 }
-
-.large-icon {
-  font-size: 2rem;
-}
-
-.small-icon {
-  font-size: 1rem;
-}
-
-.countUp {
-  padding: 0 15px;
-  content: '\f0d8';
-}
-
-.countDown {
-  padding: 0 15px;
-  content: '\f0d7';
-}
-
 
 //Bootstrap overrides
 a {
@@ -667,7 +675,6 @@ a:focus {
   border: 0;
 
   h5 {
-    text-align: -webkit-right;
     font-size: 1.1rem;
     font-weight: 600;
     padding: 0;
@@ -681,23 +688,15 @@ a:focus {
   border-bottom: 0;
   cursor: pointer;
 
-  i {
-    transition: 1s;
-  }
+  .svg-inline--fa {
+    transition: .5s;
 
-  i:hover,
-  i:active,
-  i:focus {
-    color: red;
-  }
-}
-
-.card-header:hover,
-.card-header:focus,
-.card-header.active {
-  
-  i {
-    color: red;
+    &:hover,
+    &:active,
+    &:focus,
+    &.active {
+      color: red;
+    }
   }
 }
 

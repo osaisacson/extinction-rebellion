@@ -1,7 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFistRaised, faPenFancy } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFistRaised,
+  faPenFancy,
+  faCaretUp,
+  faCaretDown
+} from "@fortawesome/free-solid-svg-icons";
 
 export class Voting extends React.Component {
   constructor(props) {
@@ -22,23 +27,31 @@ export class Voting extends React.Component {
           <div className="icon-section">
             <button className="fa-icons" onClick={this.increment}>
               <h6>{this.state.score}</h6>
-              <FontAwesomeIcon className="small-icon" icon={faFistRaised} />
+              <FontAwesomeIcon className="btn-icon" icon={faFistRaised} />
             </button>
           </div>
         ) : this.props.isSent ? (
-          <div className="icon-section sign">
+          <div className="icon-section">
             <h6>{this.state.score}</h6>
-            <FontAwesomeIcon icon={faPenFancy} onClick={this.increment} />
+            <FontAwesomeIcon
+              className="btn-icon"
+              icon={faPenFancy}
+              onClick={this.increment}
+            />
           </div>
         ) : (
           <div className="icon-section">
-            <button className="fa-icons countUp" onClick={this.increment}>
-              <i className="fas fa-caret-up"></i>
-            </button>
+            <FontAwesomeIcon
+              className="btn-icon"
+              icon={faCaretUp}
+              onClick={this.increment}
+            />
             <h6>{this.state.score}</h6>
-            <button className="fa-icons countDown" onClick={this.decrement}>
-              <i className="fas fa-caret-down"></i>
-            </button>
+            <FontAwesomeIcon
+              className="btn-icon"
+              icon={faCaretDown}
+              onClick={this.decrement}
+            />
           </div>
         )}
       </div>

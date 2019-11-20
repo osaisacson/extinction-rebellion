@@ -39,39 +39,27 @@ export default class DemandDetail extends Component {
   render() {
     return (
       <div className="card-wrapper" key={this.props.card.id}>
-        {/* Country and status indicator, shows outside card */}
-        <div className="flex-spread-end">
-          {/* Country */}
-          <div className="header-with-background">
-            {this.props.card.city},{" "}
-            <span className="bold">{this.props.card.country}</span>
-          </div>
-
-          {/* Show voting section if card isSuggested is true */}
-          {this.props.isSuggested ? (
-            <>
-              <div className="large-icon">
-                <Voting votes={this.props.card.votes} />
-              </div>
-            </>
-          ) : null}
-          {/* Status */}
-          {!this.props.isSuggested && this.props.card.status ? (
-            <p
-              className={`pill ${this.props.card.isRebel ? "red" : "darkblue"}`}
-            >
-              {this.props.card.status}
-            </p>
-          ) : null}
-        </div>
+        {/* Section with votes, appears outside toggle so can use the voting functionality */}
+        <Voting votes={this.props.card.votes} isSent={this.props.card.isSent} />
 
         <Card>
           <div className="demand-header">
-            {/* Section with votes, appears outside toggle so can use the voting functionality */}
-            <Voting
-              votes={this.props.card.votes}
-              isSent={this.props.card.isSent}
-            />
+            {/* Status */}
+            {!this.props.isSuggested && this.props.card.status ? (
+              <p
+                className={`pill ${
+                  this.props.card.isRebel ? "red" : "darkblue"
+                }`}
+              >
+                {this.props.card.status}
+              </p>
+            ) : null}
+            {/* Country */}
+            <h6>
+              {this.props.card.city},{" "}
+              <span className="bold">{this.props.card.country}</span>
+            </h6>
+
             {/* Main card header */}
             <h5>{this.props.card.title}</h5>
           </div>
@@ -196,24 +184,21 @@ export default class DemandDetail extends Component {
                       </h6>
                       {this.props.card.actions.map(action => {
                         return (
-                          <React.Fragment key={action.id}>
-                            <div className="action-section tight-header">
-                              <div className="flex-spread">
-                                <div>
-                                  <h6 className="bold">
-                                    {action.date}, {action.time}
-                                  </h6>
-                                  {/* Opened collapsible with full demand details */}
-                                  <p>{action.details}</p>
-                                </div>
-                                {/* Joined people */}
-                                <Voting
-                                  showAsRebel={true}
-                                  votes={action.joined ? action.joined : 0}
-                                ></Voting>
+                          <div className="rebel-card" key={action.id}>
+                            {/* Joined people */}
+                            <Voting
+                              showAsRebel={true}
+                              votes={action.joined ? action.joined : 0}
+                            ></Voting>
+                            <div className="rebel-content">
+                              <div>
+                                <h6 className="bold">
+                                  {action.date}, {action.time}
+                                </h6>
+                                <h6>{action.details}</h6>
                               </div>
                             </div>
-                          </React.Fragment>
+                          </div>
                         );
                       })}
                     </>

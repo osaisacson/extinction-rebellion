@@ -34,7 +34,7 @@ export default class Edits extends Component {
               <h6> {this.state.section}</h6>
               <div className="icon-section">
                 {this.state.edits.length}
-                <FontAwesomeIcon icon={faPen} />
+                <FontAwesomeIcon className="btn-icon" icon={faPen} />
               </div>
             </div>
           </div>
