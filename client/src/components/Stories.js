@@ -18,9 +18,10 @@ export default class Stories extends Component {
 
   getImage(city) {
     axios
-      .get("https://api.unsplash.com/photos/random", {
+      .get("https://api.unsplash.com/search/photos", {
         params: { query: city },
-        count: 1,
+        page: 1,
+        per_page: 1,
         headers: {
           Authorization:
             "Client-ID cb32c91579c47c9f70fd331095157ba5134b18d039ce6980b4403f3d8a9b6000"
@@ -28,27 +29,28 @@ export default class Stories extends Component {
       })
       .then(response => {
         this.setState({
-          img: response.data.urls.small,
+          img: response.data.results[0].urls.small,
           isLoading: false
         });
       });
   }
 
   render() {
-    const { isLoading } = this.state;
-
     return (
-      <>
-        {!isLoading ? (
-          <div className="story">
-            <div className="mask">
-              <img src={this.state.img} alt="img"></img>
-            </div>
-            <h5>{this.props.city}</h5>
-            <h5>{this.props.country}</h5>
-          </div>
-        ) : null}
-      </>
+      <div className="story">
+        <div className="mask">
+          <img
+            src={
+              this.state.img
+                ? this.state.img
+                : "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+            }
+            alt="img"
+          ></img>
+        </div>
+        <h5>{this.props.city}</h5>
+        <h5>{this.props.country}</h5>
+      </div>
     );
   }
 }

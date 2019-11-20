@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
@@ -26,6 +27,9 @@ export default class DemandDetail extends Component {
     super(props);
 
     this.state = {
+      isLoading: true,
+      actions: [],
+      currentDemandId: this.props.card.id,
       showDemandSection: false,
       showReferencesSection: false,
       showRebelSection: false
@@ -34,6 +38,22 @@ export default class DemandDetail extends Component {
     this.handleDemandClick = this.handleDemandClick.bind(this);
     this.handleReferencesClick = this.handleReferencesClick.bind(this);
     this.handleRebelClick = this.handleRebelClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.getActions();
+  }
+
+  getActions() {
+    axios.get("http://localhost:3001/api/actions").then(response => {
+      const actionsArray = response.data;
+      const criteria = this.state.currentDemandId;
+
+      const demandActions = actionsArray.filter(
+        item => item.demandId === criteria
+      );
+      this.setState({ actions: demandActions, isLoading: false });
+    });
   }
 
   render() {
@@ -110,9 +130,7 @@ export default class DemandDetail extends Component {
               className="icon-section"
               onClick={this.handleRebelClick}
             >
-              <h6>
-                {this.props.card.actions ? this.props.card.actions.length : 0}
-              </h6>
+              <h6>{this.state.actions ? this.state.actions.length : 0}</h6>
               <FontAwesomeIcon icon={faFistRaised} />
             </Accordion.Toggle>
           </div>
@@ -136,27 +154,28 @@ export default class DemandDetail extends Component {
                       </>
                     ) : null}
                   </div>
-                  <Header
+                  <p>Disabled for a sec while hooking up real data.</p>
+                  {/* <Header
                     postedBy={this.props.card.postedBy}
                     representative={this.props.card.representative}
                     timeSent={this.props.card.timeSent}
                   />
                   <div className="separator"></div>
-                  <Description card={this.props.card} />
+                  <Description card={this.props.card} /> */}
                 </Card.Body>
               </Accordion.Collapse>
             </>
           ) : null}
 
           {/* References section */}
-          {this.state.showReferencesSection && this.props.card.petitionId ? (
+          {this.state.showReferencesSection && this.props.card.id ? (
             <>
               <Accordion.Collapse eventKey={`${this.props.card.id}references`}>
                 <Card.Body>
                   <h6>
                     To add references that support this demand:
                     <TwitterHashtagButton
-                      tag={this.props.card.petitionId}
+                      tag={this.props.card.id}
                       options={{
                         size: "large",
                         screenName: null,
@@ -165,7 +184,7 @@ export default class DemandDetail extends Component {
                     />
                     Your tweet will automatically be pulled into the feed below.
                   </h6>
-                  <References hashtag={this.props.card.petitionId} />
+                  <References hashtag={this.props.card.id} />
                 </Card.Body>
               </Accordion.Collapse>
             </>
@@ -176,13 +195,13 @@ export default class DemandDetail extends Component {
             <>
               <Accordion.Collapse eventKey={`${this.props.card.id}rebel`}>
                 <Card.Body>
-                  {this.props.card.actions ? (
+                  {this.state.actions ? (
                     <>
                       <h6>
                         Join by indicating so on the right, you'll get sent a
                         telegram invitation with more info.
                       </h6>
-                      {this.props.card.actions.map(action => {
+                      {this.state.actions.map(action => {
                         return (
                           <div className="rebel-card" key={action.id}>
                             {/* Joined people */}
@@ -203,7 +222,7 @@ export default class DemandDetail extends Component {
                       })}
                     </>
                   ) : null}
-                  {!this.props.card.actions ? (
+                  {!this.state.actions ? (
                     <>
                       <br></br>
                       <h6>There are no actions yet, start one below</h6>

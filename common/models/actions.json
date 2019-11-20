@@ -6,10 +6,6 @@
     "validateUpsert": true
   },
   "properties": {
-    "demandId": {
-      "type": "number",
-      "required": true
-    },
     "createdOn": {
       "type": "date",
       "required": true
@@ -38,13 +34,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "demands": {
-      "type": "belongsTo",
-      "model": "demands",
-      "foreignKey": "demandId"
-    }
-  },
+  "relations": [],
   "acls": [],
   "methods": {}
 }

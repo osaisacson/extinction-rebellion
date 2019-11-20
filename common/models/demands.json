@@ -74,13 +74,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "actions": {
-      "type": "hasMany",
-      "model": "actions",
-      "foreignKey": "demandId"
-    }
-  },
+  "relations": [],
   "acls": [],
   "methods": {}
 }

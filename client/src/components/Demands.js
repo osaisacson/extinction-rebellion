@@ -24,20 +24,25 @@ export default class Demands extends Component {
   }
 
   componentDidMount() {
-    this.getDemands();
-    this.getStories();
+    this.getData();
+    // this.getStories();
   }
 
-  getStories() {
-    axios.get("http://localhost:3001/api/stories").then(response => {
-      this.setState({ stories: response.data, isLoading: false });
-    });
-  }
-
-  getDemands() {
-    axios.get("http://localhost:3001/api/demands").then(response => {
-      this.setState({ demands: response.data, isLoading: false });
-    });
+  getData() {
+    axios
+      .all([
+        axios.get("http://localhost:3001/api/stories"),
+        axios.get("http://localhost:3001/api/demands")
+      ])
+      .then(
+        axios.spread((stories, demands) => {
+          this.setState({
+            stories: stories.data,
+            demands: demands.data,
+            isLoading: false
+          });
+        })
+      );
   }
 
   // constructor(props) {
@@ -58,14 +63,14 @@ export default class Demands extends Component {
   }
 
   render() {
-    const { isLoading, demands } = this.state;
+    const { isLoading, demands, stories } = this.state;
 
     //Return only demands which country name matches what's entered in the search field
     let filteredCards = demands.filter(card => {
       return card.country.indexOf(this.state.search) !== -1;
     });
 
-    let xrFactions = this.state.stories.filter(story => {
+    let xrFactions = stories.filter(story => {
       return story.country.indexOf(this.state.search) !== -1;
     });
 
