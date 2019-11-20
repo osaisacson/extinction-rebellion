@@ -10,7 +10,7 @@ window.Dataset = {
     return set;
   })(0, 10), //starts at 0, ends at 10
 
-  cards: [
+  demands: [
     {
       id: "1",
       isSent: true,
@@ -1408,25 +1408,7 @@ window.Dataset = {
       country: "Belgium",
       city: "Brussels",
       img:
-        "https://images.unsplash.com/photo-1550481010-dfad748ad5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80",
-      pics: [
-        {
-          id: "1",
-          name: "Defined"
-        },
-        {
-          id: "2",
-          name: "Sent"
-        },
-        {
-          id: "3",
-          name: "Denied"
-        },
-        {
-          id: "4",
-          name: "Rebel"
-        }
-      ]
+        "https://images.unsplash.com/photo-1550481010-dfad748ad5c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80"
     },
     {
       id: "2",

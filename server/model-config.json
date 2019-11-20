@@ -38,5 +38,9 @@
   "demands": {
     "dataSource": "db",
     "public": true
+  },
+  "stories": {
+    "dataSource": "db",
+    "public": true
   }
 }

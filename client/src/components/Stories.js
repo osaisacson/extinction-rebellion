@@ -1,24 +1,54 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class Stories extends Component {
-  // Then we add our constructor which receives our props
   constructor(props) {
     super(props);
-
     this.state = {
-      storycontent: this.props.storycontent
+      isLoading: true,
+      img: ""
     };
+
+    this.getImage = this.getImage.bind(this);
+  }
+
+  componentDidMount() {
+    this.getImage(this.props.city);
+  }
+
+  getImage(city) {
+    axios
+      .get("https://api.unsplash.com/photos/random", {
+        params: { query: city },
+        count: 1,
+        headers: {
+          Authorization:
+            "Client-ID cb32c91579c47c9f70fd331095157ba5134b18d039ce6980b4403f3d8a9b6000"
+        }
+      })
+      .then(response => {
+        this.setState({
+          img: response.data.urls.small,
+          isLoading: false
+        });
+      });
   }
 
   render() {
+    const { isLoading } = this.state;
+
     return (
-      <div className="story">
-        <div className="mask">
-          <img src={this.state.storycontent.img} alt="Avatar"></img>
-        </div>
-        <h5>{this.state.storycontent.city}</h5>
-        <h5>{this.state.storycontent.country}</h5>
-      </div>
+      <>
+        {!isLoading ? (
+          <div className="story">
+            <div className="mask">
+              <img src={this.state.img} alt="img"></img>
+            </div>
+            <h5>{this.props.city}</h5>
+            <h5>{this.props.country}</h5>
+          </div>
+        ) : null}
+      </>
     );
   }
 }

@@ -13,8 +13,8 @@ export default class AccordionCards extends Component {
       eventKey: this.props.eventKey,
       header: this.props.header,
       subheader: this.props.subheader,
-      cards: this.props.cards,
-      noOfCards: this.props.cards.length,
+      demands: this.props.demands,
+      noOfCards: this.props.demands.length,
       backgroundColor: this.props.backgroundColor,
       isRebel: this.props.isRebel,
       isSent: this.props.isSent,
@@ -23,7 +23,7 @@ export default class AccordionCards extends Component {
   }
 
   render() {
-    let filteredCards = this.state.cards.filter(card => {
+    let filteredCards = this.state.demands.filter(card => {
       return card.country.indexOf(this.props.search) !== -1;
     });
 
@@ -33,7 +33,7 @@ export default class AccordionCards extends Component {
 
     return (
       <Card className={this.state.backgroundColor}>
-        {/* Accordion header with name of section and number of cards */}
+        {/* Accordion header with name of section and number of demands */}
         <Accordion.Toggle as={Card.Header} eventKey={this.state.eventKey}>
           <h2>
             {this.state.header} ({noOfCards})
@@ -42,7 +42,7 @@ export default class AccordionCards extends Component {
             <p>{this.state.subheader}</p>
           </div>
         </Accordion.Toggle>
-        {/* Collapsed accordion section with all cards in the set */}
+        {/* Collapsed accordion section with all demands in the set */}
         <Accordion.Collapse eventKey={this.state.eventKey}>
           <Card.Body>
             <Accordion>
