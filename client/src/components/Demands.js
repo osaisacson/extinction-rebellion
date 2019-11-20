@@ -59,34 +59,39 @@ export default class Demands extends Component {
 
         <Accordion>
           {/* isSent cards */}
-          <AccordionCards
-            search={this.state.search}
-            header="DEMANDS"
-            subheader="Active demands that have been sent to parliament. Sign the ones you support below and join actions to push them through ASAP."
-            backgroundColor="action-background-color"
-            eventKey="0"
-            cards={sentCards}
-            isSent={true}
-          ></AccordionCards>
+          <div className="active-section">
+            <AccordionCards
+              search={this.state.search}
+              header="DEMANDS"
+              subheader="Active demands that have been sent to parliament. Sign the ones you support below and join actions to push them through ASAP."
+              backgroundColor="action-background-color"
+              eventKey="0"
+              cards={sentCards}
+              isSent={true}
+            ></AccordionCards>
+          </div>
 
           {/* isSuggested cards */}
-          <AccordionCards
-            search={this.state.search}
-            header="NEW"
-            subheader="Suggested demands. Collaboratively flesh them out here."
-            backgroundColor="tweak-background-color"
-            eventKey="1"
-            cards={suggestedCards}
-            isSuggested={true}
-          ></AccordionCards>
+          <div className="define-section">
+            <AccordionCards
+              search={this.state.search}
+              header="NEW"
+              subheader="Suggested demands. Collaboratively flesh them out here."
+              backgroundColor="tweak-background-color"
+              eventKey="1"
+              cards={suggestedCards}
+              isSuggested={true}
+            ></AccordionCards>
+          </div>
 
           {/* Add new card */}
-          <Link to="/demand/add">
-            {' '}
-            <div className="add-demand">
-              <h2>ADD +</h2>
-            </div>
-          </Link>
+          <div className="add-section">
+            <Link className="add-section" to="/demand/add">
+              <div className="add-demand">
+                <h2>ADD +</h2>
+              </div>
+            </Link>
+          </div>
         </Accordion>
       </div>
     );

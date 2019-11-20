@@ -121,6 +121,78 @@ ul {
 }
 
 //Sections
+.story-section {
+  opacity: 0;
+	-webkit-animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.active-section,
+.define-section,
+.add-section {
+  opacity: 0;
+	-webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.story-section {
+  animation-delay: .2s; 
+}
+.active-section {
+  animation-delay: .6s; 
+}
+.define-section {
+  animation-delay: .9s; 
+}
+.add-section {
+  animation-delay: 1.2s; 
+}
+
+//animations
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+ 
+ @-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+
+
+
 .section {
   padding: 10px;
 }
