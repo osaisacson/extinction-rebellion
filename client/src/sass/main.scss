@@ -10,8 +10,7 @@ $demand-color: rgba(237, 155, 196, .9);
 $tweak-color: rgba(189, 102, 255, .9);
 $add-color: rgba(252, 215, 5, .9);
 $collapsible-in-card-background-color: transparent;
-// $gradient-main-background: linear-gradient(90deg, rgba(195,223,247,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
-// $gradient-background: linear-gradient(90deg, rgba(195,204,247,0.39399509803921573) 0%, rgba(209,203,254,0.43881302521008403) 61%);
+$gradient-main-background: linear-gradient(180deg, rgba(0,0,0,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
 
 //Variables
 $card-padding: 8px;
@@ -72,12 +71,8 @@ $inside-card-l-r-margin: 8px;
 
 //Main
 html { 
-  background: url(https://images.unsplash.com/photo-1571238052771-c6e35627d337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   height: 100%;
+  background: $gradient-main-background;
 }
 
 body {
@@ -85,7 +80,16 @@ body {
   font-family: 'Libre Franklin', sans-serif;
 }
 
-.App {
+.app {
+  background: url(https://images.unsplash.com/photo-1571238052771-c6e35627d337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.app-container {
   padding-bottom: 200px;
   max-width: 400px;
   margin: auto;
@@ -101,6 +105,10 @@ h3 {
 h1,
 h2 {
   font-weight: 800;
+}
+
+h2 {
+  text-align: center;
 }
 
 h6 {
@@ -127,9 +135,18 @@ ul {
 
 //Sections
 .story-section {
+  margin: 50px 0 10px 0;
+  padding: 10px 0;
   opacity: 0;
 	-webkit-animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          animation-delay: .2s; 
+  h2 {
+    padding-left: $inside-card-l-r-margin;
+    padding-right: $inside-card-l-r-margin;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 
 .active-section,
@@ -140,9 +157,6 @@ ul {
 	        animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.story-section {
-  animation-delay: .2s; 
-}
 .active-section {
   animation-delay: .6s; 
 }
@@ -262,17 +276,6 @@ ul {
   .btn-icon {
     font-size: 1.6rem;
     background-color: $action-color;
-  }
-}
-
-.story-section {
-  margin: 50px 0 10px 0;
-
-  h2 {
-    padding-left: $inside-card-l-r-margin;
-    padding-right: $inside-card-l-r-margin;
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
 }
 
@@ -686,7 +689,7 @@ a:focus {
 }
 
 .card-header {
-  padding: $card-padding;
+  padding: 15px $card-padding;
   background-color: transparent;
   border-bottom: 0;
   cursor: pointer;
