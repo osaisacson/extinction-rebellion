@@ -144,25 +144,20 @@ ul {
   background-color: #666;
   height: 50px;
 
-  
-  .currently-active {
-    text-decoration: none;
-    
-    * {
-      color: #fff !important;
-      font-size: 2rem;
-    } 
+  .icon-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30px;;
+    width: 150px;
 
-    h6  {
-      transform: all .3s;
-      display: none;
-    } 
-  }
+    h6 {
+      font-size: .6rem;
+      color: rgba(255, 255, 255, .3);
+    }
 
-
-  .home, .icon-nav {
     .svg-inline--fa  {
-      margin: 0 20px;
+      font-size: 1.2rem;
       color: rgba(255, 255, 255, .4);
     }
 
@@ -171,35 +166,34 @@ ul {
     .active,
     .currently-active,
     :focus {
-      transition: all .3s;
+      transition: all .5s;
       text-decoration: none;
       
       .svg-inline--fa  {
-        transition: all .3s;
+        transition: all .5s;
         font-size: 2rem;
         color: #fff;
       } 
 
       h6  {
-        transform: all .3s;
+        transform: all .5s;
         display: none;
       } 
     }
   }
 
-  .icon-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    h6 {
-      font-size: .6rem;
-      color: rgba(255, 255, 255, .3);
-    }
-
+  .currently-active {
+    text-decoration: none;
+    
     .svg-inline--fa {
-      font-size: 1.2rem;
-    }
+      color: #fff !important;
+      font-size: 2rem;
+    } 
+
+    h6  {
+      transform: all .5s;
+      display: none;
+    } 
   }
 
   .add-nav {

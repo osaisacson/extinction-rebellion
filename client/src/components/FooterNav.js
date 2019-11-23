@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFistRaised,
-  faWrench,
   faPlus,
-  faSkullCrossbones
+  faSkullCrossbones,
+  faHandPointer
 } from "@fortawesome/free-solid-svg-icons";
 
 export default class FooterNav extends Component {
@@ -35,24 +35,25 @@ export default class FooterNav extends Component {
             <Link to="/">
               <FontAwesomeIcon icon={faFistRaised} />
             </Link>
-            <h6>Actions</h6>
+            <h6>Demands</h6>
           </div>
           <div
-            className={`home ${this.state.homeActive}`}
+            className={`icon-nav ${this.state.homeActive}`}
             onClick={this.handleHomeClick}
           >
             <Link to="/">
               <FontAwesomeIcon icon={faSkullCrossbones} />
             </Link>
+            <h6>What's up</h6>
           </div>
           <div
             className={`icon-nav ${this.state.demandsActive}`}
             onClick={this.handleDemandsClick}
           >
             <Link to="/demands">
-              <FontAwesomeIcon icon={faWrench} />
+              <FontAwesomeIcon icon={faHandPointer} />
             </Link>
-            <h6>Demands</h6>
+            <h6>Suggested</h6>
           </div>
         </div>
         <div className="add-nav">
