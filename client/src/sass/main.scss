@@ -135,13 +135,13 @@ ul {
 
 //Sections
 .story-section {
-  margin: 50px 0 10px 0;
-  padding: 10px 0;
+  margin: 50px 0 20px 0;
   opacity: 0;
 	-webkit-animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           animation: fade-in 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
           animation-delay: .2s; 
   h2 {
+    padding-top: 10px;
     padding-left: $inside-card-l-r-margin;
     padding-right: $inside-card-l-r-margin;
     margin-bottom: 0;
@@ -236,6 +236,7 @@ ul {
 
 .add-demand {
   @extend .add-background-color;
+  margin-top: 20px;
   padding: 7px;
   
   h2 {
@@ -342,7 +343,7 @@ input[type=checkbox] {
   @extend .flex-left;
   @extend .section;
   padding-left: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   overflow: auto;
   white-space: nowrap;
 
