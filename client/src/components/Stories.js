@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Story from "./Story";
+import Tweetur from "./Tweetur";
 
 export default class Stories extends Component {
   constructor() {
     super();
     this.state = {
       isLoading: true,
+      currentTwitterHandle: "",
       stories: [],
       search: ""
     };
 
+    this.passCurrentTwitterHandle = this.passCurrentTwitterHandle.bind(this);
     this.updateSearch = this.updateSearch.bind(this);
   }
 
@@ -32,27 +35,32 @@ export default class Stories extends Component {
       search: event.target.value.substr(0, 20)
     });
   }
-  render() {
-    console.log("------STORIES-----");
-    console.log("this.props", this.props);
-    console.log("this.state", this.state);
-    console.log("---------END STORIES");
 
+  passCurrentTwitterHandle(handle) {
+    this.setState({
+      currentTwitterHandle: handle
+    });
+  }
+
+  render() {
     return (
-      <div className="story-section stories-background-color">
-        <h2>RECENT ACTIONS</h2>
-        <div className="stories">
-          {this.state.stories.map(story => {
-            return (
-              <Story
-                key={story.id}
-                city={story.city}
-                country={story.country}
-              ></Story>
-            );
-          })}
+      <>
+        <div className="story-section stories-background-color">
+          <h2>RECENT ACTIONS</h2>
+          <div className="stories">
+            {this.state.stories.map(story => {
+              return (
+                <Story
+                  key={story.id}
+                  city={story.city}
+                  country={story.country}
+                ></Story>
+              );
+            })}
+          </div>
         </div>
-      </div>
+        <Tweetur />
+      </>
     );
   }
 }
