@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Stories from "./Stories";
 import Demands from "./Demands";
-// import DemandAdd from "./DemandAdd";
+import DemandAdd from "./DemandAdd";
 import DemandDetails from "./DemandDetails";
 import Search from "./Search";
 
@@ -96,7 +96,7 @@ export default class Routes extends Component {
                   />
                 )}
               ></Route>
-              {/* <Route exact path="/demand/add" component={DemandAdd}></Route> */}
+              <Route exact path="/demand/add" component={DemandAdd}></Route>
               <Route
                 exact
                 path="/demands/:id"
@@ -122,7 +122,7 @@ export default class Routes extends Component {
             </Switch>
           </>
         ) : (
-          <h3>Loading...</h3>
+          <h1>Loading...</h1>
         )}
       </main>
     );

@@ -85,7 +85,7 @@ export default class DemandDetails extends Component {
     return (
       <>
         {/* Back, edit, delete */}
-        <Link className="btn grey" to="/">
+        <Link className="btn grey" to={"/"}>
           Back
         </Link>
         <Link className="btn" to={`/demands/edit/${demand.id}`}>
