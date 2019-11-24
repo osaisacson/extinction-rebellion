@@ -7,6 +7,8 @@ import Stories from "./Stories";
 import Demands from "./Demands";
 import AddStory from "./AddStory";
 import AddDemand from "./AddDemand";
+import EditDemand from "./EditDemand";
+
 import DemandDetails from "./DemandDetails";
 import Search from "./Search";
 
@@ -99,6 +101,11 @@ export default class Routes extends Component {
               ></Route>
               <Route exact path="/add-story" component={AddStory}></Route>
               <Route exact path="/add-demand" component={AddDemand}></Route>
+              <Route
+                exact
+                path="/demands/edit/:id"
+                component={EditDemand}
+              ></Route>
               <Route
                 exact
                 path="/demands/:id"

@@ -45,11 +45,6 @@ export default class DemandDetails extends Component {
   }
 
   componentDidMount() {
-    this.getDemand();
-    this.getActions();
-  }
-
-  componentDidMount() {
     this.getData();
   }
 
@@ -77,6 +72,16 @@ export default class DemandDetails extends Component {
       .catch(err => console.log("error in DemandDetails.js:getData()", err));
   }
 
+  onDelete() {
+    let demandId = this.state.demand.id;
+    axios
+      .delete(`http://localhost:3001/api/demands/${demandId}`)
+      .then(response => {
+        this.props.history.push("/demands");
+      })
+      .catch(err => console.log("Error from DemandDetails.js:onDelete", err));
+  }
+
   render() {
     const { isSuggested, demand } = this.state;
 
@@ -91,7 +96,9 @@ export default class DemandDetails extends Component {
         <Link className="btn" to={`/demands/edit/${demand.id}`}>
           Edit
         </Link>
-        <button className="btn red light">Delete</button>
+        <button onClick={this.onDelete.bind(this)} className="btn red light">
+          Delete
+        </button>
 
         {/* Details for item */}
         <div className={`card-wrapper ${cardBackgroundType}`} key={demand.id}>
