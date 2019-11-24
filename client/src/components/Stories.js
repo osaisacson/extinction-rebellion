@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Story from "./Story";
-import Tweetur from "./Tweetur";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default class Stories extends Component {
   constructor() {
     super();
     this.state = {
       isLoading: true,
-      currentTwitterHandle: "",
+      currentTwitterHandle: "https://twitter.com/XR_Belgium",
       stories: [],
       search: ""
     };
-
-    this.passCurrentTwitterHandle = this.passCurrentTwitterHandle.bind(this);
-    this.updateSearch = this.updateSearch.bind(this);
   }
 
   componentDidMount() {
@@ -30,16 +27,9 @@ export default class Stories extends Component {
     });
   }
 
-  updateSearch(event) {
-    this.setState({
-      search: event.target.value.substr(0, 20)
-    });
-  }
-
-  passCurrentTwitterHandle(handle) {
-    this.setState({
-      currentTwitterHandle: handle
-    });
+  passTwitterHandleFromChild(handle) {
+    console.log("handle passed to passTwitterHandleFromChild:", handle);
+    this.setState({ currentTwitterHandle: handle });
   }
 
   render() {
@@ -52,6 +42,10 @@ export default class Stories extends Component {
               return (
                 <Story
                   key={story.id}
+                  passToParent={this.passTwitterHandleFromChild.bind(
+                    this,
+                    story.twitterHandle
+                  )}
                   city={story.city}
                   country={story.country}
                 ></Story>
@@ -59,7 +53,15 @@ export default class Stories extends Component {
             })}
           </div>
         </div>
-        <Tweetur />
+        <div className="centerContent">
+          <div className="selfCenter standardWidth">
+            <TwitterTimelineEmbed
+              sourceType="url"
+              url={`https://twitter.com/${this.state.currentTwitterHandle}`}
+              options={{ height: 400 }}
+            />
+          </div>
+        </div>
       </>
     );
   }

@@ -36,8 +36,10 @@ export default class Story extends Component {
   }
 
   render() {
+    console.log("this.props.passToParent from child:", this.props.passToParent);
+
     return (
-      <div className="story">
+      <div className="story" onClick={this.props.passToParent}>
         <div className="mask">
           <img
             src={
