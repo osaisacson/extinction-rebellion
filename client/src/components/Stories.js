@@ -19,12 +19,15 @@ export default class Stories extends Component {
   }
 
   getStories() {
-    axios.get("http://localhost:3001/api/stories").then(response => {
-      this.setState({
-        stories: response.data,
-        isLoading: false
-      });
-    });
+    axios
+      .get("http://localhost:3001/api/stories")
+      .then(response => {
+        this.setState({
+          stories: response.data,
+          isLoading: false
+        });
+      })
+      .catch(err => console.log("error in Stories.js:getStories()", err));
   }
 
   passTwitterHandleFromChild(handle) {

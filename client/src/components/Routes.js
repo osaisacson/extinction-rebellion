@@ -6,7 +6,7 @@ import { Switch, Route } from "react-router-dom";
 import Stories from "./Stories";
 import Demands from "./Demands";
 // import DemandAdd from "./DemandAdd";
-// import DemandDetail from "./DemandDetail";
+import DemandDetails from "./DemandDetails";
 import Search from "./Search";
 
 export default class Routes extends Component {
@@ -40,7 +40,8 @@ export default class Routes extends Component {
             isLoading: false
           });
         })
-      );
+      )
+      .catch(err => console.log("error in Routes.js:getData()", err));
   }
 
   updateSearch(event) {
@@ -95,8 +96,12 @@ export default class Routes extends Component {
                   />
                 )}
               ></Route>
-              {/* <Route exact path="/demand/add" component={DemandAdd}></Route>
-        <Route exact path="/demand/:id" component={DemandDetail}></Route> */}
+              {/* <Route exact path="/demand/add" component={DemandAdd}></Route> */}
+              <Route
+                exact
+                path="/demands/:id"
+                component={DemandDetails}
+              ></Route>
               <Route
                 exact
                 path="/suggested"

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 
-import DemandDetail from "./DemandDetail";
+import DemandItem from "./DemandItem";
 
 export default class Demands extends Component {
   render() {
@@ -36,12 +36,12 @@ export default class Demands extends Component {
               ) : null}
               {demands.map(card => {
                 return (
-                  <DemandDetail
+                  <DemandItem
                     key={card.id}
                     card={card}
                     isSent={isSent}
                     isSuggested={isSuggested}
-                  ></DemandDetail>
+                  ></DemandItem>
                 );
               })}
             </Accordion>
