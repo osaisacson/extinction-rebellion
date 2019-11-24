@@ -1,55 +1,57 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Story from "./Story";
 
 export default class Stories extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       isLoading: true,
-      img: ""
+      stories: [],
+      search: ""
     };
 
-    this.getImage = this.getImage.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
   }
 
   componentDidMount() {
-    this.getImage(this.props.city);
+    this.getStories();
   }
 
-  getImage(city) {
-    axios
-      .get("https://api.unsplash.com/search/photos", {
-        params: { query: city },
-        page: 1,
-        per_page: 1,
-        headers: {
-          Authorization:
-            "Client-ID cb32c91579c47c9f70fd331095157ba5134b18d039ce6980b4403f3d8a9b6000"
-        }
-      })
-      .then(response => {
-        this.setState({
-          img: response.data.results[0].urls.small,
-          isLoading: false
-        });
+  getStories() {
+    axios.get("http://localhost:3001/api/stories").then(response => {
+      this.setState({
+        stories: response.data,
+        isLoading: false
       });
+    });
   }
 
+  updateSearch(event) {
+    this.setState({
+      search: event.target.value.substr(0, 20)
+    });
+  }
   render() {
+    console.log("------STORIES-----");
+    console.log("this.props", this.props);
+    console.log("this.state", this.state);
+    console.log("---------END STORIES");
+
     return (
-      <div className="story">
-        <div className="mask">
-          <img
-            src={
-              this.state.img
-                ? this.state.img
-                : "https://images.unsplash.com/photo-1571238052771-c6e35627d337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=190&q=80"
-            }
-            alt="img"
-          ></img>
+      <div className="story-section stories-background-color">
+        <h2>RECENT ACTIONS</h2>
+        <div className="stories">
+          {this.state.stories.map(story => {
+            return (
+              <Story
+                key={story.id}
+                city={story.city}
+                country={story.country}
+              ></Story>
+            );
+          })}
         </div>
-        <h5>{this.props.city}</h5>
-        <h5>{this.props.country}</h5>
       </div>
     );
   }

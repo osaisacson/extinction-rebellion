@@ -29,13 +29,13 @@ export default class FooterNav extends Component {
       <>
         <div className="footer-nav">
           <div
-            className={`icon-nav ${this.state.actionsActive}`}
-            onClick={this.handleActionsClick}
+            className={`icon-nav ${this.state.demandsActive}`}
+            onClick={this.handleDemandsClick}
           >
-            <Link to="/">
-              <FontAwesomeIcon icon={faFistRaised} />
+            <Link to="/suggested">
+              <FontAwesomeIcon icon={faHandPointer} />
             </Link>
-            <h6>Demands</h6>
+            <h6>Suggestions</h6>
           </div>
           <div
             className={`icon-nav ${this.state.homeActive}`}
@@ -47,13 +47,13 @@ export default class FooterNav extends Component {
             <h6>What's up</h6>
           </div>
           <div
-            className={`icon-nav ${this.state.demandsActive}`}
-            onClick={this.handleDemandsClick}
+            className={`icon-nav ${this.state.actionsActive}`}
+            onClick={this.handleActionsClick}
           >
             <Link to="/demands">
-              <FontAwesomeIcon icon={faHandPointer} />
+              <FontAwesomeIcon icon={faFistRaised} />
             </Link>
-            <h6>Suggested</h6>
+            <h6>Demands</h6>
           </div>
         </div>
         <div className="add-nav">

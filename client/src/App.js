@@ -2,7 +2,7 @@ import React from "react";
 import "./sass/main.scss";
 import { Link } from "react-router-dom";
 import FooterNav from "./components/FooterNav";
-import Main from "./components/Main";
+import Routes from "./components/Routes";
 
 const App = () => (
   // Header, shows regardless of which page we are on. Links back to '/' (Demands)
@@ -14,7 +14,7 @@ const App = () => (
             <img src={"/xr-logo.png"} className="logo" alt="logo" />
           </Link>
         </header>
-        <Main />
+        <Routes />
       </div>
     </div>
     <FooterNav />

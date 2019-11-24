@@ -57,31 +57,30 @@ export default class DemandDetail extends Component {
   }
 
   render() {
+    const { isSent, isSuggested, card } = this.props;
+
+    let cardBackgroundType = isSuggested ? "suggested" : "sent";
+
     return (
-      <div className="card-wrapper" key={this.props.card.id}>
+      <div className={`card-wrapper ${cardBackgroundType}`} key={card.id}>
         {/* Section with votes, appears outside toggle so can use the voting functionality */}
-        <Voting votes={this.props.card.votes} isSent={this.props.card.isSent} />
+        <Voting votes={card.votes} isSent={card.isSent} />
 
         <Card>
           <div className="demand-header">
             {/* Status */}
-            {!this.props.isSuggested && this.props.card.status ? (
-              <p
-                className={`pill ${
-                  this.props.card.isRebel ? "red" : "darkblue"
-                }`}
-              >
-                {this.props.card.status}
+            {!isSuggested && card.status ? (
+              <p className={`pill ${card.isRebel ? "red" : "darkblue"}`}>
+                {card.status}
               </p>
             ) : null}
             {/* Country */}
             <h6>
-              {this.props.card.city},{" "}
-              <span className="bold">{this.props.card.country}</span>
+              {card.city}, <span className="bold">{card.country}</span>
             </h6>
 
             {/* Main card header */}
-            <h5>{this.props.card.title}</h5>
+            <h5>{card.title}</h5>
           </div>
           <div className="separator"></div>
 
@@ -90,11 +89,11 @@ export default class DemandDetail extends Component {
             {/* Show full demand */}
             <Accordion.Toggle
               as={Card.Header}
-              eventKey={`${this.props.card.id}demands`}
+              eventKey={`${card.id}demands`}
               className="icon-section"
               onClick={this.handleDemandClick}
             >
-              {this.props.card.isSent ? (
+              {card.isSent ? (
                 <>
                   <FontAwesomeIcon icon={faBook} />
                   <FontAwesomeIcon
@@ -117,7 +116,7 @@ export default class DemandDetail extends Component {
             {/* Show references */}
             <Accordion.Toggle
               as={Card.Header}
-              eventKey={`${this.props.card.id}references`}
+              eventKey={`${card.id}references`}
               className="icon-section"
               onClick={this.handleReferencesClick}
             >
@@ -126,7 +125,7 @@ export default class DemandDetail extends Component {
             {/* Show rebel actions */}
             <Accordion.Toggle
               as={Card.Header}
-              eventKey={`${this.props.card.id}rebel`}
+              eventKey={`${card.id}rebel`}
               className="icon-section"
               onClick={this.handleRebelClick}
             >
@@ -140,12 +139,12 @@ export default class DemandDetail extends Component {
           {/* Demand section */}
           {this.state.showDemandSection ? (
             <>
-              <Accordion.Collapse eventKey={`${this.props.card.id}demands`}>
+              <Accordion.Collapse eventKey={`${card.id}demands`}>
                 <Card.Body>
                   <div>
                     {/* Summary section*/}
 
-                    {this.props.isSuggested ? (
+                    {isSuggested ? (
                       <>
                         <div className="tight-header">
                           <h6>Being defined. Edit and add below.</h6>
@@ -156,26 +155,26 @@ export default class DemandDetail extends Component {
                   </div>
                   <p>Disabled for a sec while hooking up real data.</p>
                   {/* <Header
-                    postedBy={this.props.card.postedBy}
-                    representative={this.props.card.representative}
-                    timeSent={this.props.card.timeSent}
+                    postedBy={card.postedBy}
+                    representative={card.representative}
+                    timeSent={card.timeSent}
                   />
                   <div className="separator"></div>
-                  <Description card={this.props.card} /> */}
+                  <Description card={card} /> */}
                 </Card.Body>
               </Accordion.Collapse>
             </>
           ) : null}
 
           {/* References section */}
-          {this.state.showReferencesSection && this.props.card.id ? (
+          {this.state.showReferencesSection && card.id ? (
             <>
-              <Accordion.Collapse eventKey={`${this.props.card.id}references`}>
+              <Accordion.Collapse eventKey={`${card.id}references`}>
                 <Card.Body>
                   <h6>
                     To add references that support this demand:
                     <TwitterHashtagButton
-                      tag={this.props.card.id}
+                      tag={card.id}
                       options={{
                         size: "large",
                         screenName: null,
@@ -184,7 +183,7 @@ export default class DemandDetail extends Component {
                     />
                     Your tweet will automatically be pulled into the feed below.
                   </h6>
-                  <References hashtag={this.props.card.id} />
+                  <References hashtag={card.id} />
                 </Card.Body>
               </Accordion.Collapse>
             </>
@@ -193,7 +192,7 @@ export default class DemandDetail extends Component {
           {/* Action section */}
           {this.state.showRebelSection ? (
             <>
-              <Accordion.Collapse eventKey={`${this.props.card.id}rebel`}>
+              <Accordion.Collapse eventKey={`${card.id}rebel`}>
                 <Card.Body>
                   {this.state.actions ? (
                     <>
