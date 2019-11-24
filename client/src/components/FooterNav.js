@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -57,7 +56,7 @@ export default class FooterNav extends Component {
           </div>
         </div>
         <div className="add-nav">
-          <Link to="/demand/add">
+          <Link to="/add-demand">
             <FontAwesomeIcon icon={faPlus} />
           </Link>
         </div>

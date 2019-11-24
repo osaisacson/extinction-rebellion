@@ -71,6 +71,10 @@
     "representative": {
       "type": "string",
       "default": "No representative yet"
+    },
+    "representativeEmail": {
+      "type": "string",
+      "default": "No representative yet"
     }
   },
   "validations": [],

@@ -1,13 +1,39 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-export default class DemandAdd extends Component {
-  onSubmit(e) {
-    e.preventDefault();
-    console.log("Hurray, submitted");
-    console.log("eeeeeeeeeek", e);
+export default class AddDemand extends Component {
+  addDemand(newDemand) {
+    axios
+      .request({
+        method: "post",
+        url: "http://localhost:3001/api/demands",
+        data: newDemand
+      })
+      .then(response => {
+        this.props.history.push("/suggested");
+        console.log(response);
+      })
+      .catch(err => console.log("Error from AddDemand.js:addDemand", err));
   }
+
+  onSubmit(e) {
+    const newDemand = {
+      isBeingDefined: true,
+      title: this.refs.title.value,
+      city: this.refs.city.value,
+      country: this.refs.country.value,
+      summary: this.refs.summary.value,
+      background: this.refs.background.value,
+      indicators: this.refs.indicators.value,
+      representative: this.refs.representative.value,
+      representativeEmail: this.refs.representativeEmail.value
+    };
+    this.addDemand(newDemand);
+    e.preventDefault();
+  }
+
   render() {
     return (
       <>
@@ -70,6 +96,15 @@ export default class DemandAdd extends Component {
               />
               <label htmlFor="background"></label>
             </div>
+            <div className="form-group">
+              <input
+                type="text"
+                name="indicators"
+                ref="indicators"
+                placeholder="Indicators"
+              />
+              <label htmlFor="indicators"></label>
+            </div>
             <br></br>
             <h6>
               <span className="bold">Representative</span> to send the demand to
@@ -81,11 +116,11 @@ export default class DemandAdd extends Component {
               <div className="form-group">
                 <input
                   type="text"
-                  name="representativeName"
-                  ref="representativeName"
-                  placeholder="Name"
+                  name="representative"
+                  ref="representative"
+                  placeholder="Rep name"
                 />
-                <label htmlFor="representativeName"></label>
+                <label htmlFor="representative"></label>
               </div>
               <div className="form-group">
                 <input
@@ -167,101 +202,4 @@ export default class DemandAdd extends Component {
       </>
     );
   }
-
-  // import React, { Component } from "react";
-  // import Card from "react-bootstrap/Card";
-  // import { Link } from "react-router-dom";
-
-  // const inputParsers = {
-  //   lowercase(input) {
-  //     return input.toLowerCase();
-  //   },
-  //   number(input) {
-  //     return parseFloat(input);
-  //   }
-  // };
-
-  // export default class DemandAdd extends Component {
-  //   constructor() {
-  //     super();
-  //     this.state = {};
-  //     this.handleSubmit = this.handleSubmit.bind(this);
-  //   }
-
-  // stringifyFormData(fd) {
-  //   const data = {};
-  //   for (let key of fd.keys()) {
-  //     data[key] = fd.get(key);
-  //   }
-  //   return JSON.stringify(data, null, 2);
-  // }
-
-  // handleSubmit(event) {
-  //   event.preventDefault();
-  //   if (!event.target.checkValidity()) {
-  //     this.setState({
-  //       invalid: true,
-  //       displayErrors: true
-  //     });
-  //     return;
-  //   }
-  //   const form = event.target;
-  //   const data = new FormData(form);
-
-  //   for (let name of data.keys()) {
-  //     const input className="form-input" = form.elements[name];
-  //     const parserName = input.dataset.parse;
-  //     console.log("parser name is", parserName);
-  //     if (parserName) {
-  //       const parsedValue = inputParsers[parserName](data.get(name));
-  //       data.set(name, parsedValue);
-  //     }
-  //   }
-
-  //   this.setState({
-  //     res: data,
-  //     invalid: false,
-  //     displayErrors: false
-  //   });
-
-  // fetch('/api/form-submit-url', {
-  //   method: 'POST',
-  //   body: data,
-  // });
 }
-
-// render() {
-//   const { res, invalid, displayErrors } = this.state;
-
-//   return (
-//     <div>
-//       <Card className="add-background-color">
-//         <form
-//           onSubmit={this.handleSubmit}
-//           noValidate
-//           className={displayErrors ? "displayErrors" : ""}
-//         >
-//           <label htmlFor="username">Username:</label>
-//           <input
-//             id="username"
-//             name="username"
-//             type="text"
-//             data-parse="lowercase"
-//             placeholder="your name"
-//           />
-
-//           <button>Send data!</button>
-//         </form>
-
-//         <div className="res-block">
-//           {invalid && <p>check what's missing above</p>}
-//           {!invalid && res && (
-//             <div>
-//               <h4>Demand</h4>
-//               <pre>FormData {res}</pre>
-//             </div>
-//           )}
-//         </div>
-//       </Card>
-//     </div>
-//   );

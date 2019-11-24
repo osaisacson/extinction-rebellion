@@ -51,6 +51,7 @@ export default class DemandItem extends Component {
 
               {/* Main card header */}
               <h5>{card.title}</h5>
+              <h6>{card.summary}</h6>
             </div>
 
             <div className="separator"></div>

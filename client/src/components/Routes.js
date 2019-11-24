@@ -5,7 +5,8 @@ import { Switch, Route } from "react-router-dom";
 
 import Stories from "./Stories";
 import Demands from "./Demands";
-import DemandAdd from "./DemandAdd";
+import AddStory from "./AddStory";
+import AddDemand from "./AddDemand";
 import DemandDetails from "./DemandDetails";
 import Search from "./Search";
 
@@ -96,7 +97,8 @@ export default class Routes extends Component {
                   />
                 )}
               ></Route>
-              <Route exact path="/demand/add" component={DemandAdd}></Route>
+              <Route exact path="/add-story" component={AddStory}></Route>
+              <Route exact path="/add-demand" component={AddDemand}></Route>
               <Route
                 exact
                 path="/demands/:id"
@@ -110,7 +112,7 @@ export default class Routes extends Component {
                     {...props}
                     demands={suggestedCards}
                     search={search}
-                    header="SUGGESTED"
+                    header="SUGGESTIONS"
                     subheader="Suggested demands. Collaboratively flesh them out here."
                     backgroundColor="tweak-background-color"
                     eventKey="1"
@@ -122,7 +124,7 @@ export default class Routes extends Component {
             </Switch>
           </>
         ) : (
-          <h1>Loading...</h1>
+          <h3>Loading...</h3>
         )}
       </main>
     );
