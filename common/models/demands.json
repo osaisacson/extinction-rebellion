@@ -1,0 +1,84 @@
+{
+  "name": "demands",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "isSent": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "isBeingDefined": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "default": "global"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postedBy": {
+      "type": "string",
+      "required": true,
+      "default": "anonymous"
+    },
+    "signees": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "votes": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "edits": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "contributors": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "timeSent": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string",
+      "default": "No title yet"
+    },
+    "summary": {
+      "type": "string",
+      "default": "No summary yet"
+    },
+    "background": {
+      "type": "string",
+      "default": "No background yet"
+    },
+    "indicators": {
+      "type": "string",
+      "default": "No success indicators yet"
+    },
+    "representative": {
+      "type": "string",
+      "default": "No representative yet"
+    },
+    "representativeEmail": {
+      "type": "string",
+      "default": "No representative yet"
+    }
+  },
+  "validations": [],
+  "relations": [],
+  "acls": [],
+  "methods": {}
+}

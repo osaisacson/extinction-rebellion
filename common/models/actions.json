@@ -1,0 +1,40 @@
+{
+  "name": "actions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "createdOn": {
+      "type": "date",
+      "required": true
+    },
+    "date": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    },
+    "joined": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "details": {
+      "type": "string",
+      "required": true,
+      "default": "No details defined"
+    },
+    "contactKey": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": [],
+  "acls": [],
+  "methods": {}
+}

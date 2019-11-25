@@ -1,55 +1,61 @@
 {
   "name": "extinction-rebellion-demands",
   "version": "1.0.0",
+  "main": "server/server.js",
   "engines": {
     "node": "10.16.3"
   },
-  "description": "Resilienshus Floda",
-  "main": "index.js",
+  "description": "Extinction Rebellion Demand Plattform",
   "scripts": {
-    "start": "node index.js",
-    "server": "node index.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "start": "node .",
+    "server": "node .",
+    "client_src": "npm start --prefix client_src",
+    "dev": "concurrently \"npm run server\" \"npm run client_src\"",
+    "heroku-postbuild": "npm install --prefix client_src && npm run build --prefix client_src"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/osaisacson/extinction-rebellion-demands.git"
+    "url": "git+https://github.com/osaisacson/extinction-rebellion.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Osa Gambas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/osaisacson/extinction-rebellion-demands/issues"
+    "url": "https://github.com/osaisacson/extinction-rebellion/issues"
   },
-  "homepage": "https://github.com/osaisacson/extinction-rebellion-demands#readme",
+  "homepage": "https://github.com/osaisacson/extinction-rebellion#readme",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@tinymce/tinymce-react": "^3.3.2",
     "axios": "^0.19.0",
+    "compression": "^1.0.3",
     "concurrently": "^4.1.2",
     "cors": "^2.8.5",
-    "countup": "^1.8.2",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
     "express": "^4.17.1",
     "font-awesome": "^4.7.0",
+    "helmet": "^3.10.0",
     "jquery": "^3.4.1",
+    "loopback": "^3.22.0",
+    "loopback-boot": "^2.6.5",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback-connector-mongodb": "^5.2.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
-    "react-countup": "^4.2.2",
     "react-dom": "^16.9.0",
-    "react-insta-stories": "^1.5.2",
-    "react-move": "^6.0.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.1",
     "react-twitter-embed": "^3.0.3",
     "reactstrap": "^8.0.1",
-    "save-dev": "^2.0.0"
+    "save-dev": "0.0.1-security",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-loopback": "^8.0.0"
   }
 }
