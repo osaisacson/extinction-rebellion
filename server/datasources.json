@@ -1,13 +1,10 @@
 {
   "db": {
-    "host": "localhost",
-    "port": 27017,
-    "url": "",
-    "database": "xr-db",
-    "password": "",
     "name": "db",
-    "user": "",
-    "useNewUrlParser": true,
+    "connector": "memory"
+  },
+  "mongo": {
+    "name": "mongo",
     "connector": "mongodb"
   }
 }
