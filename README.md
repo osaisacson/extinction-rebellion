@@ -105,7 +105,7 @@ Npm's are little external code packages that each deal with something useful for
 
 cd extinction-rebellion (if you're not already in this folder. You can check by writing `ls`, and move up in the structure by writing `cd ..`)
 npm install
-cd client
+cd client_src
 npm install
 
 ```

@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node .",
     "server": "node .",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm install --prefix client && npm run build --prefix client"
+    "client_src": "npm start --prefix client_src",
+    "dev": "concurrently \"npm run server\" \"npm run client_src\"",
+    "heroku-postbuild": "npm install --prefix client_src && npm run build --prefix client_src"
   },
   "repository": {
     "type": "git",

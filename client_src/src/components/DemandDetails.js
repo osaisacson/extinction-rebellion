@@ -77,7 +77,7 @@ export default class DemandDetails extends Component {
     axios
       .delete(`http://localhost:3001/api/demands/${demandId}`)
       .then(response => {
-        this.props.history.push("/demands");
+        this.props.history.push("/");
       })
       .catch(err => console.log("Error from DemandDetails.js:onDelete", err));
   }

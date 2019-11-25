@@ -3,19 +3,64 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-export default class AddDemand extends Component {
-  addDemand(newDemand) {
+export default class EditDemand extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isBeingDefined: true, //this should be dealt with differently, should only be true if the demand does not meet certain criteria (TBD)
+      title: "",
+      city: "",
+      country: "",
+      summary: "",
+      background: "",
+      indicators: "",
+      representative: "",
+      representativeEmail: ""
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  componentWillMount() {
+    this.getDemandDetails();
+  }
+
+  getDemandDetails() {
+    let demandId = this.props.match.params.id;
+    axios
+      .get(`http://localhost:3001/api/demands/${demandId}`)
+      .then(response => {
+        this.setState({
+          id: response.data.id,
+          title: response.data.title,
+          city: response.data.city,
+          country: response.data.country,
+          summary: response.data.summary,
+          background: response.data.background,
+          indicators: response.data.indicators,
+          representative: response.data.representative,
+          representativeEmail: response.data.representativeEmail
+        });
+      })
+      .catch(err =>
+        console.log("Error from EditDemand.js:getDemandDetails", err)
+      );
+  }
+
+  editDemand(newDemand) {
     axios
       .request({
-        method: "post",
-        url: "http://localhost:3001/api/demands",
+        method: "put",
+        url: `http://localhost:3001/api/demands/${this.state.id}`,
         data: newDemand
       })
       .then(response => {
-        this.props.history.push("/suggested");
+        alert("Saved");
+        this.props.history.push("/");
         console.log(response);
       })
-      .catch(err => console.log("Error from AddDemand.js:addDemand", err));
+      .catch(err => console.log("Error from EditDemand.js:editDemand", err));
   }
 
   onSubmit(e) {
@@ -30,8 +75,18 @@ export default class AddDemand extends Component {
       representative: this.refs.representative.value,
       representativeEmail: this.refs.representativeEmail.value
     };
-    this.addDemand(newDemand);
+    this.editDemand(newDemand);
     e.preventDefault();
+  }
+
+  handleInputChange(e) {
+    const target = e.target;
+    const value = target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
@@ -41,11 +96,6 @@ export default class AddDemand extends Component {
           Back
         </Link>
         <Card className="add-demand">
-          <h6>
-            Start a new demand. It does not have to be perfect, we can make it
-            great together afterwards.
-          </h6>
-
           <form onSubmit={this.onSubmit.bind(this)}>
             <div className="form-group">
               <input
@@ -54,6 +104,8 @@ export default class AddDemand extends Component {
                 name="title"
                 ref="title"
                 placeholder="Title"
+                value={this.state.title}
+                onChange={this.handleInputChange}
               />
               <label htmlFor="title"></label>
             </div>
@@ -65,6 +117,8 @@ export default class AddDemand extends Component {
                   name="city"
                   ref="city"
                   placeholder="City"
+                  value={this.state.city}
+                  onChange={this.handleInputChange}
                 />
                 <label htmlFor="city"></label>
               </div>
@@ -74,6 +128,8 @@ export default class AddDemand extends Component {
                   name="country"
                   ref="country"
                   placeholder="Country"
+                  value={this.state.country}
+                  onChange={this.handleInputChange}
                 />
                 <label htmlFor="country"></label>
               </div>
@@ -84,6 +140,8 @@ export default class AddDemand extends Component {
                 name="summary"
                 ref="summary"
                 placeholder="Summary"
+                value={this.state.summary}
+                onChange={this.handleInputChange}
               />
               <label htmlFor="summary"></label>
             </div>
@@ -93,6 +151,8 @@ export default class AddDemand extends Component {
                 name="background"
                 ref="background"
                 placeholder="Background"
+                value={this.state.background}
+                onChange={this.handleInputChange}
               />
               <label htmlFor="background"></label>
             </div>
@@ -102,16 +162,13 @@ export default class AddDemand extends Component {
                 name="indicators"
                 ref="indicators"
                 placeholder="Indicators"
+                value={this.state.indicators}
+                onChange={this.handleInputChange}
               />
               <label htmlFor="indicators"></label>
             </div>
             <br></br>
-            <h6>
-              <span className="bold">Representative</span> to send the demand to
-              once it has been defined and accepted by the group. This should be
-              the person who has the authority to raise this issue in
-              parliament. If you don't know who, leave it blank for now.
-            </h6>
+
             <div className="flex-spread">
               <div className="form-group">
                 <input
@@ -119,6 +176,8 @@ export default class AddDemand extends Component {
                   name="representative"
                   ref="representative"
                   placeholder="Rep name"
+                  value={this.state.representative}
+                  onChange={this.handleInputChange}
                 />
                 <label htmlFor="representative"></label>
               </div>
@@ -128,72 +187,17 @@ export default class AddDemand extends Component {
                   name="representativeEmail"
                   ref="representativeEmail"
                   placeholder="Email"
+                  value={this.state.representativeEmail}
+                  onChange={this.handleInputChange}
                 />
                 <label htmlFor="representativeEmail"></label>
               </div>
             </div>
 
-            <br></br>
-            <h6>One time linking setup:</h6>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdTwitter"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Create a new account on Twitter called{" "}
-                <span className="bold">@xr110references</span>, after this
-                initial setup you will not need to touch it again.
-              </span>
-            </div>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdIFTTT"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Create an account at{" "}
-                <a className="bold" href="https://iftt.com">
-                  IFTTT
-                </a>
-              </span>
-            </div>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdScript"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Setup autotweeting all Tweets with #xr110 through this{" "}
-                <a
-                  className="bold"
-                  href="https://ifttt.com/applets/SMvaxczG-if-hashtag-then-retweet-it"
-                >
-                  IFTTT recipe.
-                </a>
-              </span>
-            </div>
-            <p>
-              Hurray! Now all Tweets anyone does with #xr110 gets automatically
-              pulled into the # section of your new petition. You won't have to
-              do anything.
-            </p>
             <input
               className="form-input tweak-background-color btn float-right"
               type="submit"
-              value="Add new demand"
+              value="Save"
             />
           </form>
           <br></br>
