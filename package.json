@@ -10,8 +10,7 @@
     "start": "node .",
     "server": "node .",
     "client_src": "npm start --prefix client_src",
-    "dev": "concurrently \"npm run server\" \"npm run client_src\"",
-    "heroku-postbuild": "npm install --prefix client_src && npm run build --prefix client_src"
+    "dev": "concurrently \"npm run server\" \"npm run client_src\""
   },
   "repository": {
     "type": "git",
