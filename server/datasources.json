@@ -1,14 +1,13 @@
 {
   "db": {
-    "host": "localhost",
+    "host": "xr-1omtm.mongodb.net",
     "port": 27017,
-    "url": "",
-    "database": "xr-db",
-    "password": "",
-    "name": "db",
-    "user": "",
+    "url": "mongodb+srv://osagambas:Zzorba22@xr-1omtm.mongodb.net/test?retryWrites=true&w=majority",
+    "database": "loopback-mongodb-atlas",
+    "password": "Zzorba22",
+    "name": "mongoatlas",
+    "user": "osagambas",
     "useNewUrlParser": true,
-    "useUnifiedTopology": true,
     "connector": "mongodb"
   }
 }
