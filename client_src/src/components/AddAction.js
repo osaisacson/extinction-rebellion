@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default class AddAction extends Component {
@@ -12,7 +10,7 @@ export default class AddAction extends Component {
         data: newAction
       })
       .then(response => {
-        this.props.history.push("/");
+        alert("Saved, refresh to see (working on this)");
         console.log(response);
       })
       .catch(err => console.log("Error from AddAction.js:addAction", err));
@@ -23,9 +21,11 @@ export default class AddAction extends Component {
       demandId: this.props.demandId,
       date: this.refs.date.value,
       time: this.refs.time.value,
-      details: this.refs.details.value,
-      contactKey: this.refs.contactKey.value
+      name: this.refs.name.value,
+      telegram: this.refs.telegram.value
     };
+    console.log("newAction", newAction);
+
     this.addAction(newAction);
     e.preventDefault();
   }
@@ -33,57 +33,55 @@ export default class AddAction extends Component {
   render() {
     return (
       <>
-        <Link className="btn grey" to="/">
-          Back
-        </Link>
-        <Card className="add-story">
-          <h6>
-            Add a new action for this demand. It could be a meeting, a protest,
-            an event. Anything you think will push it forward
-          </h6>
-          <form onSubmit={this.onSubmit.bind(this)}>
-            <div className="flex-spread">
-              <div className="form-group">
-                <input
-                  className="form-input"
-                  type="text"
-                  name="date"
-                  ref="date"
-                  placeholder="Date of action"
-                />
-                <label htmlFor="date"></label>
-              </div>
-              <div className="form-group">
-                <input type="text" name="time" ref="time" placeholder="time" />
-                <label htmlFor="time"></label>
-              </div>
-            </div>
+        <h6>
+          Create new action. Handle all communication for this action via
+          telegram, so start by{" "}
+          <a href="https://blog.en.uptodown.com/how-to-create-groups-and-channels-telegram/">
+            creating a group on telegram
+          </a>{" "}
+          and adding the name of it below.
+        </h6>
+        <form onSubmit={this.onSubmit.bind(this)}>
+          <div className="flex-spread">
             <div className="form-group">
               <input
+                className="form-input"
                 type="text"
-                name="details"
-                ref="details"
-                placeholder="Any necessary details, but use the Telegram group below for logistics"
+                name="date"
+                ref="date"
+                placeholder="Date of action"
               />
-              <label htmlFor="details"></label>
+              <label htmlFor="date"></label>
             </div>
             <div className="form-group">
-              <input
-                type="text"
-                name="contactKey"
-                ref="contactKey"
-                placeholder="Telegram group name"
-              />
-              <label htmlFor="contactKey"></label>
+              <input type="text" name="time" ref="time" placeholder="time" />
+              <label htmlFor="time"></label>
             </div>
+          </div>
+          <div className="form-group">
             <input
-              className="form-input tweak-background-color btn float-right"
-              type="submit"
-              value="Add new action"
+              type="text"
+              name="name"
+              ref="name"
+              placeholder="Name of action"
             />
-          </form>
-          <br></br>
-        </Card>
+            <label htmlFor="name"></label>
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="telegram"
+              ref="telegram"
+              placeholder="Telegram group name"
+            />
+            <label htmlFor="telegram"></label>
+          </div>
+          <input
+            className="form-input tweak-background-color btn float-right"
+            type="submit"
+            value="Add new action"
+          />
+        </form>
       </>
     );
   }

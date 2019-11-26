@@ -149,7 +149,7 @@ git checkout -b name-of-your-new-branch (creates a new branch identical to the l
 ```
 
 cd extinction-rebellion (ls and cd .. until you're in the extinction-rebellion folder)
-node . (this starts both the client and server, and opens up a http://localhost:3001 window in your browser to see the client)
+npm run dev (this starts both the client and server, and opens up a http://localhost:3000 window in your browser to see the client)
 to see the loopback API manually open http://localhost:3001/explorer
 
 ```

@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFistRaised,
+  faMale,
   faPenFancy,
   faCaretUp,
   faCaretDown
@@ -27,7 +27,7 @@ export class Voting extends React.Component {
           <div className="icon-section">
             <button className="fa-icons" onClick={this.increment}>
               <h6>{this.state.score}</h6>
-              <FontAwesomeIcon className="btn-icon" icon={faFistRaised} />
+              <FontAwesomeIcon className="btn-icon" icon={faMale} />
             </button>
           </div>
         ) : this.props.isSent ? (

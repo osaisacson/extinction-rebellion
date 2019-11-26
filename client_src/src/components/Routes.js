@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 
 import Stories from "./Stories";
 import Demands from "./Demands";
+import AddAction from "./AddAction";
 import AddStory from "./AddStory";
 import AddDemand from "./AddDemand";
 import EditDemand from "./EditDemand";
@@ -99,6 +100,7 @@ export default class Routes extends Component {
                   />
                 )}
               ></Route>
+              <Route exact path="/:id/add-action" component={AddAction}></Route>
               <Route exact path="/add-story" component={AddStory}></Route>
               <Route exact path="/add-demand" component={AddDemand}></Route>
               <Route

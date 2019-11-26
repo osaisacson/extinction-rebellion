@@ -9,10 +9,6 @@
     "demandId": {
       "type": "string"
     },
-    "createdOn": {
-      "type": "date",
-      "required": true
-    },
     "date": {
       "type": "string",
       "required": true
@@ -23,15 +19,14 @@
     },
     "joined": {
       "type": "number",
-      "required": true,
       "default": 0
     },
-    "details": {
+    "name": {
       "type": "string",
       "required": true,
       "default": "No details defined"
     },
-    "contactKey": {
+    "telegram": {
       "type": "string",
       "required": true
     }

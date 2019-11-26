@@ -16,6 +16,7 @@ import { TwitterHashtagButton } from "react-twitter-embed";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faPlus,
   faBook,
   faBookOpen,
   faHashtag,
@@ -239,8 +240,9 @@ export default class DemandDetails extends Component {
                       {this.state.actions ? (
                         <>
                           <h6>
-                            Join by indicating so on the right, you'll get sent
-                            a telegram invitation with more info.
+                            Join by clicking the join button on the right of the
+                            action, you'll get sent a telegram invitation with
+                            more info.
                           </h6>
                           {this.state.actions.map(action => {
                             return (
@@ -255,7 +257,7 @@ export default class DemandDetails extends Component {
                                     <h6 className="bold">
                                       {action.date}, {action.time}
                                     </h6>
-                                    <h6>{action.details}</h6>
+                                    <h6>{action.name}</h6>
                                   </div>
                                 </div>
                               </div>
@@ -271,15 +273,13 @@ export default class DemandDetails extends Component {
                       ) : null}
                       <div className="separator"></div>
                       <br></br>
-                      <h6>
-                        Create new action. Handle all communication for this
-                        action via telegram, so start by{" "}
-                        <a href="https://blog.en.uptodown.com/how-to-create-groups-and-channels-telegram/">
-                          creating a group on telegram
-                        </a>{" "}
-                        and adding the name of it below.
-                      </h6>
+                      {/* Add new action */}
                       <AddAction demandId={demand.id} />
+                      {/* <Link to={`/${demand.id}/add-action`}>
+                        <div className="add-button">
+                          <FontAwesomeIcon icon={faPlus} />
+                        </div>
+                      </Link> */}
                       <br></br>
                     </Card.Body>
                   </Accordion.Collapse>
