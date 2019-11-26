@@ -5,6 +5,7 @@ import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
+import AddAction from "./AddAction";
 import References from "./DemandComponents/References";
 import Description from "./DemandComponents/Description";
 import Header from "./DemandComponents/Header";
@@ -278,57 +279,7 @@ export default class DemandDetails extends Component {
                         </a>{" "}
                         and adding the name of it below.
                       </h6>
-                      <form action="/" method="post">
-                        <div className="flex-spread">
-                          <div className="form-group">
-                            <label htmlFor="date"></label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="date"
-                              placeholder="Date"
-                            />
-                          </div>
-                          <div className="form-group">
-                            <label htmlFor="time"></label>
-                            <input
-                              type="text"
-                              className="form-control"
-                              id="time"
-                              placeholder="Time"
-                            />
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="where"></label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="where"
-                            placeholder="Where"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="description"></label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="notes"
-                            placeholder="Notes"
-                          />
-                        </div>
-                        <div className="form-group">
-                          <label htmlFor="telegram"></label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            id="telegram"
-                            placeholder="Telegram"
-                          />
-                        </div>
-                      </form>
-                      <br></br>
-                      <h5>Add new action</h5>
+                      <AddAction demandId={demand.id} />
                       <br></br>
                     </Card.Body>
                   </Accordion.Collapse>

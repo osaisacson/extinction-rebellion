@@ -20,17 +20,13 @@ export default class AddAction extends Component {
 
   onSubmit(e) {
     const newAction = {
-      isBeingDefined: true,
-      title: this.refs.title.value,
-      city: this.refs.city.value,
-      country: this.refs.country.value,
-      summary: this.refs.summary.value,
-      background: this.refs.background.value,
-      indicators: this.refs.indicators.value,
-      representative: this.refs.representative.value,
-      representativeEmail: this.refs.representativeEmail.value
+      demandId: this.props.demandId,
+      date: this.refs.date.value,
+      time: this.refs.time.value,
+      details: this.refs.details.value,
+      contactKey: this.refs.contactKey.value
     };
-    this.addDemand(newDemand);
+    this.addAction(newAction);
     e.preventDefault();
   }
 
@@ -40,163 +36,52 @@ export default class AddAction extends Component {
         <Link className="btn grey" to="/">
           Back
         </Link>
-        <Card className="add-demand">
+        <Card className="add-story">
           <h6>
-            Start a new demand. It does not have to be perfect, we can make it
-            great together afterwards.
+            Add a new action for this demand. It could be a meeting, a protest,
+            an event. Anything you think will push it forward
           </h6>
-
           <form onSubmit={this.onSubmit.bind(this)}>
-            <div className="form-group">
-              <input
-                className="form-input"
-                type="text"
-                name="title"
-                ref="title"
-                placeholder="Title"
-              />
-              <label htmlFor="title"></label>
-            </div>
             <div className="flex-spread">
               <div className="form-group">
                 <input
                   className="form-input"
                   type="text"
-                  name="city"
-                  ref="city"
-                  placeholder="City"
+                  name="date"
+                  ref="date"
+                  placeholder="Date of action"
                 />
-                <label htmlFor="city"></label>
+                <label htmlFor="date"></label>
               </div>
               <div className="form-group">
-                <input
-                  type="text"
-                  name="country"
-                  ref="country"
-                  placeholder="Country"
-                />
-                <label htmlFor="country"></label>
+                <input type="text" name="time" ref="time" placeholder="time" />
+                <label htmlFor="time"></label>
               </div>
             </div>
             <div className="form-group">
               <input
                 type="text"
-                name="summary"
-                ref="summary"
-                placeholder="Summary"
+                name="details"
+                ref="details"
+                placeholder="Any necessary details, but use the Telegram group below for logistics"
               />
-              <label htmlFor="summary"></label>
+              <label htmlFor="details"></label>
             </div>
             <div className="form-group">
               <input
                 type="text"
-                name="background"
-                ref="background"
-                placeholder="Background"
+                name="contactKey"
+                ref="contactKey"
+                placeholder="Telegram group name"
               />
-              <label htmlFor="background"></label>
+              <label htmlFor="contactKey"></label>
             </div>
-            <div className="form-group">
-              <input
-                type="text"
-                name="indicators"
-                ref="indicators"
-                placeholder="Indicators"
-              />
-              <label htmlFor="indicators"></label>
-            </div>
-            <br></br>
-            <h6>
-              <span className="bold">Representative</span> to send the demand to
-              once it has been defined and accepted by the group. This should be
-              the person who has the authority to raise this issue in
-              parliament. If you don't know who, leave it blank for now.
-            </h6>
-            <div className="flex-spread">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="representative"
-                  ref="representative"
-                  placeholder="Rep name"
-                />
-                <label htmlFor="representative"></label>
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="representativeEmail"
-                  ref="representativeEmail"
-                  placeholder="Email"
-                />
-                <label htmlFor="representativeEmail"></label>
-              </div>
-            </div>
-
-            <br></br>
-            <h6>One time linking setup:</h6>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdTwitter"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Create a new account on Twitter called{" "}
-                <span className="bold">@xr110references</span>, after this
-                initial setup you will not need to touch it again.
-              </span>
-            </div>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdIFTTT"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Create an account at{" "}
-                <a className="bold" href="https://iftt.com">
-                  IFTTT
-                </a>
-              </span>
-            </div>
-            <div className="list-group-item">
-              <input
-                type="checkbox"
-                ref="createdScript"
-                style={{
-                  height: 16,
-                  width: 16
-                }}
-              />
-              <span>
-                Setup autotweeting all Tweets with #xr110 through this{" "}
-                <a
-                  className="bold"
-                  href="https://ifttt.com/applets/SMvaxczG-if-hashtag-then-retweet-it"
-                >
-                  IFTTT recipe.
-                </a>
-              </span>
-            </div>
-            <p>
-              Hurray! Now all Tweets anyone does with #xr110 gets automatically
-              pulled into the # section of your new petition. You won't have to
-              do anything.
-            </p>
             <input
               className="form-input tweak-background-color btn float-right"
               type="submit"
-              value="Add new demand"
+              value="Add new action"
             />
           </form>
-          <br></br>
           <br></br>
         </Card>
       </>

@@ -6,6 +6,9 @@
     "validateUpsert": true
   },
   "properties": {
+    "demandId": {
+      "type": "string"
+    },
     "createdOn": {
       "type": "date",
       "required": true
