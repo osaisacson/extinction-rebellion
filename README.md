@@ -3,6 +3,10 @@
 Uses React.js/Node.js/loopback for api/mongoDB and deploys with Heroku.
 Based on this example: https://www.youtube.com/watch?v=Mx-cywTNy8s
 
+Find the latest live version at:
+
+### https://extinction-rebellion.herokuapp.com/
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development purposes.
@@ -46,6 +50,14 @@ git --version
 ```
 brew install node
 ```
+
+### MongoDB
+
+Download mongodb compass community.
+`brew install mongodb-community@4.2`
+`brew tap mongodb/brew`
+`brew services start mongodb-community` (this starts the mongo server)
+`npm install -g mongo --save`
 
 ### Original setup - get the latest code for the website
 
@@ -137,23 +149,22 @@ git checkout -b name-of-your-new-branch (creates a new branch identical to the l
 ```
 
 cd extinction-rebellion (ls and cd .. until you're in the extinction-rebellion folder)
-npm run dev (this starts the client and server, and opens up a http://localhost:3000 window in your browser to see the client)
-manually open http://localhost:3001/explorer to see the API
+node . (this starts both the client and server, and opens up a http://localhost:3001 window in your browser to see the client)
+to see the loopback API manually open http://localhost:3001/explorer
 
 ```
 
-...this runs both the server and client and will automatically open a browser window with the project. This shows any changes you make to the code on your local machine, but no changes are yet in the live version.
-
-4. Make changes to the code in visual studio code
+4. Make changes to the code in visual studio code. NOTE: only make changes in client_src folder, not in the client folder. The client folder is where the build lives when we are ready for that. All the work gets done in client_src.
    Main interesting folders are:
-   /client/src/App.js - this is the wrapper for the whole page
-   /client/src/components/Blog.js - this is where you enter entries for the blog, also check out the other components in this folder.
-   /client/src/sass/main.scss - this is where the styles live
+   /client_src/src/App.js - this is the wrapper for the whole page
+   /client_src/src/components/Blog.js - this is where you enter entries for the blog, also check out the other components in this folder.
+   /client_src/src/sass/main.scss - this is where the styles live
 
 5. Once you're done with your changes to the code, push them to GitHub like this:
 
 ```
 (in the first terminal window, not the one you wrote 'npm run dev' in)
+(from client_src) npm run build (this will compile your code and copy it to the client folder)
 git add .
 git commit -m "commit message"
 git push (you'll be prompted to set the upstream branch, use the given suggestion)
