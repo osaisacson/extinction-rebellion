@@ -8,6 +8,7 @@
     "name": "db",
     "user": "",
     "useNewUrlParser": true,
+    "useUnifiedTopology": true,
     "connector": "mongodb"
   }
 }
