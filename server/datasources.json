@@ -5,7 +5,7 @@
     "url": "mongodb+srv://osagambas:Zzorba22@xr-1omtm.mongodb.net/test?retryWrites=true&w=majority",
     "database": "loopback-mongodb-atlas",
     "password": "Zzorba22",
-    "name": "mongoatlas",
+    "name": "db",
     "user": "osagambas",
     "useNewUrlParser": true,
     "connector": "mongodb"
