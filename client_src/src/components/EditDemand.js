@@ -27,7 +27,7 @@ export default class EditDemand extends Component {
   }
 
   getDemandDetails() {
-    let demandId = this.props.match.params.id;
+    let demandId = this.props.demandId;
     axios
       .get(`http://localhost:3001/api/demands/${demandId}`)
       .then(response => {
@@ -92,9 +92,9 @@ export default class EditDemand extends Component {
   render() {
     return (
       <>
-        <Link className="btn grey" to="/">
+        {/* <Link className="btn grey" to="/">
           Back
-        </Link>
+        </Link> */}
         <Card className="add-demand">
           <form onSubmit={this.onSubmit.bind(this)}>
             <div className="form-group">

@@ -6,6 +6,8 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 import AddAction from "./AddAction";
+import EditDemand from "./EditDemand";
+
 import References from "./DemandComponents/References";
 import Description from "./DemandComponents/Description";
 import Header from "./DemandComponents/Header";
@@ -196,12 +198,13 @@ export default class DemandDetails extends Component {
                         ) : null}
                       </div>
                       <p>Disabled for a sec while hooking up real data.</p>
-                      {/* <Header
-                    postedBy={demand.postedBy}
-                    representative={demand.representative}
-                    timeSent={demand.timeSent}
-                  />
-                  <div className="separator"></div>
+                      <Header
+                        postedBy={demand.postedBy}
+                        representative={demand.representative}
+                      />
+                      <EditDemand demandId={demand.id} />
+                      {/* <div className="separator"></div>
+                      
                   <Description card={demand} /> */}
                     </Card.Body>
                   </Accordion.Collapse>
