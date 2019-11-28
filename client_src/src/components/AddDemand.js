@@ -21,14 +21,16 @@ export default class AddDemand extends Component {
   onSubmit(e) {
     const newDemand = {
       isBeingDefined: true,
-      title: this.refs.title.value,
-      city: this.refs.city.value,
-      country: this.refs.country.value,
-      summary: this.refs.summary.value,
-      background: this.refs.background.value,
-      indicators: this.refs.indicators.value,
-      representative: this.refs.representative.value,
-      representativeEmail: this.refs.representativeEmail.value
+      title: this.refs.title.value || "No title yet",
+      city: this.refs.city.value || "No city yet",
+      country: this.refs.country.value || "No country yet",
+      summary: this.refs.summary.value || "No summary yet",
+      background: this.refs.background.value || "No background yet",
+      indicators: this.refs.indicators.value || "No indicators yet",
+      representative: this.refs.representative.value || "No representative yet",
+      representativeEmail:
+        this.refs.representativeEmail.value ||
+        "No email for the representative yet"
     };
     this.addDemand(newDemand);
     e.preventDefault();

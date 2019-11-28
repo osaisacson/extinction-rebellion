@@ -10,7 +10,6 @@ import EditDemand from "./EditDemand";
 
 import References from "./DemandComponents/References";
 import Description from "./DemandComponents/Description";
-import Header from "./DemandComponents/Header";
 
 import Voting from "./Voting";
 
@@ -18,8 +17,8 @@ import { TwitterHashtagButton } from "react-twitter-embed";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPlus,
   faBook,
+  faEdit,
   faBookOpen,
   faHashtag,
   faFistRaised,
@@ -34,15 +33,16 @@ export default class DemandDetails extends Component {
     this.state = {
       demand: "",
       isLoading: true,
+      showEdit: false,
       actions: [],
       currentDemandId: props.match.params.id,
-      isSuggested: props.isSuggested,
       isSent: props.isSent,
       showDemandSection: false,
       showReferencesSection: false,
       showRebelSection: false
     };
 
+    this.toggleEdit = this.toggleEdit.bind(this);
     this.handleDemandClick = this.handleDemandClick.bind(this);
     this.handleReferencesClick = this.handleReferencesClick.bind(this);
     this.handleRebelClick = this.handleRebelClick.bind(this);
@@ -86,8 +86,12 @@ export default class DemandDetails extends Component {
       .catch(err => console.log("Error from DemandDetails.js:onDelete", err));
   }
 
+  toggleEdit(e) {
+    this.setState({ showEdit: !this.state.showEdit });
+  }
+
   render() {
-    const { isSuggested, demand } = this.state;
+    const { isSent, demand } = this.state;
 
     let cardBackgroundType = demand.isBeingDefined ? "suggested" : "sent";
 
@@ -113,7 +117,7 @@ export default class DemandDetails extends Component {
             <Card>
               <div className="demand-header">
                 {/* Status */}
-                {!isSuggested && demand.status ? (
+                {isSent && demand.status ? (
                   <p className={`pill ${demand.isRebel ? "red" : "darkblue"}`}>
                     {demand.status}
                   </p>
@@ -187,8 +191,7 @@ export default class DemandDetails extends Component {
                     <Card.Body>
                       <div>
                         {/* Summary section*/}
-
-                        {isSuggested ? (
+                        {!isSent ? (
                           <>
                             <div className="tight-header">
                               <h6>Being defined. Edit and add below.</h6>
@@ -197,15 +200,22 @@ export default class DemandDetails extends Component {
                           </>
                         ) : null}
                       </div>
-                      <p>Disabled for a sec while hooking up real data.</p>
-                      <Header
-                        postedBy={demand.postedBy}
-                        representative={demand.representative}
-                      />
-                      <EditDemand demandId={demand.id} />
-                      {/* <div className="separator"></div>
-                      
-                  <Description card={demand} /> */}
+                      {/* Toggles the editing section of the demand */}
+                      <div
+                        className="edit-btn"
+                        onClick={e => this.toggleEdit(e)}
+                      >
+                        <FontAwesomeIcon icon={faEdit} />
+                      </div>
+                      {/* Editing section of the demand */}
+                      {this.state.showEdit ? (
+                        <EditDemand demandId={demand.id} />
+                      ) : (
+                        <Description
+                          isSent={this.props.isSent}
+                          demand={demand}
+                        />
+                      )}
                     </Card.Body>
                   </Accordion.Collapse>
                 </>

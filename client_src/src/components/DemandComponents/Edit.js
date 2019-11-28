@@ -6,9 +6,7 @@ export default class Edit extends Component {
     super(props);
 
     this.state = {
-      open: true,
-      originalText: this.props.originalText,
-      edit: this.props.edit
+      open: true
     };
     this.togglePanel = this.togglePanel.bind(this);
   }
@@ -17,19 +15,17 @@ export default class Edit extends Component {
     this.setState({ open: !this.state.open });
   }
 
-  componentDidUpdate() {
-    // this.props.onToggle(this.props.index);
-  }
-
   render() {
+    const { edit } = this.props;
+
     return (
       <>
         <div className="separator"></div>
         <div
-          key={this.state.edit.id}
+          key={edit.id}
           className="collapsible-in-card main-border-color card-padding"
         >
-          <Voting votes={this.state.edit.votes} acceptedVoteNumber={100} />
+          <Voting votes={edit.votes} acceptedVoteNumber={100} />
           <div
             onClick={e => this.togglePanel(e)}
             className="collapsible-trigger"
@@ -37,12 +33,10 @@ export default class Edit extends Component {
             <div className="edit flex-spread">
               <div className="tight-header">
                 <p className="grey-color">
-                  {this.state.edit.date ? this.state.edit.date : "No date"}
+                  {edit.date ? edit.date : "No date"}
                 </p>
-                <p className="bold margin-bottom-10px">
-                  "{this.state.edit.title}"
-                </p>
-                <p>{this.state.edit.name ? this.state.edit.name : "No name"}</p>
+                <p className="bold margin-bottom-10px">"{edit.title}"</p>
+                <p>{edit.name ? edit.name : "No name"}</p>
               </div>
             </div>
           </div>
@@ -52,12 +46,8 @@ export default class Edit extends Component {
               <div className="separator"></div>
               <div className="compare-commits">
                 <div className="edit-section">
-                  <p className="bold">Original:</p>
-                  <p>{this.state.originalText}</p>
-                </div>
-                <div className="edit-section">
                   <p className="bold">Edit:</p>
-                  <p className="changes">{this.state.edit.edit}</p>
+                  <p className="changes">{edit.edit}</p>
                 </div>
               </div>{" "}
             </div>
