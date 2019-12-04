@@ -25,7 +25,7 @@ export default class Edit extends Component {
           key={edit.id}
           className="collapsible-in-card main-border-color card-padding"
         >
-          <Voting votes={edit.votes} acceptedVoteNumber={100} />
+          <Voting votes={edit.votes} cardId={edit.demandId} />
           <div
             onClick={e => this.togglePanel(e)}
             className="collapsible-trigger"

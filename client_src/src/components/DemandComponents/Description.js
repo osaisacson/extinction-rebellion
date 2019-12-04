@@ -37,23 +37,25 @@ export default class Description extends Component {
   }
 
   render() {
-    const { isSent, demand } = this.props;
+    const { demand } = this.props;
+    const { edits } = this.state;
+
     return (
       <>
         {/* Show if the demand is completed*/}
-        {isSent ? (
+        {demand.isSent ? (
           <>
             <h6>
-              This demand was defined by{" "}
-              <span className="bold">{demand.noOfContributors}</span> of our
-              members, who together made{" "}
-              <span className="bold">{demand.noOfEdits}</span> edits. Add
-              references supporting the demand in the hashtag section above, and
-              start actions to push it through parliament in the rebel section.
+              We together made <span className="bold">{edits.length}</span>{" "}
+              edits. <br></br>Add references supporting the demand in the
+              hashtag section above, and start actions to push it through
+              parliament in the rebel section.
             </h6>
             <div className="separator"></div>
           </>
-        ) : null}
+        ) : (
+          <h6>Being defined. Edit and add below.</h6>
+        )}
         {/* Show if demand is in the suggested state */}
         <>
           <div className="small-card-header">
@@ -71,19 +73,23 @@ export default class Description extends Component {
           <p>{demand.country}</p>
           <h6 className="bold">City</h6>
           <p>{demand.city}</p>
+          <h6 className="bold">Summary</h6>
+          <p>{demand.summary}</p>
           <h6 className="bold">Background</h6>
           <p>{demand.background}</p>
           <h6 className="bold">Indicators</h6>
           <p>{demand.indicators}</p>
         </>
         {/* Loop over edits belonging to this demand */}
-        {!isSent && this.state.edits.length ? (
+        {!demand.isSent && edits.length ? (
           <>
-            {demand.edits.map(edit => {
+            {edits.map(edit => {
               return <Edit key={edit.id} edits={edit} />;
             })}
           </>
-        ) : null}
+        ) : (
+          <h5>No edits yet</h5>
+        )}
       </>
     );
   }

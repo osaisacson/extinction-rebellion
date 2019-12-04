@@ -5,9 +5,9 @@ $primary-text-color: #000;
 $secondary-text-color: rgb(56, 56, 56);
 $card-background-color: rgba(255, 255, 255, .5);
 $home-color: rgba(33, 167, 61, .9);
-$action-color: rgba(113, 208, 241, .9);
-$demand-color: rgba(237, 155, 196, .9);
-$tweak-color: rgba(189, 102, 255, .9);
+$action-color: rgba(113, 208, 241, .6);
+$demand-color: rgba(237, 155, 196, .6);
+$tweak-color: rgba(189, 102, 255, .6);
 $add-color: rgba(252, 215, 5, .9);
 $collapsible-in-card-background-color: transparent;
 $gradient-main-background: linear-gradient(360deg, rgba(0,0,0,0.5816701680672269) 0%, rgba(173,164,249,0.43881302521008403) 71%);
@@ -359,6 +359,11 @@ ul {
 .card-stats-section {
   margin: 0 10px;
   padding: 7px 0;
+}
+
+.card-indicators {
+  @extend .flex-spread;
+  width: 150px;
 }
 
 .search-filter {
@@ -716,7 +721,7 @@ input[type=submit] {
   align-items: center;
 
   h6 {
-    font-size: .9rem;
+    font-size: .8rem;
     margin: 0 6px;
     font-family: 'Libre Franklin', sans-serif;
     color: $primary-text-color;
@@ -862,8 +867,16 @@ a:focus {
 
 .card-body {
   padding: $card-padding;
+
+  &.suggested, 
+  &.sent {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
 }
 
-.tab-content {
-  margin-bottom: 200px;
+.card-header-tabs {
+  margin: 0;
+  max-height: 62px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
 }
+

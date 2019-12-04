@@ -1,0 +1,54 @@
+{
+  "name": "edits",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "demandId": {
+      "type": "string"
+    },
+    "by": {
+      "type": "string",
+      "required": true,
+      "default": "anonymous"
+    },
+    "country": {
+      "type": "string",
+      "required": true,
+      "default": "global"
+    },
+    "city": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "default": "No title yet"
+    },
+    "summary": {
+      "type": "string",
+      "default": "No summary yet"
+    },
+    "background": {
+      "type": "string",
+      "default": "No background yet"
+    },
+    "indicators": {
+      "type": "string",
+      "default": "No success indicators yet"
+    },
+    "representative": {
+      "type": "string",
+      "default": "No representative yet"
+    },
+    "representativeEmail": {
+      "type": "string",
+      "default": "No representative yet"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

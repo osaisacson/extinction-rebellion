@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
@@ -8,10 +9,8 @@ import Voting from "./Voting";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
-  faBookOpen,
   faHashtag,
   faFistRaised,
-  faCheck,
   faWrench
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,21 +19,100 @@ export default class DemandItem extends Component {
     super(props);
 
     this.state = {
-      card: props.card
+      card: props.card,
+      demand: "",
+      isLoading: true,
+      showEdit: false,
+      edits: [],
+      references: [],
+      actions: [],
+      isSent: props.isSent
     };
   }
 
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
+    let demandId = this.state.card.id;
+    axios
+      .all([
+        axios.get(`http://localhost:3001/api/demands/${demandId}`),
+        axios.get("http://localhost:3001/api/edits"),
+        axios.get("http://localhost:3001/api/references"),
+        axios.get("http://localhost:3001/api/actions")
+      ])
+      .then(
+        axios.spread((demand, edits, references, actions) => {
+          const editsArray = edits.data;
+          const referencesArray = references.data;
+          const actionsArray = actions.data;
+          const criteria = demandId;
+
+          const demandEdits = editsArray.filter(
+            item => item.demandId === criteria
+          );
+          const demandReferences = referencesArray.filter(
+            item => item.demandId === criteria
+          );
+          const demandActions = actionsArray.filter(
+            item => item.demandId === criteria
+          );
+
+          this.setState({
+            demand: demand.data,
+            edits: demandEdits,
+            references: demandReferences,
+            actions: demandActions,
+            isLoading: false
+          });
+        })
+      )
+      .catch(err => console.log("error in DemandItem.js:getData()", err));
+  }
+
   render() {
-    const { card } = this.state;
+    const { card, edits, references, actions } = this.state;
 
     let isSuggested = card.isBeingDefined;
     let cardBackgroundType = isSuggested ? "suggested" : "sent";
 
     return (
       <div className={`card-wrapper ${cardBackgroundType}`} key={card.id}>
-        {/* Section with votes, appears outside toggle so can use the voting functionality */}
-        <Voting votes={card.votes} isSent={card.isSent} />
+        <div className="flex-spread">
+          <div className="card-indicators">
+            <div as={Card.Header} className="icon-section">
+              {card.isSent ? (
+                <>
+                  <h6>{edits ? edits.length : 0}</h6>
+                  <FontAwesomeIcon icon={faBook} />
+                </>
+              ) : (
+                <>
+                  <h6>{edits ? edits.length : 0}</h6>
+                  <FontAwesomeIcon icon={faWrench} />
+                </>
+              )}
+            </div>
+            <div as={Card.Header} className="icon-section">
+              <h6>{references ? references.length : 0}</h6>
+              <FontAwesomeIcon icon={faHashtag} />
+            </div>
+            <div as={Card.Header} className="icon-section">
+              <h6>{actions ? actions.length : 0}</h6>
+              <FontAwesomeIcon icon={faFistRaised} />
+            </div>
+          </div>
 
+          {/* Section with votes, appears outside toggle so can use the voting functionality */}
+          <Voting
+            votes={card.votes}
+            isSent={card.isSent}
+            cardId={card.id}
+            voteLimit={10}
+          />
+        </div>
         <Card>
           <Link to={`/demands/${card.id}`}>
             <div className="demand-header">
@@ -55,37 +133,6 @@ export default class DemandItem extends Component {
             </div>
 
             <div className="separator"></div>
-
-            {/* TRIGGERS */}
-            <div className="card-stats-section flex-spread">
-              {/* Show full demand */}
-              <div as={Card.Header} className="icon-section">
-                {card.isSent ? (
-                  <>
-                    <FontAwesomeIcon icon={faBook} />
-                    <FontAwesomeIcon
-                      icon={faCheck}
-                      className="green-color icon-margin-left"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <FontAwesomeIcon icon={faBookOpen} />
-                    <FontAwesomeIcon
-                      icon={faWrench}
-                      className="icon-margin-left"
-                    />
-                  </>
-                )}
-              </div>
-              <div as={Card.Header} className="icon-section">
-                <FontAwesomeIcon icon={faHashtag} />
-              </div>
-              <div as={Card.Header} className="icon-section">
-                <h6>{this.state.actions ? this.state.actions.length : 0}</h6>
-                <FontAwesomeIcon icon={faFistRaised} />
-              </div>
-            </div>
           </Link>
         </Card>
       </div>

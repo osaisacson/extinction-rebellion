@@ -78,7 +78,7 @@ export default class Stories extends Component {
     return (
       <>
         <div className="story-section stories-background-color">
-          <h2>FACTION ACTIONS</h2>
+          <h2>FACTIONS & ACTIONS</h2>
           <div className="stories">
             <Link to="/add-story">
               <div className="add-button">

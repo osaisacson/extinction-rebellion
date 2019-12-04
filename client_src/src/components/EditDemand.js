@@ -56,6 +56,7 @@ export default class EditDemand extends Component {
       })
       .then(response => {
         alert("Saved");
+        window.location.reload();
         this.props.history.push("/");
         console.log(response);
       })

@@ -10,8 +10,8 @@ export default class AddAction extends Component {
         data: newAction
       })
       .then(response => {
-        alert("Saved, refresh to see (working on this)");
-        console.log(response);
+        alert("Saved!");
+        window.location.reload();
       })
       .catch(err => console.log("Error from AddAction.js:addAction", err));
   }
@@ -77,7 +77,7 @@ export default class AddAction extends Component {
             <label htmlFor="telegram"></label>
           </div>
           <input
-            className="form-input tweak-background-color btn float-right"
+            className="form-input tweak-background-color btn"
             type="submit"
             value="Add new action"
           />

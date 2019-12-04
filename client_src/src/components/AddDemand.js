@@ -12,6 +12,7 @@ export default class AddDemand extends Component {
         data: newDemand
       })
       .then(response => {
+        window.location.reload();
         this.props.history.push("/");
         console.log(response);
       })

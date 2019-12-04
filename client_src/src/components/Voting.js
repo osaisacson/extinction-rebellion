@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,30 +14,64 @@ export class Voting extends React.Component {
     super(props);
 
     this.state = {
-      score: this.props.votes
+      votes: this.props.votes
     };
-
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
   }
+
+  editDemand(newVote) {
+    axios
+      .request({
+        method: "patch",
+        url: `http://localhost:3001/api/demands/${this.props.cardId}`,
+        data: newVote
+      })
+      .then(response => {
+        window.location.reload();
+        this.props.history.push("/");
+      })
+      .catch(err => console.log("Error from Voting.js:editDemand", err));
+  }
+
+  upvote = () => {
+    let newVote;
+    if (this.props.voteLimit === this.state.votes - 1) {
+      newVote = {
+        isSent: true,
+        isBeingDefined: false,
+        votes: this.state.votes + 1
+      };
+    } else {
+      newVote = {
+        votes: this.state.votes + 1
+      };
+    }
+    this.editDemand(newVote);
+  };
+
+  downvote = () => {
+    const newVote = {
+      votes: this.state.votes - 1
+    };
+    this.editDemand(newVote);
+  };
 
   render() {
     return (
       <div className="voting-section">
         {this.props.showAsRebel ? (
           <div className="icon-section">
-            <button className="fa-icons" onClick={this.increment}>
-              <h6>{this.state.score}</h6>
+            <button className="fa-icons" onClick={this.upvote}>
+              <h6>{this.state.votes}</h6>
               <FontAwesomeIcon className="btn-icon" icon={faMale} />
             </button>
           </div>
         ) : this.props.isSent ? (
           <div className="icon-section">
-            <h6>{this.state.score}</h6>
+            <h6>{this.state.votes}</h6>
             <FontAwesomeIcon
               className="btn-icon"
               icon={faPenFancy}
-              onClick={this.increment}
+              onClick={this.upvote}
             />
           </div>
         ) : (
@@ -44,30 +79,18 @@ export class Voting extends React.Component {
             <FontAwesomeIcon
               className="btn-icon"
               icon={faCaretUp}
-              onClick={this.increment}
+              onClick={this.upvote}
             />
-            <h6>{this.state.score}</h6>
+            <h6>{this.state.votes}</h6>
             <FontAwesomeIcon
               className="btn-icon"
               icon={faCaretDown}
-              onClick={this.decrement}
+              onClick={this.downvote}
             />
           </div>
         )}
       </div>
     );
-  }
-
-  increment() {
-    this.setState({
-      score: this.state.score + 1
-    });
-  }
-
-  decrement() {
-    this.setState({
-      score: this.state.score - 1
-    });
   }
 }
 export default Voting;

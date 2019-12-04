@@ -2,27 +2,24 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import Accordion from "react-bootstrap/Accordion";
+import { Tabs, Tab } from "react-bootstrap";
+
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 import AddAction from "./AddAction";
 import EditDemand from "./EditDemand";
 
-import References from "./DemandComponents/References";
 import Description from "./DemandComponents/Description";
 
 import Voting from "./Voting";
-
-import { TwitterHashtagButton } from "react-twitter-embed";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
   faEdit,
-  faBookOpen,
   faHashtag,
   faFistRaised,
-  faCheck,
   faWrench
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -34,18 +31,13 @@ export default class DemandDetails extends Component {
       demand: "",
       isLoading: true,
       showEdit: false,
+      edits: [],
+      references: [],
       actions: [],
-      currentDemandId: props.match.params.id,
-      isSent: props.isSent,
-      showDemandSection: false,
-      showReferencesSection: false,
-      showRebelSection: false
+      currentDemandId: props.match.params.id
     };
 
     this.toggleEdit = this.toggleEdit.bind(this);
-    this.handleDemandClick = this.handleDemandClick.bind(this);
-    this.handleReferencesClick = this.handleReferencesClick.bind(this);
-    this.handleRebelClick = this.handleRebelClick.bind(this);
   }
 
   componentDidMount() {
@@ -57,17 +49,31 @@ export default class DemandDetails extends Component {
     axios
       .all([
         axios.get(`http://localhost:3001/api/demands/${demandId}`),
+        axios.get("http://localhost:3001/api/edits"),
+        axios.get("http://localhost:3001/api/references"),
         axios.get("http://localhost:3001/api/actions")
       ])
       .then(
-        axios.spread((demand, actions) => {
+        axios.spread((demand, edits, references, actions) => {
+          const editsArray = edits.data;
+          const referencesArray = references.data;
           const actionsArray = actions.data;
           const criteria = this.state.currentDemandId;
+
+          const demandEdits = editsArray.filter(
+            item => item.demandId === criteria
+          );
+          const demandReferences = referencesArray.filter(
+            item => item.demandId === criteria
+          );
           const demandActions = actionsArray.filter(
             item => item.demandId === criteria
           );
+
           this.setState({
             demand: demand.data,
+            edits: demandEdits,
+            references: demandReferences,
             actions: demandActions,
             isLoading: false
           });
@@ -91,7 +97,7 @@ export default class DemandDetails extends Component {
   }
 
   render() {
-    const { isSent, demand } = this.state;
+    const { demand, edits, references, actions, showEdit } = this.state;
 
     let cardBackgroundType = demand.isBeingDefined ? "suggested" : "sent";
 
@@ -101,9 +107,6 @@ export default class DemandDetails extends Component {
         <Link className="btn grey" to={"/"}>
           Back
         </Link>
-        <Link className="btn" to={`/demands/edit/${demand.id}`}>
-          Edit
-        </Link>
         <button onClick={this.onDelete.bind(this)} className="btn red light">
           Delete
         </button>
@@ -111,17 +114,16 @@ export default class DemandDetails extends Component {
         {/* Details for item */}
         <div className={`card-wrapper ${cardBackgroundType}`} key={demand.id}>
           {/* Section with votes, appears outside toggle so can use the voting functionality */}
-          <Voting votes={demand.votes} isSent={demand.isSent} />
+          <Voting
+            votes={demand.votes}
+            isSent={demand.isSent}
+            cardId={demand.id}
+            voteLimit={10}
+          />
 
           <Accordion defaultActiveKey="0">
             <Card>
               <div className="demand-header">
-                {/* Status */}
-                {isSent && demand.status ? (
-                  <p className={`pill ${demand.isRebel ? "red" : "darkblue"}`}>
-                    {demand.status}
-                  </p>
-                ) : null}
                 {/* Country */}
                 <h6>
                   {demand.city}, <span className="bold">{demand.country}</span>
@@ -132,197 +134,128 @@ export default class DemandDetails extends Component {
               </div>
               <div className="separator"></div>
 
-              {/* TRIGGERS */}
-              <div className="card-stats-section flex-spread">
-                {/* Show full demand */}
-                <Accordion.Toggle
-                  as={Card.Header}
-                  eventKey="0"
-                  className="icon-section"
-                  onClick={this.handleDemandClick}
+              <Tabs defaultActiveKey={1}>
+                <Tab
+                  eventKey={1}
+                  title={
+                    <span className="icon-section card-header">
+                      {demand.isSent ? (
+                        <>
+                          <h6>{edits ? edits.length : 0}</h6>
+                          <FontAwesomeIcon icon={faBook} />
+                        </>
+                      ) : (
+                        <>
+                          <h6>{edits ? edits.length : 0}</h6>
+                          <FontAwesomeIcon icon={faWrench} />
+                        </>
+                      )}{" "}
+                    </span>
+                  }
                 >
-                  {demand.isSent ? (
-                    <>
-                      <FontAwesomeIcon icon={faBook} />
-                      <FontAwesomeIcon
-                        icon={faCheck}
-                        className="green-color icon-margin-left"
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <FontAwesomeIcon icon={faBookOpen} />
-
-                      <FontAwesomeIcon
-                        icon={faWrench}
-                        className="icon-margin-left"
-                      />
-                    </>
-                  )}
-                </Accordion.Toggle>
-
-                {/* Show references */}
-                <Accordion.Toggle
-                  as={Card.Header}
-                  eventKey="1"
-                  className="icon-section"
-                  onClick={this.handleReferencesClick}
-                >
-                  <FontAwesomeIcon icon={faHashtag} />
-                </Accordion.Toggle>
-                {/* Show rebel actions */}
-                <Accordion.Toggle
-                  as={Card.Header}
-                  eventKey="2"
-                  className="icon-section"
-                  onClick={this.handleRebelClick}
-                >
-                  <h6>{this.state.actions ? this.state.actions.length : 0}</h6>
-                  <FontAwesomeIcon icon={faFistRaised} />
-                </Accordion.Toggle>
-              </div>
-
-              {/* CONTENT */}
-
-              {/* Demand section */}
-              {this.state.showDemandSection ? (
-                <>
-                  <Accordion.Collapse eventKey="0">
-                    <Card.Body>
-                      <div>
-                        {/* Summary section*/}
-                        {!isSent ? (
-                          <>
-                            <div className="tight-header">
-                              <h6>Being defined. Edit and add below.</h6>
-                            </div>
-                            <div className="separator"></div>
-                          </>
-                        ) : null}
-                      </div>
-                      {/* Toggles the editing section of the demand */}
-                      <div
-                        className="edit-btn"
-                        onClick={e => this.toggleEdit(e)}
-                      >
-                        <FontAwesomeIcon icon={faEdit} />
-                      </div>
-                      {/* Editing section of the demand */}
-                      {this.state.showEdit ? (
-                        <EditDemand demandId={demand.id} />
+                  <Card.Body className={cardBackgroundType}>
+                    <div>
+                      {/* Summary section*/}
+                      {!demand.isSent ? (
+                        <>
+                          {/* Toggles the editing section of the demand */}
+                          <div
+                            className="edit-btn"
+                            onClick={e => this.toggleEdit(e)}
+                          >
+                            <FontAwesomeIcon icon={faEdit} />
+                          </div>
+                          {/* Editing section of the demand */}
+                          {showEdit ? (
+                            <EditDemand demandId={demand.id} />
+                          ) : null}
+                        </>
                       ) : (
                         <Description demand={demand} />
                       )}
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </>
-              ) : null}
-
-              {/* References section */}
-              {this.state.showReferencesSection && demand.id ? (
-                <>
-                  <Accordion.Collapse eventKey="1">
-                    <Card.Body>
-                      <h6>
-                        To add references that support this demand:
-                        <TwitterHashtagButton
-                          tag={demand.id}
-                          options={{
-                            size: "large",
-                            screenName: null,
-                            buttonHashtag: null
-                          }}
-                        />
-                        Your tweet will automatically be pulled into the feed
-                        below.
-                      </h6>
-                      <References hashtag={demand.id} />
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </>
-              ) : null}
-
-              {/* Action section */}
-              {this.state.showRebelSection ? (
-                <>
-                  <Accordion.Collapse eventKey="2">
-                    <Card.Body>
-                      {this.state.actions ? (
-                        <>
-                          <h6>
-                            Join by clicking the join button on the right of the
-                            action, you'll get sent a telegram invitation with
-                            more info.
-                          </h6>
-                          {this.state.actions.map(action => {
-                            return (
-                              <div className="rebel-card" key={action.id}>
-                                {/* Joined people */}
-                                <Voting
-                                  showAsRebel={true}
-                                  votes={action.joined ? action.joined : 0}
-                                ></Voting>
-                                <div className="rebel-content">
-                                  <div>
-                                    <h6 className="bold">
-                                      {action.date}, {action.time}
-                                    </h6>
-                                    <h6>{action.name}</h6>
-                                  </div>
+                    </div>
+                  </Card.Body>
+                </Tab>
+                <Tab
+                  eventKey={2}
+                  title={
+                    <span className="icon-section card-header">
+                      {" "}
+                      <h6>{references ? references.length : 0}</h6>
+                      <FontAwesomeIcon icon={faHashtag} />
+                    </span>
+                  }
+                >
+                  <Card.Body className={cardBackgroundType}>
+                    <h6>
+                      To add references that support this demand: Your tweet
+                      will automatically be pulled into the feed below.
+                    </h6>
+                    {/* <References hashtag={demand.id} /> */}
+                  </Card.Body>{" "}
+                </Tab>
+                <Tab
+                  eventKey={3}
+                  title={
+                    <span className="icon-section card-header">
+                      {" "}
+                      <h6>{actions ? actions.length : 0}</h6>
+                      <FontAwesomeIcon icon={faFistRaised} />
+                    </span>
+                  }
+                >
+                  <Card.Body className={cardBackgroundType}>
+                    {actions ? (
+                      <>
+                        <h6>
+                          Join by clicking the join button on the right of the
+                          action, you'll get sent a telegram invitation with
+                          more info.
+                        </h6>
+                        {actions.map(action => {
+                          return (
+                            <div className="rebel-card" key={action.id}>
+                              {/* Joined people */}
+                              <Voting
+                                showAsRebel={true}
+                                votes={action.joined ? action.joined : 0}
+                              ></Voting>
+                              <div className="rebel-content">
+                                <div>
+                                  <h6 className="bold">
+                                    {action.date}, {action.time}
+                                  </h6>
+                                  <h6>{action.name}</h6>
                                 </div>
                               </div>
-                            );
-                          })}
-                        </>
-                      ) : null}
-                      {!this.state.actions ? (
-                        <>
-                          <br></br>
-                          <h6>There are no actions yet, start one below</h6>
-                        </>
-                      ) : null}
-                      <div className="separator"></div>
-                      <br></br>
-                      {/* Add new action */}
-                      <AddAction demandId={demand.id} />
-                      {/* <Link to={`/${demand.id}/add-action`}>
+                            </div>
+                          );
+                        })}
+                      </>
+                    ) : null}
+                    {!actions ? (
+                      <>
+                        <br></br>
+                        <h6>There are no actions yet, start one below</h6>
+                      </>
+                    ) : null}
+                    <div className="separator"></div>
+                    <br></br>
+                    {/* Add new action */}
+                    <AddAction demandId={demand.id} />
+                    {/* <Link to={`/${demand.id}/add-action`}>
                         <div className="add-button">
                           <FontAwesomeIcon icon={faPlus} />
                         </div>
                       </Link> */}
-                      <br></br>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </>
-              ) : null}
+                    <br></br>
+                  </Card.Body>{" "}
+                </Tab>
+              </Tabs>
             </Card>
           </Accordion>
         </div>
       </>
     );
-  }
-
-  handleDemandClick() {
-    this.setState({
-      showDemandSection: true,
-      showReferencesSection: false,
-      showRebelSection: false
-    });
-  }
-
-  handleReferencesClick() {
-    this.setState({
-      showDemandSection: false,
-      showReferencesSection: true,
-      showRebelSection: false
-    });
-  }
-
-  handleRebelClick() {
-    this.setState({
-      showDemandSection: false,
-      showReferencesSection: false,
-      showRebelSection: true
-    });
   }
 }
