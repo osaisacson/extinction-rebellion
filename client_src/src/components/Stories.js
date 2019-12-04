@@ -13,8 +13,7 @@ export default class Stories extends Component {
     this.state = {
       twitterHandle: "",
       isLoading: true,
-      stories: [],
-      search: ""
+      stories: []
     };
     this.updateTwitter = this.updateTwitter.bind(this);
   }
@@ -27,13 +26,12 @@ export default class Stories extends Component {
     axios
       .get("http://localhost:3001/api/stories")
       .then(response => {
-        console.log("response from api stories: ", response.data);
-        console.log(
-          "response.data.sort(): ",
-          response.data.sort((a, b) => b.city.localeCompare(a.city))
+        let sortedStories = response.data.sort((a, b) =>
+          b.city.localeCompare(a.city)
         );
+
         this.setState({
-          stories: response.data,
+          stories: sortedStories,
           isLoading: false
         });
       })
@@ -80,7 +78,7 @@ export default class Stories extends Component {
     return (
       <>
         <div className="story-section stories-background-color">
-          <h2>RECENT ACTIONS</h2>
+          <h2>FACTION ACTIONS</h2>
           <div className="stories">
             <Link to="/add-story">
               <div className="add-button">

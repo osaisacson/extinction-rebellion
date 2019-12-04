@@ -80,10 +80,11 @@ export default class Routes extends Component {
               <Route
                 exact
                 path="/"
-                component={Stories}
-                stories={xrFactions}
-                search={search}
+                render={props => (
+                  <Stories {...props} stories={xrFactions} search={search} />
+                )}
               ></Route>
+
               <Route
                 exact
                 path="/demands"
