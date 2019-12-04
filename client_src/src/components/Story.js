@@ -35,11 +35,16 @@ export default class Story extends Component {
       });
   }
 
-  render() {
-    console.log("this.props.passToParent from child:", this.props.passToParent);
+  updateTwitter(handle) {
+    this.props.handleStateChange(handle);
+  }
 
+  render() {
     return (
-      <div className="story" onClick={this.props.passToParent}>
+      <button
+        className="story"
+        onClick={e => this.props.onClick(this.props.twitterHandle)}
+      >
         <div className="mask">
           <img
             src={
@@ -52,7 +57,7 @@ export default class Story extends Component {
         </div>
         <h5>{this.props.city}</h5>
         <h5>{this.props.country}</h5>
-      </div>
+      </button>
     );
   }
 }

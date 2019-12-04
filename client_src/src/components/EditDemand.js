@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "react-bootstrap/Card";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default class EditDemand extends Component {
@@ -22,7 +21,7 @@ export default class EditDemand extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getDemandDetails();
   }
 

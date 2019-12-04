@@ -211,10 +211,7 @@ export default class DemandDetails extends Component {
                       {this.state.showEdit ? (
                         <EditDemand demandId={demand.id} />
                       ) : (
-                        <Description
-                          isSent={this.props.isSent}
-                          demand={demand}
-                        />
+                        <Description demand={demand} />
                       )}
                     </Card.Body>
                   </Accordion.Collapse>

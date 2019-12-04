@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Story from "./Story";
+// import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { Timeline } from "react-twitter-widgets";
 import { Link } from "react-router-dom";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,11 +11,12 @@ export default class Stories extends Component {
   constructor() {
     super();
     this.state = {
+      twitterHandle: "",
       isLoading: true,
-      currentTwitterHandle: "https://twitter.com/XR_Belgium",
       stories: [],
       search: ""
     };
+    this.updateTwitter = this.updateTwitter.bind(this);
   }
 
   componentDidMount() {
@@ -26,19 +28,50 @@ export default class Stories extends Component {
       .get("http://localhost:3001/api/stories")
       .then(response => {
         this.setState({
-          stories: response.data,
+          stories: response.data.sort(),
           isLoading: false
         });
       })
       .catch(err => console.log("error in Stories.js:getStories()", err));
   }
 
-  passTwitterHandleFromChild(handle) {
-    console.log("handle passed to passTwitterHandleFromChild:", handle);
-    this.setState({ currentTwitterHandle: handle });
+  // Update twitterfeed to the profile belonging to the clicked story
+  updateTwitter(handle) {
+    this.setState({ twitterHandle: handle });
   }
 
   render() {
+    const handle = this.state.twitterHandle;
+    let twitterFeed;
+
+    if (handle) {
+      twitterFeed = (
+        <Timeline
+          dataSource={{
+            sourceType: "profile",
+            screenName: handle
+          }}
+          options={{
+            username: handle,
+            height: "400"
+          }}
+        />
+      );
+    } else {
+      twitterFeed = (
+        <Timeline
+          dataSource={{
+            sourceType: "profile",
+            screenName: "ExtinctionR"
+          }}
+          options={{
+            username: "ExtinctionR",
+            height: "400"
+          }}
+        />
+      );
+    }
+
     return (
       <>
         <div className="story-section stories-background-color">
@@ -53,10 +86,8 @@ export default class Stories extends Component {
               return (
                 <Story
                   key={story.id}
-                  passToParent={this.passTwitterHandleFromChild.bind(
-                    this,
-                    story.twitterHandle
-                  )}
+                  twitterHandle={story.twitterHandle}
+                  onClick={this.updateTwitter}
                   city={story.city}
                   country={story.country}
                 ></Story>
@@ -65,13 +96,7 @@ export default class Stories extends Component {
           </div>
         </div>
         <div className="centerContent">
-          <div className="selfCenter standardWidth">
-            <TwitterTimelineEmbed
-              sourceType="url"
-              url={`https://twitter.com/${this.state.currentTwitterHandle}`}
-              options={{ height: 600 }}
-            />
-          </div>
+          <div className="selfCenter standardWidth">{twitterFeed}</div>
         </div>
       </>
     );

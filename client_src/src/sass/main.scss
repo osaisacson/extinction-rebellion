@@ -424,6 +424,7 @@ input[type=submit] {
 
 .stories {
   @extend .flex-left;
+  max-height: 120px;
   padding-top: 15px;
   padding-left: 10px;
   padding-bottom: 20px;
@@ -431,12 +432,31 @@ input[type=submit] {
   white-space: nowrap;
 
   .story {
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
     text-align: center;
     margin-right: 30px;
     display: inline-block;
     opacity: 0;
     -webkit-animation: fade-in 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             animation: fade-in 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    &.active, 
+    &:hover, 
+    &:focus,
+    &:active {
+
+      .mask {
+        width: 60px;
+        max-height: 60px;
+
+        img {
+          height: 60px;
+          width: 60px;
+        }
+      }
+    }
     
     h5 {
       color: #fff;
@@ -656,16 +676,19 @@ input[type=submit] {
 
 .mask {
   display: inline-block;
+  border: 2px solid black;
   width: 50px;
   max-height: 50px;
   border-radius: 50%;
   overflow: hidden;
+  transition: all .5s;
   
   img {
     height: 50px;
     width: 50px;
     object-fit: cover;
     border-radius: 50%;
+    transition: all .5s;
   }
 }
 

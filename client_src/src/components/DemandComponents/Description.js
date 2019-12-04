@@ -8,8 +8,7 @@ export default class Description extends Component {
 
     this.state = {
       isLoading: true,
-      edits: [],
-      isSent: props.isSent
+      edits: []
     };
   }
 
