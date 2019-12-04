@@ -27,8 +27,13 @@ export default class Stories extends Component {
     axios
       .get("http://localhost:3001/api/stories")
       .then(response => {
+        console.log("response from api stories: ", response.data);
+        console.log(
+          "response.data.sort(): ",
+          response.data.sort((a, b) => b.city.localeCompare(a.city))
+        );
         this.setState({
-          stories: response.data.sort(),
+          stories: response.data,
           isLoading: false
         });
       })
