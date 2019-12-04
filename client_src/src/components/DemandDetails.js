@@ -8,6 +8,8 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 import AddAction from "./AddAction";
+import AddEdit from "./AddEdit";
+
 import EditDemand from "./EditDemand";
 
 import Description from "./DemandComponents/Description";
@@ -174,6 +176,81 @@ export default class DemandDetails extends Component {
                         <Description demand={demand} />
                       )}
                     </div>
+
+                    {edits ? (
+                      <>
+                        <h6>
+                          Add your proposed edit below. Once it reaches 10
+                          upvotes it will automatically update the demand.
+                        </h6>
+                        {edits.map(edit => {
+                          return (
+                            <div className="rebel-card" key={edit.id}>
+                              {/* Joined people */}
+                              <Voting
+                                voteLimit={10}
+                                votes={edit.editVotes ? edit.editVotes : 0}
+                              ></Voting>
+                              <div className="rebel-content">
+                                <div>
+                                  <>
+                                    <h6>{edit.editSummary}</h6>
+                                    <div className="tight-header">
+                                      <p className="grey">By: {edit.by}</p>
+                                      <br></br>
+                                      <div>
+                                        <p className="bold">
+                                          Responsible representative
+                                        </p>
+                                        <p> {edit.representative}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">
+                                          Representative email
+                                        </p>
+                                        <p> {edit.representativeEmail}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">Country</p>
+                                        <p>{edit.country}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">City</p>
+                                        <p>{edit.city}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">Summary</p>
+                                        <p>{edit.summary}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">Background</p>
+                                        <p>{edit.background}</p>
+                                      </div>
+                                      <div>
+                                        <p className="bold">Indicators</p>
+                                        <p>{edit.indicators}</p>
+                                      </div>
+                                    </div>
+                                  </>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </>
+                    ) : null}
+                    {!edits ? (
+                      <>
+                        <br></br>
+                        <h6>There are no edits yet, start one below</h6>
+                      </>
+                    ) : null}
+                    <div className="separator"></div>
+                    <br></br>
+                    {/* Add new action */}
+                    <AddEdit demand={demand} />
+
+                    <br></br>
                   </Card.Body>
                 </Tab>
                 <Tab

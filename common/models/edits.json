@@ -9,6 +9,14 @@
     "demandId": {
       "type": "string"
     },
+    "editSummary": {
+      "type": "string",
+      "required": true
+    },
+    "editVotes": {
+      "type": "number",
+      "default": 0
+    },
     "by": {
       "type": "string",
       "required": true,

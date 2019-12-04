@@ -111,6 +111,8 @@ ul {
   padding-inline-start: 0;
 }
 
+
+
 .hashtag {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 1.3rem;
@@ -657,6 +659,10 @@ input[type=submit] {
     font-size: 12px;
     margin: 0;
     padding: 0;
+  }
+
+  p + p {
+    padding-bottom: 12px;
   }
 }
 

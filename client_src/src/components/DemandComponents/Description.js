@@ -1,44 +1,10 @@
 import React, { Component } from "react";
-import Edit from "./Edit";
-import axios from "axios";
+// import Edit from "./Edit";
+// import axios from "axios";
 
 export default class Description extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-      edits: []
-    };
-  }
-
-  componentDidMount() {
-    this.getEdits();
-  }
-
-  getEdits() {
-    let demandId = this.props.demand.id;
-    axios
-      .all([axios.get(`http://localhost:3001/api/edits/${demandId}`)])
-      .then(
-        axios.spread(edits => {
-          const editsArray = edits.data;
-          const criteria = demandId;
-          const demandEdits = editsArray.filter(
-            item => item.demandId === criteria
-          );
-          this.setState({
-            edits: demandEdits,
-            isLoading: false
-          });
-        })
-      )
-      .catch(err => console.log("error in Description.js:getEdits()", err));
-  }
-
   render() {
     const { demand } = this.props;
-    const { edits } = this.state;
 
     return (
       <>
@@ -46,10 +12,8 @@ export default class Description extends Component {
         {demand.isSent ? (
           <>
             <h6>
-              We together made <span className="bold">{edits.length}</span>{" "}
-              edits. <br></br>Add references supporting the demand in the
-              hashtag section above, and start actions to push it through
-              parliament in the rebel section.
+              This demand was made collaboratively. Once it reached 100 votes it
+              got sent to the representative.
             </h6>
             <div className="separator"></div>
           </>
@@ -80,16 +44,6 @@ export default class Description extends Component {
           <h6 className="bold">Indicators</h6>
           <p>{demand.indicators}</p>
         </>
-        {/* Loop over edits belonging to this demand */}
-        {!demand.isSent && edits.length ? (
-          <>
-            {edits.map(edit => {
-              return <Edit key={edit.id} edits={edit} />;
-            })}
-          </>
-        ) : (
-          <h5>No edits yet</h5>
-        )}
       </>
     );
   }
