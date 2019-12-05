@@ -31,10 +31,17 @@ export default class Routes extends Component {
   }
 
   getData() {
+    let axiosConfig = {
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Access-Control-Allow-Origin": "*"
+      }
+    };
+
     axios
       .all([
-        axios.get("http://localhost:3001/api/stories"),
-        axios.get("http://localhost:3001/api/demands")
+        axios.get("http://localhost:3001/api/stories", {}, axiosConfig),
+        axios.get("http://localhost:3001/api/demands", {}, axiosConfig)
       ])
       .then(
         axios.spread((stories, demands) => {
