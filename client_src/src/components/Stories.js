@@ -24,7 +24,7 @@ export default class Stories extends Component {
 
   getStories() {
     axios
-      .get("http://localhost:3001/api/stories")
+      .get("https://extinction-rebellion.herokuapp.com/api/stories")
       .then(response => {
         let sortedStories = response.data.sort((a, b) =>
           b.city.localeCompare(a.city)

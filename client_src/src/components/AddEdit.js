@@ -6,7 +6,7 @@ export default class AddEdit extends Component {
     axios
       .request({
         method: "post",
-        url: "http://localhost:3001/api/edits",
+        url: "https://extinction-rebellion.herokuapp.com/api/edits",
         data: newEdit
       })
       .then(response => {

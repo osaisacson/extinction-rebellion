@@ -8,7 +8,7 @@ export default class AddStory extends Component {
     axios
       .request({
         method: "post",
-        url: "http://localhost:3001/api/stories",
+        url: "https://extinction-rebellion.herokuapp.com/api/stories",
         data: newStory
       })
       .then(response => {

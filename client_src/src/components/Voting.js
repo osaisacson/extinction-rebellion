@@ -22,7 +22,7 @@ export class Voting extends React.Component {
     axios
       .request({
         method: "patch",
-        url: `http://localhost:3001/api/demands/${this.props.cardId}`,
+        url: `https://extinction-rebellion.herokuapp.com/api/demands/${this.props.cardId}`,
         data: newVote
       })
       .then(response => {

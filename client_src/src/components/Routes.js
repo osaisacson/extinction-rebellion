@@ -40,8 +40,16 @@ export default class Routes extends Component {
 
     axios
       .all([
-        axios.get("http://localhost:3001/api/stories", {}, axiosConfig),
-        axios.get("http://localhost:3001/api/demands", {}, axiosConfig)
+        axios.get(
+          "https://extinction-rebellion.herokuapp.com/api/stories",
+          {},
+          axiosConfig
+        ),
+        axios.get(
+          "https://extinction-rebellion.herokuapp.com/api/demands",
+          {},
+          axiosConfig
+        )
       ])
       .then(
         axios.spread((stories, demands) => {

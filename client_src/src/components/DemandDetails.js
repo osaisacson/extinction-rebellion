@@ -50,10 +50,12 @@ export default class DemandDetails extends Component {
     let demandId = this.props.match.params.id;
     axios
       .all([
-        axios.get(`http://localhost:3001/api/demands/${demandId}`),
-        axios.get("http://localhost:3001/api/edits"),
-        axios.get("http://localhost:3001/api/references"),
-        axios.get("http://localhost:3001/api/actions")
+        axios.get(
+          `https://extinction-rebellion.herokuapp.com/api/demands/${demandId}`
+        ),
+        axios.get("https://extinction-rebellion.herokuapp.com/api/edits"),
+        axios.get("https://extinction-rebellion.herokuapp.com/api/references"),
+        axios.get("https://extinction-rebellion.herokuapp.com/api/actions")
       ])
       .then(
         axios.spread((demand, edits, references, actions) => {
@@ -87,7 +89,9 @@ export default class DemandDetails extends Component {
   onDelete() {
     let demandId = this.state.demand.id;
     axios
-      .delete(`http://localhost:3001/api/demands/${demandId}`)
+      .delete(
+        `https://extinction-rebellion.herokuapp.com/api/demands/${demandId}`
+      )
       .then(response => {
         this.props.history.push("/");
       })

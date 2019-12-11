@@ -6,7 +6,7 @@ export default class AddAction extends Component {
     axios
       .request({
         method: "post",
-        url: "http://localhost:3001/api/actions",
+        url: "https://extinction-rebellion.herokuapp.com/api/actions",
         data: newAction
       })
       .then(response => {

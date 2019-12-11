@@ -8,7 +8,7 @@ export default class AddDemand extends Component {
     axios
       .request({
         method: "post",
-        url: "http://localhost:3001/api/demands",
+        url: "https://extinction-rebellion.herokuapp.com/api/demands",
         data: newDemand
       })
       .then(response => {

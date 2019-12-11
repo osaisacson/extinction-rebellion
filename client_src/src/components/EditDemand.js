@@ -28,7 +28,7 @@ export default class EditDemand extends Component {
   getDemandDetails() {
     let demandId = this.props.demandId;
     axios
-      .get(`http://localhost:3001/api/demands/${demandId}`)
+      .get(`https://extinction-rebellion.herokuapp.com/api/demands/${demandId}`)
       .then(response => {
         this.setState({
           id: response.data.id,
@@ -51,7 +51,7 @@ export default class EditDemand extends Component {
     axios
       .request({
         method: "put",
-        url: `http://localhost:3001/api/demands/${this.state.id}`,
+        url: `https://extinction-rebellion.herokuapp.com/api/demands/${this.state.id}`,
         data: newDemand
       })
       .then(response => {
