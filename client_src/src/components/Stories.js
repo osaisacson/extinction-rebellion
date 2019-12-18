@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Story from "./Story";
-// import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { Timeline } from "react-twitter-widgets";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -56,7 +55,8 @@ export default class Stories extends Component {
           }}
           options={{
             username: handle,
-            height: "400"
+            height: "600",
+            chrome: "nofooter"
           }}
         />
       );
@@ -69,7 +69,8 @@ export default class Stories extends Component {
           }}
           options={{
             username: "ExtinctionR",
-            height: "400"
+            height: "600",
+            chrome: "nofooter"
           }}
         />
       );
@@ -78,7 +79,6 @@ export default class Stories extends Component {
     return (
       <>
         <div className="story-section stories-background-color">
-          <h2>FACTIONS</h2>
           <div className="stories">
             <Link to="/add-story">
               <div className="add-button">
@@ -93,13 +93,16 @@ export default class Stories extends Component {
                   onClick={this.updateTwitter}
                   city={story.city}
                   country={story.country}
+                  img={story.img}
                 ></Story>
               );
             })}
           </div>
         </div>
         <div className="centerContent">
-          <div className="selfCenter standardWidth">{twitterFeed}</div>
+          <div className="selfCenter standardWidth twitterFeed">
+            {twitterFeed}
+          </div>
         </div>
       </>
     );
