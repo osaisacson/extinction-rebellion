@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 import DemandItem from "./DemandItem";
 
@@ -19,6 +23,11 @@ export default class Demands extends Component {
       <div className="demand-section">
         <Card>
           <div className={`demand-section-header ${backgroundColor}`}>
+            <Link to="/add-demand">
+              <div className="add-button">
+                <FontAwesomeIcon icon={faPlus} />
+              </div>
+            </Link>
             <h2>
               {header} ({demands.length || 0})
             </h2>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
 import axios from "axios";
 
 export default class EditDemand extends Component {
@@ -95,11 +94,11 @@ export default class EditDemand extends Component {
         {/* <Link className="btn grey" to="/">
           Back
         </Link> */}
-        <Card className="add-demand">
+        <div className="add-demand">
           <form onSubmit={this.onSubmit.bind(this)}>
             <div className="form-group">
               <input
-                className="form-input"
+                className="form-control"
                 type="text"
                 name="title"
                 ref="title"
@@ -112,7 +111,7 @@ export default class EditDemand extends Component {
             <div className="flex-spread">
               <div className="form-group">
                 <input
-                  className="form-input"
+                  className="form-control"
                   type="text"
                   name="city"
                   ref="city"
@@ -124,6 +123,7 @@ export default class EditDemand extends Component {
               </div>
               <div className="form-group">
                 <input
+                  className="form-control"
                   type="text"
                   name="country"
                   ref="country"
@@ -134,8 +134,11 @@ export default class EditDemand extends Component {
                 <label htmlFor="country"></label>
               </div>
             </div>
+
             <div className="form-group">
-              <input
+              <textarea
+                className="form-control"
+                rows="2"
                 type="text"
                 name="summary"
                 ref="summary"
@@ -146,7 +149,9 @@ export default class EditDemand extends Component {
               <label htmlFor="summary"></label>
             </div>
             <div className="form-group">
-              <input
+              <textarea
+                className="form-control"
+                rows="4"
                 type="text"
                 name="background"
                 ref="background"
@@ -157,7 +162,9 @@ export default class EditDemand extends Component {
               <label htmlFor="background"></label>
             </div>
             <div className="form-group">
-              <input
+              <textarea
+                className="form-control"
+                rows="3"
                 type="text"
                 name="indicators"
                 ref="indicators"
@@ -172,6 +179,7 @@ export default class EditDemand extends Component {
             <div className="flex-spread">
               <div className="form-group">
                 <input
+                  className="form-control"
                   type="text"
                   name="representative"
                   ref="representative"
@@ -183,7 +191,8 @@ export default class EditDemand extends Component {
               </div>
               <div className="form-group">
                 <input
-                  type="text"
+                  className="form-control"
+                  type="email"
                   name="representativeEmail"
                   ref="representativeEmail"
                   placeholder="Email"
@@ -202,7 +211,7 @@ export default class EditDemand extends Component {
           </form>
           <br></br>
           <br></br>
-        </Card>
+        </div>
       </>
     );
   }

@@ -42,33 +42,36 @@ export default class AddAction extends Component {
           and adding the name of it below.
         </h6>
         <form onSubmit={this.onSubmit.bind(this)}>
-          <div className="flex-spread">
-            <div className="form-group">
-              <input
-                className="form-input"
-                type="text"
-                name="date"
-                ref="date"
-                placeholder="Date of action"
-              />
-              <label htmlFor="date"></label>
-            </div>
-            <div className="form-group">
-              <input type="text" name="time" ref="time" placeholder="time" />
-              <label htmlFor="time"></label>
-            </div>
-          </div>
           <div className="form-group">
             <input
+              className="form-control"
+              type="text"
+              name="date"
+              ref="date"
+              placeholder="Date of action"
+            />
+            <label htmlFor="date"></label>
+
+            <input
+              className="form-control"
+              type="text"
+              name="time"
+              ref="time"
+              placeholder="time"
+            />
+            <label htmlFor="time"></label>
+
+            <input
+              className="form-control"
               type="text"
               name="name"
               ref="name"
               placeholder="Name of action"
             />
             <label htmlFor="name"></label>
-          </div>
-          <div className="form-group">
+
             <input
+              className="form-control"
               type="text"
               name="telegram"
               ref="telegram"

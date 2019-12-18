@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFistRaised,
-  faPlus,
-  faSkullCrossbones,
-  faHandPointer
+  faSkullCrossbones
 } from "@fortawesome/free-solid-svg-icons";
 
 export default class FooterNav extends Component {
@@ -13,12 +11,10 @@ export default class FooterNav extends Component {
     super(props);
 
     this.state = {
-      actionsActive: "",
       homeActive: "currently-active",
       demandsActive: ""
     };
 
-    this.handleActionsClick = this.handleActionsClick.bind(this);
     this.handleHomeClick = this.handleHomeClick.bind(this);
     this.handleDemandsClick = this.handleDemandsClick.bind(this);
   }
@@ -28,53 +24,30 @@ export default class FooterNav extends Component {
       <>
         <div className="footer-nav">
           <div
-            className={`icon-nav ${this.state.demandsActive}`}
-            onClick={this.handleDemandsClick}
-          >
-            <Link to="/suggested">
-              <FontAwesomeIcon icon={faHandPointer} />
-            </Link>
-            <h6>Suggestions</h6>
-          </div>
-          <div
             className={`icon-nav ${this.state.homeActive}`}
             onClick={this.handleHomeClick}
           >
             <Link to="/">
               <FontAwesomeIcon icon={faSkullCrossbones} />
             </Link>
-            <h6>What's up</h6>
+            <h6>Actions</h6>
           </div>
           <div
-            className={`icon-nav ${this.state.actionsActive}`}
-            onClick={this.handleActionsClick}
+            className={`icon-nav ${this.state.demandsActive}`}
+            onClick={this.handleDemandsClick}
           >
-            <Link to="/demands">
+            <Link to="/suggested">
               <FontAwesomeIcon icon={faFistRaised} />
             </Link>
             <h6>Demands</h6>
           </div>
         </div>
-        <div className="add-nav">
-          <Link to="/add-demand">
-            <FontAwesomeIcon icon={faPlus} />
-          </Link>
-        </div>
       </>
     );
   }
 
-  handleActionsClick() {
-    this.setState({
-      actionsActive: "currently-active",
-      homeActive: "",
-      demandsActive: ""
-    });
-  }
-
   handleHomeClick() {
     this.setState({
-      actionsActive: "",
       homeActive: "currently-active",
       demandsActive: ""
     });
@@ -82,7 +55,6 @@ export default class FooterNav extends Component {
 
   handleDemandsClick() {
     this.setState({
-      actionsActive: "",
       homeActive: "",
       demandsActive: "currently-active"
     });

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -43,100 +42,96 @@ export default class AddDemand extends Component {
         <Link className="btn grey" to="/">
           Back
         </Link>
-        <Card className="add-demand">
+        <div className="add-demand">
           <h6>
-            Start a new demand. It does not have to be perfect, we can make it
-            great together afterwards.
+            It doesn't have to be perfect, we can make it great together later.
           </h6>
+          <br></br>
 
           <form onSubmit={this.onSubmit.bind(this)}>
             <div className="form-group">
               <input
-                className="form-input"
+                className="form-control"
                 type="text"
                 name="title"
                 ref="title"
                 placeholder="Title"
               />
               <label htmlFor="title"></label>
-            </div>
-            <div className="flex-spread">
-              <div className="form-group">
-                <input
-                  className="form-input"
-                  type="text"
-                  name="city"
-                  ref="city"
-                  placeholder="City"
-                />
-                <label htmlFor="city"></label>
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="country"
-                  ref="country"
-                  placeholder="Country"
-                />
-                <label htmlFor="country"></label>
-              </div>
-            </div>
-            <div className="form-group">
               <input
+                className="form-control"
+                type="text"
+                name="city"
+                ref="city"
+                placeholder="City"
+              />
+              <label htmlFor="city"></label>
+              <input
+                className="form-control"
+                type="text"
+                name="country"
+                ref="country"
+                placeholder="Country"
+              />
+              <label htmlFor="country"></label>
+
+              <textarea
+                className="form-control"
+                rows="5"
                 type="text"
                 name="summary"
                 ref="summary"
                 placeholder="Summary"
               />
               <label htmlFor="summary"></label>
-            </div>
-            <div className="form-group">
-              <input
+
+              <textarea
+                className="form-control"
+                rows="4"
                 type="text"
                 name="background"
                 ref="background"
                 placeholder="Background"
               />
               <label htmlFor="background"></label>
-            </div>
-            <div className="form-group">
-              <input
+
+              <textarea
+                className="form-control"
+                rows="3"
                 type="text"
                 name="indicators"
                 ref="indicators"
                 placeholder="Indicators"
               />
               <label htmlFor="indicators"></label>
-            </div>
-            <br></br>
-            <h6>
-              <span className="bold">Representative</span> to send the demand to
-              once it has been defined and accepted by the group. This should be
-              the person who has the authority to raise this issue in
-              parliament. If you don't know who, leave it blank for now.
-            </h6>
-            <div className="flex-spread">
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="representative"
-                  ref="representative"
-                  placeholder="Rep name"
-                />
-                <label htmlFor="representative"></label>
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="representativeEmail"
-                  ref="representativeEmail"
-                  placeholder="Email"
-                />
-                <label htmlFor="representativeEmail"></label>
-              </div>
+              <h6>
+                <span className="bold">Representative</span> to eventually send
+                the demand to. This should be the person who has the authority
+                to raise this issue in parliament.
+                <br></br>If you don't know, leave it blank for now.
+              </h6>
+              <br></br>
+
+              <input
+                className="form-control"
+                type="text"
+                name="representative"
+                ref="representative"
+                placeholder="Name of representative"
+              />
+              <label htmlFor="representative"></label>
+
+              <input
+                className="form-control"
+                type="email"
+                name="representativeEmail"
+                ref="representativeEmail"
+                placeholder="Email of representative"
+              />
+              <label htmlFor="representativeEmail"></label>
             </div>
 
-            <br></br>
+            {/* <br></br>
             <h6>One time linking setup:</h6>
             <div className="list-group-item">
               <input
@@ -192,7 +187,7 @@ export default class AddDemand extends Component {
               Hurray! Now all Tweets anyone does with #xr110 gets automatically
               pulled into the # section of your new petition. You won't have to
               do anything.
-            </p>
+            </p> */}
             <input
               className="form-input tweak-background-color btn float-right"
               type="submit"
@@ -201,7 +196,7 @@ export default class AddDemand extends Component {
           </form>
           <br></br>
           <br></br>
-        </Card>
+        </div>
       </>
     );
   }

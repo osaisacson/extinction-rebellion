@@ -54,27 +54,27 @@
     },
     "title": {
       "type": "string",
-      "default": "No title yet"
+      "default": ""
     },
     "summary": {
       "type": "string",
-      "default": "No summary yet"
+      "default": ""
     },
     "background": {
       "type": "string",
-      "default": "No background yet"
+      "default": ""
     },
     "indicators": {
       "type": "string",
-      "default": "No success indicators yet"
+      "default": ""
     },
     "representative": {
       "type": "string",
-      "default": "No representative yet"
+      "default": ""
     },
     "representativeEmail": {
       "type": "string",
-      "default": "No representative yet"
+      "default": ""
     }
   },
   "validations": [],

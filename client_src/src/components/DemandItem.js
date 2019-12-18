@@ -9,7 +9,6 @@ import Voting from "./Voting";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
-  faHashtag,
   faFistRaised,
   faWrench
 } from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +23,6 @@ export default class DemandItem extends Component {
       isLoading: true,
       showEdit: false,
       edits: [],
-      references: [],
       actions: [],
       isSent: props.isSent
     };
@@ -42,20 +40,15 @@ export default class DemandItem extends Component {
           `https://extinction-rebellion.herokuapp.com/api/demands/${demandId}`
         ),
         axios.get("https://extinction-rebellion.herokuapp.com/api/edits"),
-        axios.get("https://extinction-rebellion.herokuapp.com/api/references"),
         axios.get("https://extinction-rebellion.herokuapp.com/api/actions")
       ])
       .then(
-        axios.spread((demand, edits, references, actions) => {
+        axios.spread((demand, edits, actions) => {
           const editsArray = edits.data;
-          const referencesArray = references.data;
           const actionsArray = actions.data;
           const criteria = demandId;
 
           const demandEdits = editsArray.filter(
-            item => item.demandId === criteria
-          );
-          const demandReferences = referencesArray.filter(
             item => item.demandId === criteria
           );
           const demandActions = actionsArray.filter(
@@ -65,7 +58,6 @@ export default class DemandItem extends Component {
           this.setState({
             demand: demand.data,
             edits: demandEdits,
-            references: demandReferences,
             actions: demandActions,
             isLoading: false
           });
@@ -75,7 +67,7 @@ export default class DemandItem extends Component {
   }
 
   render() {
-    const { card, edits, references, actions } = this.state;
+    const { card, edits, actions } = this.state;
 
     let isSuggested = card.isBeingDefined;
     let cardBackgroundType = isSuggested ? "suggested" : "sent";
@@ -97,10 +89,7 @@ export default class DemandItem extends Component {
                 </>
               )}
             </div>
-            <div as={Card.Header} className="icon-section">
-              <h6>{references ? references.length : 0}</h6>
-              <FontAwesomeIcon icon={faHashtag} />
-            </div>
+
             <div as={Card.Header} className="icon-section">
               <h6>{actions ? actions.length : 0}</h6>
               <FontAwesomeIcon icon={faFistRaised} />

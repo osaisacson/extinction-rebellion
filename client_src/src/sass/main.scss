@@ -123,7 +123,9 @@ ul {
   padding-inline-start: 0;
 }
 
-
+.text-align-right {
+  text-align: right;
+}
 
 .hashtag {
   font-family: 'Libre Franklin', sans-serif;
@@ -379,7 +381,7 @@ ul {
 
 .card-indicators {
   @extend .flex-spread;
-  width: 150px;
+  width: 100px;
 }
 
 .search-filter {
@@ -418,19 +420,10 @@ input[type=submit] {
 }
 
 .form-group {
-  margin: 0;
-  line-height: .5;
 
   input {
-    width: 100%;
-    height: 40px;
-    background-color: rgba(255, 255, 255, .8);
-    border: 0;
-    margin: 2px 0;
-    padding: 0 8px;
     outline: 0;
     box-shadow: none;
-
 
     &::placeholder {
       color: rgba(0, 0, 0, .5);;

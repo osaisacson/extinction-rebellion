@@ -85,7 +85,6 @@ export default class Routes extends Component {
     });
 
     // Define subsets of main card set
-    let sentCards = filteredCards.filter(card => card.isSent);
     let suggestedCards = filteredCards.filter(card => card.isBeingDefined);
 
     return (
@@ -100,23 +99,6 @@ export default class Routes extends Component {
                 path="/"
                 render={props => (
                   <Stories {...props} stories={xrFactions} search={search} />
-                )}
-              ></Route>
-
-              <Route
-                exact
-                path="/demands"
-                render={props => (
-                  <Demands
-                    {...props}
-                    demands={sentCards}
-                    search={search}
-                    header="DEMANDS"
-                    subheader="Active demands that have been sent to parliament. Sign the ones you support below and join actions to push them through ASAP."
-                    backgroundColor="action-background-color"
-                    eventKey="0"
-                    isSent={true}
-                  />
                 )}
               ></Route>
               <Route exact path="/:id/add-action" component={AddAction}></Route>
@@ -140,8 +122,8 @@ export default class Routes extends Component {
                     {...props}
                     demands={suggestedCards}
                     search={search}
-                    header="SUGGESTIONS"
-                    subheader="Suggested demands. Collaboratively flesh them out here."
+                    header="DEMANDS"
+                    subheader="Sign the ones you support below and join actions to push them through ASAP."
                     backgroundColor="tweak-background-color"
                     eventKey="1"
                     isSuggested={true}
