@@ -4,36 +4,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default class AddStory extends Component {
-  addStory(newStory) {
-    axios
-      .request({
-        method: "post",
-        url: "https://extinction-rebellion.herokuapp.com/api/stories",
-        data: newStory
-      })
-      .then(response => {
-        this.props.history.push("/");
-        console.log(response);
-      })
-      .catch(err => console.log("Error from AddStory.js:addStory", err));
-  }
-
   onSubmit(e) {
-    const newStory = {
-      img: this.getImage(this.refs.city.value),
-      city: this.refs.city.value,
-      country: this.refs.country.value,
-      twitterHandle: this.refs.twitter.value
-    };
-    this.addStory(newStory);
-    e.preventDefault();
-  }
-
-  getImage(city) {
-    console.log("getImage is being called, with the city: ", city);
     axios
       .get("https://api.unsplash.com/search/photos", {
-        params: { query: city },
+        params: { query: this.refs.city.value },
         page: 1,
         per_page: 1,
         headers: {
@@ -42,20 +16,31 @@ export default class AddStory extends Component {
         }
       })
       .then(response => {
-        console.log("response.data", response.data);
-        const fetchedPic = response.data.results[0].urls.small;
-        const defaultPic =
-          "https://images.unsplash.com/photo-1571238052771-c6e35627d337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=190&q=80";
-        console.log("getImage returns: ");
-        console.log(
-          "response.data.results[0].urls.small ",
-          response.data.results[0].urls.small
-        );
-        console.log("fetchedPic ", fetchedPic);
-        console.log("defaultPic ", defaultPic);
+        let cityPic =
+          response.data.results.length > 0
+            ? response.data.results[0].urls.small
+            : "https://images.unsplash.com/photo-1571238052771-c6e35627d337?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=190&q=80";
 
-        return fetchedPic ? fetchedPic : defaultPic;
+        const newStory = {
+          img: cityPic,
+          city: this.refs.city.value,
+          country: this.refs.country.value,
+          twitterHandle: this.refs.twitter.value
+        };
+
+        axios
+          .request({
+            method: "post",
+            url: "https://extinction-rebellion.herokuapp.com/api/stories",
+            data: newStory
+          })
+          .then(response => {
+            this.props.history.push("/");
+          })
+          .catch(err => console.log("Error from StoriesAdd.js:addStory", err));
       });
+
+    e.preventDefault();
   }
 
   render() {
