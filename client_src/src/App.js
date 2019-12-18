@@ -7,13 +7,13 @@ import Routes from "./components/Routes";
 const App = () => (
   <>
     <div className="app">
+      {/* Header, shows regardless of which page we are on. Links back to '/' (Factions) */}
+      <header>
+        <Link to="/">
+          <img src={"/xr-logo.png"} className="logo" alt="logo" />
+        </Link>
+      </header>
       <div className="app-container">
-        {/* Header, shows regardless of which page we are on. Links back to '/' (Factions) */}
-        <header>
-          <Link to="/">
-            <img src={"/xr-logo.png"} className="logo" alt="logo" />
-          </Link>
-        </header>
         <Routes />
       </div>
     </div>

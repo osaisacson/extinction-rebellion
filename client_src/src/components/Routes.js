@@ -13,6 +13,9 @@ import EditDemand from "./EditDemand";
 import DemandDetails from "./DemandDetails";
 import Search from "./Search";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAmericanSignLanguageInterpreting } from "@fortawesome/free-solid-svg-icons";
+
 export default class Routes extends Component {
   constructor() {
     super();
@@ -149,7 +152,12 @@ export default class Routes extends Component {
             </Switch>
           </>
         ) : (
-          <h3>Loading...</h3>
+          <div className="loading-section">
+            {" "}
+            <div className="spinner">
+              <FontAwesomeIcon icon={faAmericanSignLanguageInterpreting} />
+            </div>
+          </div>
         )}
       </main>
     );
