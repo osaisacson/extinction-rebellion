@@ -56,7 +56,7 @@ export default class Stories extends Component {
           }}
           options={{
             username: handle,
-            height: "600"
+            height: "2000"
           }}
         />
       );
@@ -69,7 +69,7 @@ export default class Stories extends Component {
           }}
           options={{
             username: "ExtinctionR",
-            height: "600"
+            height: "2000"
           }}
         />
       );

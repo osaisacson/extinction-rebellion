@@ -431,10 +431,10 @@ input[type=submit] {
 
 .stories {
   @extend .flex-left;
-  max-height: 120px;
-  padding-top: 15px;
+  max-height: 110px;
+  padding-top: 10px;
   padding-left: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
   overflow: auto;
   white-space: nowrap;
 
